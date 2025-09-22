@@ -1156,10 +1156,13 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 <p>fonctions mathématiques (<code>round</code>,<code>cos</code>,<code>sin</code>,<code>randint</code>,<code>sqrt</code>)</p>
 </li>
 </ul>
-<p><strong>Mémo</strong></p>
+<p><strong>Consignes</strong></p>
 <ul>
 <li>
 <p>Prends connaissance du cours sur les <a href="../NSI_Premi%C3%A8re_Partie1_Chapitre2_VariablesTypes.pdf"><strong>variables</strong></a>, fais les activités ci-dessous puis réponds aux questions <strong>QCM</strong> du pdf.</p>
+</li>
+<li>
+<p>Si tu éprouves encore des difficultés, fais les exercices proposés en remédiation au chapitre 6.</p>
 </li>
 <li>
 <p>Tu peux tester ton code avec l'IDE du chapitre "7. Bac à sable"</p>
@@ -1176,11 +1179,11 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 <p>Certains langages nécessitent de déclarer le type de chaque variable avant son utilisation.</p>
 <p>En python, ce n’est pas nécessaire, le type est défini de façon dynamique lors de la 1ère affectation de la variable. </p>
 <details class="question">
-<summary>Test1 : Que valent tutu et tiri ?</summary>
-<div class="highlight"><pre><span></span><code><span class="n">toto</span> <span class="o">=</span> <span class="mi">24</span>
-<span class="n">tutu</span> <span class="o">=</span> <span class="n">toto</span> <span class="o">+</span> <span class="mi">4</span>
-<span class="n">tutu</span> <span class="o">=</span> <span class="n">tutu</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="n">tiri</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="o">+</span><span class="s2">&quot;loulou&quot;</span>
+<summary>Test 1 : Que valent tutu et tiri ?</summary>
+<div class="highlight"><pre><span></span><code><span class="n">toto</span> <span class="err">←</span> <span class="mi">24</span>
+<span class="n">tutu</span> <span class="err">←</span> <span class="n">toto</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="n">tutu</span> <span class="err">←</span> <span class="n">tutu</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">tiri</span> <span class="err">←</span> <span class="s2">&quot;hello&quot;</span><span class="o">+</span><span class="s2">&quot;loulou&quot;</span>
 </code></pre></div>
 </details>
 <details class="tip">
@@ -1194,14 +1197,14 @@ tiri vaut "helloloulou"</p>
 <p>Dans une instruction d’affectation, on trouve :</p>
 <ul>
 <li>
-<p>à <strong>gauche</strong> de la flèche, un nom de <strong>variable</strong>, et uniquement cela.</p>
+<p>à <strong>gauche</strong> de la flèche <code>←</code>, un nom de <strong>variable</strong>, et uniquement cela.</p>
 </li>
 <li>
-<p>à <strong>droite</strong> de la flèche, ce qu’on appelle une expression qui doit pouvoir prendre une <strong>valeur</strong>. Les valeurs peuvent être reliées entre elles par des opérateurs.</p>
+<p>à <strong>droite</strong> de la flèche, ce qu’on appelle une expression qui doit pouvoir prendre une <strong>valeur</strong>. Les valeurs peuvent être reliées entre elles par des opérateurs (<code>+</code>, <code>-</code>, <code>x</code>, <code>/</code> ...).</p>
 </li>
 <li>
-<p>l’expression située à droite de la flèche soit du même type que la variable située à gauche. </p>
-<p><strong>Variables  = Valeurs (avec éventuels opérateurs)</strong></p>
+<p>l’expression située à droite de la flèche doit être du même type que la variable située à gauche. </p>
+<p><strong>Variables  = Valeurs (avec opérateurs éventuels)</strong></p>
 </li>
 </ul>
 </div>
@@ -1219,12 +1222,12 @@ Lorsque l’on écrit :</p>
 <div class="highlight"><pre><span></span><code>    <span class="n">ax</span><span class="err">²</span> <span class="o">+</span> <span class="n">bx</span> <span class="o">+</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
 </code></pre></div>
 <p>la variable <code>x</code> désigne les solutions à cette équation, c’est-à-dire zéro, une ou deux valeurs à la fois …</p>
-<p><strong>En informatique, une variable possède à un moment donné une valeur et une seule.</strong>
-A la rigueur, elle peut ne pas avoir de valeur du tout (une fois qu’elle a été déclarée, et tant qu’on ne l’a pas affectée - à signaler que dans certains langages, les variables non encore affectées sont considérées comme valant automatiquement zéro). Mais ce qui est important, c’est que cette valeur justement, ne « varie » pas à proprement parler. Du moins ne varie-t-elle que lorsqu’elle est l’objet d’une instruction d’affectation.</p>
+<p><strong>En informatique, une variable possède à un moment donné une valeur et une seule.</strong></p>
+<p>A la rigueur, elle peut ne pas avoir de valeur du tout (une fois qu’elle a été déclarée, et tant qu’on ne l’a pas affectée - à signaler que dans certains langages, les variables non encore affectées sont considérées comme valant automatiquement zéro). Mais ce qui est important, c’est que cette valeur justement, ne « varie » pas à proprement parler. Du moins elle ne varie que lorsqu’elle est l’objet d’une instruction d’affectation.</p>
 </li>
 <li>
 <p>La deuxième remarque concerne le <strong>signe de l’affectation.</strong></p>
-<p>En algorithmique, c’est le signe <code>←</code>. Mais en pratique, la quasi-totalité des langages emploient le signe <code>=</code>. Et là, pour les ants, la confusion avec les maths est également facile. </p>
+<p>En algorithmique, c’est le signe <code>←</code>. Mais en pratique, la quasi-totalité des langages emploient le signe <code>=</code>. Et là, la confusion avec les maths est également facile. </p>
 <p>En maths, <code>A = B</code> et <code>B = A</code> sont deux propositions strictement équivalentes.</p>
 <p>En informatique, absolument pas, puisque cela revient à écrire <code>A ← B</code> et <code>B ← A</code>, deux choses bien différentes.</p>
 <p>De même, <code>A = A + 1</code>, qui en mathématiques, constitue une équation sans solution, représente en programmation une action tout à fait licite (et de surcroît extrêmement courante). Donc, attention   ! ! ! La meilleure des vaccinations contre cette confusion consiste à bien employer le signe <code>←</code> en pseudocode, signe qui a le mérite de ne pas laisser place à l’ambiguïté. Une fois acquis les bons réflexes avec ce signe, vous n’aurez plus aucune difficulté à passer au <code>=</code> des langages de programmation.</p>
@@ -1246,13 +1249,13 @@ A la rigueur, elle peut ne pas avoir de valeur du tout (une fois qu’elle a ét
 <p>L'instruction <strong><code>input()</code></strong> est une opération de lecture: elle permet de demander à l'utilisateur de saisir des données au clavier. </p>
 <p>Par exemple:
 <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">lettre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entre une lettre : &quot;</span><span class="p">)</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">lettre</span><span class="p">)</span>
     <span class="n">Entre</span> <span class="n">une</span> <span class="n">lettre</span><span class="p">:</span> <span class="n">A</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">lettre</span><span class="p">)</span>
     <span class="n">A</span>
 </code></pre></div></p>
 <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">nb</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entre un nombre entier : &quot;</span><span class="p">)</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span>
     <span class="n">Entre</span> <span class="n">une</span> <span class="n">lettre</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span>
     <span class="mi">3</span>
 </code></pre></div>
 </li>
@@ -1274,7 +1277,7 @@ A la rigueur, elle peut ne pas avoir de valeur du tout (une fois qu’elle a ét
 </div>
 </div>
 <details class="question">
-<summary>Test2 : fonction input()</summary>
+<summary>Test 2 : fonction input()</summary>
 <p>Complète sur une feuille le code suivant pour afficher le contenu de la variable y qui prend la valeur du quotient <span class="arithmatex">\((2x-3)/(x-3)\)</span></p>
 <div class="highlight"><pre><span></span><code>    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entre un entier : &quot;</span><span class="p">))</span>
     <span class="n">y</span> <span class="o">=</span> <span class="o">...</span>
@@ -1282,7 +1285,7 @@ A la rigueur, elle peut ne pas avoir de valeur du tout (une fois qu’elle a ét
 </code></pre></div>
 </details>
 <details class="question">
-<summary>Test3 : Séquence d'instructions</summary>
+<summary>Test 3 : Séquence d'instructions</summary>
 <p>Re-écris le code sur une feuille et complète pour chaque ligne le contenu des 3 variables a, b, c :
 <div class="highlight"><pre><span></span><code>    <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">1</span>
@@ -1291,37 +1294,39 @@ A la rigueur, elle peut ne pas avoir de valeur du tout (une fois qu’elle a ét
     <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">-</span><span class="mi">2</span>
     <span class="nb">print</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">B</span> <span class="p">)</span>
 </code></pre></div>
-Tu peux vérifier ton code en l'exécutant pas à pas avec l'application en ligne <a href="https://pythontutor.com/iframe-embed.html#code=A%20%3D%205%0AB%20%3D%20A%2B1%0AB%20%3D%202*B%0AB%20%3D%20B-A%0AB%20%3D%20B-2%0Aprint%28%20A,%20B%20%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">pythontutor avec du code</a></p>
+Tu peux vérifier ton code en l'exécutant pas à pas avec l'application en ligne <a href="https://pythontutor.com/iframe-embed.html#code=A%20%3D%205%0AB%20%3D%20A%2B1%0AB%20%3D%202*B%0AB%20%3D%20B-A%0AB%20%3D%20B-2%0Aprint%28%20A,%20B%20%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">pythontutor</a></p>
 </details>
 <details class="question">
-<summary>Test4 : Séquence d'instructions</summary>
+<summary>Test 4 : Séquence d'instructions</summary>
+<p>Que produit le code suivant ?
 <div class="highlight"><pre><span></span><code>    <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="o">-</span><span class="n">a</span>
     <span class="nb">print</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">)</span>
-</code></pre></div>
+</code></pre></div></p>
 <details class="tip">
 <summary>Solution</summary>
 <p>4 5</p>
 </details>
 </details>
 <details class="question">
-<summary>Test5 : Séquence d'instructions</summary>
+<summary>Test 5 : Séquence d'instructions</summary>
+<p>Que produit le code suivant ?
 <div class="highlight"><pre><span></span><code>    <span class="n">a</span> <span class="o">=</span> <span class="mi">7</span>
     <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span><span class="o">*</span><span class="n">a</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
     <span class="n">d</span> <span class="o">=</span> <span class="n">b</span><span class="o">-</span><span class="n">c</span>
     <span class="nb">print</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="p">)</span>
-</code></pre></div>
+</code></pre></div></p>
 <details class="tip">
 <summary>Solution</summary>
 <p>7 42 49 -7</p>
 </details>
 </details>
 <details class="question">
-<summary>Test6 : Opérations</summary>
+<summary>Test 6 : Opérations</summary>
 <p>Complète sur une feuille les deux lignes du code ci-dessous ( au niveau des "...") afin d'afficher le contenu de la variable <code>y</code> qui prend la valeur <span class="arithmatex">\(3x^2 + 5x -7\)</span>
 <div class="highlight"><pre><span></span><code>    <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
     <span class="n">y</span> <span class="o">=</span> <span class="o">...</span>
@@ -1330,6 +1335,8 @@ Tu peux vérifier ton code en l'exécutant pas à pas avec l'application en lign
 Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non d'écrire directement la valeur voulue par y ?</p>
 </details>
 <h2 id="2-qcm-variables-et-affectation">2. QCM Variables et affectation</h2>
+<div class="highlight"><pre><span></span><code>Réponds aux questions du QCM 1.10 p3 du cours sur les variables.
+</code></pre></div>
 <details class="tip">
 <summary>Solutions du QCM 1.10 p3 du pdf</summary>
 <ol>
@@ -1344,7 +1351,7 @@ Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non
 
 <h2 id="3-types-de-donnees">3. Types de données</h2>
 <details class="question">
-<summary>Test7 : Comment calculer <span class="arithmatex">\(y = \sqrt{3x+5}\)</span> ?</summary>
+<summary>Test 7 : Comment calculer <span class="arithmatex">\(y = \sqrt{3x+5}\)</span> ?</summary>
 <p>Complète le code suivant sur une feuille ou utilise l'IDE du bac à sable si tu veux le vérifier.</p>
 <div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
     <span class="n">x</span> <span class="o">=</span> <span class="o">...</span>
@@ -1353,7 +1360,7 @@ Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non
 </code></pre></div>
 </details>
 <details class="question">
-<summary>Test8 : Que renvoie la fonction type ?</summary>
+<summary>Test 8 : Que renvoie la fonction type ?</summary>
 <p><div class="highlight"><pre><span></span><code>    <span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
     <span class="nb">type</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
     <span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -1362,7 +1369,7 @@ Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non
 <div style="--n-buttons:2" class="term_wrapper"><div style="line-height:24px;--n-lines:10;" id="term_only_da4b9237bacccdf19c0760cab7aec4a8359010b0" class="py_mk_wrapper term_solo py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard &amp; stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></p>
 </details>
 <details class="question">
-<summary>Test9 : Transtipage</summary>
+<summary>Test 9 : Transtipage</summary>
 <p>Corrige le code :
 <div class="highlight"><pre><span></span><code>    <span class="n">annee_naissance</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Saisir votre année de naissance : &quot;</span><span class="p">)</span>
     <span class="n">age</span> <span class="o">=</span> <span class="mi">2023</span> <span class="o">-</span> <span class="n">annee_naissance</span>
@@ -1372,7 +1379,7 @@ Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non
 </details>
 <div class="admonition info">
 <p class="admonition-title">Transtipage</p>
-<p>Il existe de nombreuses fonctions de transtypage (changement). En général, elles portent le nom du nouveau type que l'on veut obtenir. Au lycée, on utilisera essentiellement les fonctions suivantes :</p>
+<p>Il existe de nombreuses fonctions de transtypage (changement). En général, elles portent le nom du nouveau type que l'on veut obtenir. On utilisera essentiellement les fonctions suivantes :</p>
 <ul>
 <li><code>int</code> : permet de transtyper une donnée en un <strong>entier</strong></li>
 <li><code>float</code> : permet de transtyper une donnée en un <strong>réel</strong></li>
@@ -1381,7 +1388,7 @@ Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non
 </ul>
 </div>
 <details class="question">
-<summary>Test10 : Test d'égalité <code>==</code> </summary>
+<summary>Test 10 : Test d'égalité <code>==</code> </summary>
 <p>Teste dans le terminal les codes suivants:</p>
 <p><div class="highlight"><pre><span></span><code>    <span class="mf">0.25</span><span class="o">**</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="o">/</span><span class="mi">16</span>
 
@@ -1398,7 +1405,7 @@ Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non
 </div>
 </details>
 <details class="question">
-<summary>Test11 : Concaténation</summary>
+<summary>Test 11 : Concaténation</summary>
 <p>Que produit le code suivant ?
 <div class="highlight"><pre><span></span><code>    <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;423&quot;</span>
     <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;12&quot;</span>
@@ -1407,7 +1414,7 @@ Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non
 </code></pre></div></p>
 </details>
 <details class="question">
-<summary>Test12 : Concaténation</summary>
+<summary>Test 12 : Concaténation</summary>
 <p>Complète le code :
 <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;Bon&#39;</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;jour&#39;</span>
@@ -1417,7 +1424,7 @@ Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non
 </code></pre></div></p>
 </details>
 <details class="question">
-<summary>Test13 : Print de variables</summary>
+<summary>Test 13 : Print de variables</summary>
 <p>Complète le code :
 <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">prix</span> <span class="o">=</span> <span class="mf">1.1</span> <span class="o">*</span> <span class="mi">2</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="n">phrase</span> <span class="o">=</span> <span class="o">...</span>
@@ -1426,6 +1433,7 @@ Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non
 </code></pre></div></p>
 </details>
 <h2 id="4-qcm-types-de-donnees">4. QCM Types de données</h2>
+<p>Réponds aux questions du QCM 2.11 p6 du cours sur les variables.</p>
 <details class="tip">
 <summary>Solutions du QCM 2.11 p6  du pdf</summary>
 <ol>
@@ -1436,12 +1444,14 @@ Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non
 <li>a, d</li>
 </ol>
 </details>
+<div style="page-break-before: always;"></div>
+
 <h2 id="5-exercices">5. Exercices</h2>
 <details class="question">
-<summary>Test1 : Décomposition d’un montant en euros</summary>
+<summary>Exo 1 : Décomposition d’un montant en euros</summary>
 <ul>
 <li>
-<p>Écrire un programme permettant de décomposer un montant entré au clavier en billets de 20, 10, 5 euros en utilisant les opérateurs de la division euclidienne.</p>
+<p>Écris un programme permettant de décomposer un montant entré au clavier en billets de 20, 10, 5 euros en utilisant les opérateurs de la division euclidienne.</p>
 </li>
 <li>
 <p>Modifie ton programme pour ne pas utiliser l’opérateur modulo.</p>
@@ -1452,33 +1462,33 @@ Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non
 <p>// : division entière</p>
 <p>% : modulo ou reste de la division</p>
 </div>
-<p><div id="global_editor_26273be6b9032bdece2074d274fea14f75a26573" class="py_mk_ide"><div class="py_mk_wrapper_v md-typeset"><div class="comment_py_mk_wrapper"><div is_v="true" mode="_v" id="editor_26273be6b9032bdece2074d274fea14f75a26573"></div><span id="comment_editor_26273be6b9032bdece2074d274fea14f75a26573" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="True" style="line-height:24px;" id="term_editor_26273be6b9032bdece2074d274fea14f75a26573" class="term_editor_v py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard &amp; stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"></div></div></div></div></p>
-<div markdown="1" id="solution_editor_26273be6b9032bdece2074d274fea14f75a26573"      class="py_mk_hidden" data-search-exclude >
+<p><div id="global_editor_356a192b7913b04c54574d18c28d46e6395428ab" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_356a192b7913b04c54574d18c28d46e6395428ab"></div><span id="comment_editor_356a192b7913b04c54574d18c28d46e6395428ab" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_356a192b7913b04c54574d18c28d46e6395428ab" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard &amp; stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"></div></div></div></div></p>
+<div markdown="1" id="solution_editor_356a192b7913b04c54574d18c28d46e6395428ab"      class="py_mk_hidden" data-search-exclude >
 </div>
 </details>
 <details class="note">
-<summary>Test2 : Somme de deux fractions (<mark>Maison</mark>)</summary>
+<summary>Exo 2 : Somme de deux fractions (<mark>Maison</mark>)</summary>
 <p>Ecris un programme permettant de calculer le numérateur et le dénominateur d’une somme de deux fractions entières (on ne demande pas de trouver la fraction résultat sous forme irréductible).</p>
 </details>
 <details class="note">
-<summary>Test3 : Conversion prix HT en TTC (<mark>Maison</mark>)</summary>
+<summary>Exo 3 : Conversion prix HT en TTC (<mark>Maison</mark>)</summary>
 <p>Ecris un programme qui lit le prix HT d’un article, le nombre d’articles et le taux de TVA, et qui fournit le prix total TTC correspondant. Fais en sorte que des libellés apparaissent clairement.</p>
 </details>
 <h2 id="6-remediation">6. Remédiation</h2>
 <details class="note">
-<summary>Test4 : Surface d’un champ (<mark>Remédiation</mark>)</summary>
+<summary>Exo 4 : Surface d’un champ (<mark>Remédiation</mark>)</summary>
 <p>Écrire un programme qui demande à l’utilisateur de taper la largeur et la longueur d’un champ et qui en affiche la surface.</p>
 </details>
 <details class="note">
-<summary>Test5 : Bonjour (<mark>Remédiation</mark>)</summary>
-<p>Écrire un algorithme qui demande à l’utilisateur de saisir son prénom et qui affiche le message "Bonjour <prénom>" en remplaçant <prénom> par le texte saisi.</p>
+<summary>Exo 5 : Bonjour (<mark>Remédiation</mark>)</summary>
+<p>Écrire un algorithme qui demande à l’utilisateur de saisir son prénom et qui affiche le message "Bonjour prénom" en remplaçant prénom par le texte saisi.</p>
 </details>
 <details class="note">
-<summary>Test6 : Prix des pommes (<mark>Remédiation</mark>)</summary>
+<summary>Exo 6 : Prix des pommes (<mark>Remédiation</mark>)</summary>
 <p>Écrire un algorithme qui demande à l’utilisateur de taper le prix au kg de pommes, la masse achetée et qui affiche le prix à payer.</p>
 </details>
 <details class="note">
-<summary>Test7 : France IOI (<mark>Remédiation</mark>)</summary>
+<summary>Exo 7 : France IOI (<mark>Remédiation</mark>)</summary>
 <p>Vas sur le <a href="https://www.france-ioi.org/algo/chapters.php">site de France IOI</a> et fais dans les chapitres suivants :</p>
 <ul>
 <li>
@@ -1509,8 +1519,8 @@ Vois-tu l'intérêt d'écrire la variables y en fonction de la variable x et non
 <li>[Baston IDE en ligne] (https://console.basthon.fr/)</li>
 </ul><script type="text/javascript">
 CONFIG.needMermaid = false;
-CONFIG.overlordClasses = ["GlobalRunnersManager", "Terminal", "Ide"];
-globalThis.PAGE_IDES_CONFIG = '.\x1e5hwdb8_niayc.21r:lm76-s}3 ]x,9I[4ouvpfq{eg0kt\x1e0N010S0O0p0s0g0H0h0r0k0g0y0a0u0j0o0D0n0e0t0D0o0y0e0Q0G0l0a0G0a0t0G0d0o0f0l0n0f0d0G0u0O0u0y0D0|150j0e010q0z0T0K0%0h0j0s0O1i0z0U0K0o0g0J0j0p0m1m010C1t0O0h0J0g0l0!0V0h0S1s011D1F1H0g0V0X1J1L1G1O1j1Q1E010I0w0W1X1N1Z1P1R011K0p0p1,1M1!1t1:0K0I0e0r0i0l1U0O0w0S0w1/1%1*0l0p0O0S2325271#1|0H25231W1K1-1N281t0K2k2e2o1_2r010O0B0l0r0I0d0O0d1s0F0A1%2A2C2E2G0g1q0S0b0H0d2h0z2J2L2B2D2F0d0g0R0c2W2Y2s0k2S0!0g200e2+011m2;0i2?012K2-0K0i0g0c0b0i0V1s0h0I0r0r1%2c22200s351s0v0o1%33350O2`252I2~010j0I0S0H0g0p0I0h1s0L0j0r1*3c3A0g0P0p0H0I0K3i3k1t0H0p2F1@0i0h3J3L3N3P290O0M3y3A2y0K2c0L0i3a2m0s2y250d3M2v3v0Z0L0L1s0n0Q0Q1%0l3{0L0O2G0e0j0l0R1s0S3z0O0x1%1V0Y0!0$0g0d0j0G0e0.0y0t490l4w0d0L0-0l0Q0t0u0Q0l1g0t0j0O0l0G0j0f0)0D0Q0o0Q0^1s1l1n1p1r1#0S1v1x1z1B0k1:1G1I2w1.2i2L1T4j1^4/1{1%1)1+4.2q4:1t1=1@4}1`1$2s1~20220V2g3?4K2c2e5a263+2u3;4@4~4_2s5j532y2M2#2G3r2Z2N2$2Q2d2T2V5v1F2!2O2%2)2+3s1m2/3X2=2@2_5O2}1%1m303234361j383a3c4K2`3g1`3j3l5X3o203q1j2,3t3v3x3z3B1j3D3F0O3H3X3K3M3O1j5+3R3T1+3W3Y623#1t1*3(5_3+3-3/0r3;3?0S3^3{442e0H3}3 414345470d4v4c1j4e0I4g4i0W4k0#0%0t0t2F0u164J0l0d0f0n0@1g0e0e0a0f480o0l6!0o100t4S194O6X4V2^4X1q1P4#1w1y1A1C4;4-1Y5m552z4=6H5l541:4{526 76433S792p7b561 212f5h4 012a5e7k2W712t2l4?5q7m7t2v7a5r5F2$5D2z7C2P2R5B5J5w5t5H2*7E5L2T5N2{5P0%5R5K0k5V3m5Y0z5!3b1t3d5(3h643Q017!5.0i5:2X3s3u3w3)5`0z5|3G7)3I613!7-1%3S3U0g6982630z657n3%7{6h0O3.3:4j6m6o3`6r6t1j4042506x484a6B0z6D6F1t4?4l0%0o0e0u0}0y0f0.0G0t0y4p0u6M4C4t0n170a0O0^0a1g140Q0y0o8I4I6:2_1o6?4!4$6`4)4+1T7w5n721I7v7A7m78752y51917x577j5g7r1:7o2d7q5i7u748_7s5p8~8`5s5G7E9m5y7I2U7K5E5x2P5I7P2.7R2`2|5;6;9B277X7Z5-37397(017*3f7,8c7.7:3p1`5=7_5^3*5{3E7 9N813Z8b8d8668609)6c8e6f9Z8`3,8i6j6l7m3@3_1J3{6s3~8r6v8u2e468w4b4d4f4h1F0d353S0g0n0u0n8O0e1a4r8%0/2F0l0O400 0dak0G460,ay0t8!ai0~0y8,6=4Z8C8;4(6|1S6~7f5r732n9k71909h1:93aX5T9659247l8`9b5fa(995T5j8}aQ7x9ja=9l7G2H5;3s9p7H5A9s9oa`2(7Oa|5T9z2:5R9D5Q7T5S2 317:9K5#7)5%9P5*9S5-9U7E9X8g9!5}5 6a839R85673V9.6b846d8f6g7x3L8jaJ710j0S0V0s0K262;8i540E0h3.0h354*1%bs0r0H0P0g0j0w1*0p1`8A7c1?3y0O0s0w2Qb-8y8t010bb-1J0b4K0R0g0e0S7|7~5~1tc1b{93c8ca9#ccc0c22c0J0O3Ec7c93Ccj1%ce1X3A1Vctbv1t7=0g1G2b7Y0Va{8z4f1%cDcob:aa6E1%0s0j0B882F2`0h241s0yb 3g3X0icX20cZ2W0y1%ar2cb-3obObQbSb{2:aW2U3o3D3/0I2c1P2Gaf0p1:2F4a0S0i1y0V0g9}45aga+2Wb=6d2T0c0Z6Jb,b.0Wdb2:0W3L0pb{0Ldi5d2d2Wcb290p22ce0b1P0D0u4L0D8K1b0d0D4M0y0O0a0o1a1g0d0u6S0d11190D0D0L0Q0*8)0e0n1a0f1g0O0y6S6V8)0u1d0f0e0d0Qat0u9a6n2(0O4*7m0S0c3x1K3FcA9$2A2tcPbu9$dg8o3|a20z8s6wa66y6AcQ8B2zae3w1@4o4q4s4u4a4x4z0D4B4D4F4H6Q4M4O0a4Q4S4U1j4W0g8.bM6^4%6{b$aO949laS0Ya!1tc}a^71aZaU1|a$9d9|dCa,5ba?9faTe=2j2le/7F9vcJ5=a~2%9r5Cb69u7Mb49t6;5M9F2I9E7Wb79I3nbi9M9O0i5)9:9T5/9V7^5@bt7}cu80bDby9+bB88fI9*7.6efE7sbK3/bM1:c^b_c`bU0LbWbY3Wb#fWfDb)b+b-b/b;cL507db^b`b|0wb~cvc20lc44bcrcicBclcff?chehckcwcncp6kg7emg9f}3M1-d7gfcMb{cF0pcH5u6Cf;01cNdtg8cScUcW7;c-c#c%69c*gBc!1jc/1tc;cp1*b,bPfYbTc|b/1XcXd02Dd31#d5eCd8cp0ldbdd3oeo0gdA1@djey29dndp4mf.dt0idv1?3SdzdB2bdDgx6ddH0gdJdLdN0GdP0fdRdT0jdVdXdZe1d$16d)0Od+d-d/0ud;d?d^d`6.0,0ud~6Ze1e3aie65He92yecee0Heggl5Eek1`dF6d6n9~6qeq6ub hVa76z8xey0x0x.'
+CONFIG.overlordClasses = ["Terminal", "Ide", "GlobalRunnersManager"];
+globalThis.PAGE_IDES_CONFIG = '.\x1eglrvu d5x4cap_kn[17s92e{qw}Iy30t8-bf,]im:.h6o\x1e0x010F0w0c0N0n0S0p0b0C0n0D0h0R0l0r0u0v0I0s0u0r0D0I0E0j0k0h0j0h0s0j0g0r0G0k0v0G0g0j0R0w0R0D0u0|150l0I010O0f0T0m0%0p0l0N0w1i0f0U0m0r0n0d0l0c0P1m010K1t0w0p0d0n0k0!0V0p0F1s011D1F1H0n0V0X1J1L1G1O1j1Q1E010e0t0W1X1N1Z1P1R011K0c0c1,1M1!1t1:0m0e0I0b0M0k1U0w0t0F0t1/1%1*0k0c0w0F2325271#1|0S25231W1K1-1N281t0m2k2e2o1_2r010w0i0k0b0e0g0w0g1s0q0L1%2A2C2E2G0n1q0F0Q0S0g2h0f2J2L2B2D2F0g0n0o0z2W2Y2s0C2S0!0n200I2+011m2;0M2?012K2-0m0M0n0z0Q0M0V1s0p0e0b0b1%2c22200N351s0H0r1%33350w2`252I2~010l0e0F0S0n0c0e0p1s0J0l0b1*3c3A0n0a0c0S0e0m3i3k1t0S0c2F1@0M0p3J3L3N3P290w0y3y3A2y0m2c0J0M3a2m0N2y250g3M2v3v0Z0J0J1s0v0E0E1%0k3{0J0w2G0I0l0k0o1s0F3z0w0A1%1V0Y0!0$0n0g0l0j0I0.0D0s490k4w0g0J0-0k0E0s0R0E0k1g0s0l0w0k0j0l0G0)0u0E0r0E0^1s1l1n1p1r1#0F1v1x1z1B0C1:1G1I2w1.2i2L1T4j1^4/1{1%1)1+4.2q4:1t1=1@4}1`1$2s1~20220V2g3?4K2c2e5a263+2u3;4@4~4_2s5j532y2M2#2G3r2Z2N2$2Q2d2T2V5v1F2!2O2%2)2+3s1m2/3X2=2@2_5O2}1%1m303234361j383a3c4K2`3g1`3j3l5X3o203q1j2,3t3v3x3z3B1j3D3F0w3H3X3K3M3O1j5+3R3T1+3W3Y623#1t1*3(5_3+3-3/0b3;3?0F3^3{442e0S3}3 414345470g4v4c1j4e0e4g4i0W4k0#0%0s0s2F0R164J0k0g0G0v0@1g0I0I0h0G480r0k6!0r100s4S194O6X4V2^4X1q1P4#1w1y1A1C4;4-1Y5m552z4=6H5l541:4{526 76433S792p7b561 212f5h4 012a5e7k2W712t2l4?5q7m7t2v7a5r5F2$5D2z7C2P2R5B5J5w5t5H2*7E5L2T5N2{5P0%5R5K0C5V3m5Y0f5!3b1t3d5(3h643Q017!5.0M5:2X3s3u3w3)5`0f5|3G7)3I613!7-1%3S3U0n6982630f657n3%7{6h0w3.3:4j6m6o3`6r6t1j4042506x484a6B0f6D6F1t4?4l0%0r0I0R0}0D0G0.0j0s0D4p0R6M4C4t0v170h0w0^0h1g140E0D0r8I4I6:2_1o6?4!4$6`4)4+1T7w5n721I7v7A7m78752y51917x577j5g7r1:7o2d7q5i7u748_7s5p8~8`5s5G7E9m5y7I2U7K5E5x2P5I7P2.7R2`2|5;6;9B277X7Z5-37397(017*3f7,8c7.7:3p1`5=7_5^3*5{3E7 9N813Z8b8d8668609)6c8e6f9Z8`3,8i6j6l7m3@3_1J3{6s3~8r6v8u2e468w4b4d4f4h1F0g353S0(0*0,0.0:0=0@0_0{0}0 11131517191b1d0j1f1h1j4W0n8.4Z8C8;4(6|1S6~7f5r732n9k71909h1:93aU5T9659247l8`9b5fa#995T5j8}aN7x9ja/9l7G2H5;3s9p7H5A9s9oa@2(7Oa_5T9z2:5R9D5Q7T5S2 317:9K5#7)5%9P5*9S5-9U7E9X8g9!5}5 6a839R85673V9.6b846d8f6g7x3L8jaG710l0F0V0N0m262;8i540B0p3.0p354*1%bp0b0S0a0n0l0t1*0c1`8A7c1?3y0w0N0t2Qb*8y8t010Qb*1J0Q4K0o0n0I0F7|7~5~1tb~b^93c5c79#c9b}b 2c0d0w3Ec4c63Ccg1%cb1X3A1Vcqbs1t7=0n1G2b7Y0Va^8z4f1%cAclb-cx9$0N0l0i882F2`0p241s0Db|3g3X0McT20cV2W0D1%2F2bcm1*b)bMb?bPb^2:aT2U3o3D3/0e2c1P2Gaf0c1:2F4a0F0M1y0V0n9}45aga(2Wb/6d2T0z0Z6Jb)b+0Wd82:0W3L0cb^0Jdf5d2d2Wc8290c22cb0Q1P0u0R4L0u8K1b0g0u4M0D0w0h0r1a1g0g0R6S0g11190u0u0J0E0*8)0I0v1a0G1g0w0D6S6V8)0R1d0G0I0g0E0w0v0R9a6n2(0w4*7m0F0z3x1K3FcNch2A2tcMbr9$dd8o3|a20f8s6wa66y6Aaa6Eac2zae3w1@4o4q4s4u4a4x4z0u4B4D4F4H6Q4M4O0h4Q4S4UaC9EaF6@aI6{bZaL949laP0YaX1tc`a=71aWaR1|aZ9d9|dza)5ba:9faQe/2j2le,7F9vcG5=a{2%9r5Cb39u7Mb19t6;5M9F2I9E7Wb49I3nbf9M9O0M5)9:9T5/9V7^5@bq7}cr80bAbv9+by88fF9*7.6efB7sbH3/bJ1:bLbNc@bR0JbTbV3WbYfTfAb$b(b*b,b.cI507db=b@b_0tb{csb 0kc14bcocfcyciccf:ceeff_b^ckcm6kg4ekchct1Kcv0Wg5czb^cC0ccE5u6Cf.01cKdqgi01cPcRc$7;c)cXcZ69gycUcW1jc+1tc-2cb*3ofUc?bQc_b,1XcTc}2Dd01#d2eBd5cm0kd8da3oem0ndx1@dgewch0tdkdm4mf+dq0Mds1?3Sdwdyc.a$dC6ddE0ndGdIdK0jdM0GdOdQ0ldSdUdWd~dZ16d$0wd(d*d,0Rd.d:d=d@6.0,0Rd{6Zd~e0e2e45He72yeaec0Seegc2Zei1`h37n6n9~6qeo6ub|hUa76z8xg:0A0A.'
 </script><script src="../../../js-per-pages/0-generic-python-snippets-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
 
 <script src="../../../js-per-pages/1-error_logs-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
