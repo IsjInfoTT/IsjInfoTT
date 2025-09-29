@@ -971,12 +971,13 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 <p>Lis le site de présentation d'une <a href="https://info.blaisepascal.fr/nsi-sockets-python"><strong>architecture Client-Serveur au travers des sockets</strong></a></p>
 </li>
 <li>
-<p>Lis le <a href="../files/AppPython_Chap19_Socket.pdf"><strong>chapitre 9 sur les sockets</strong></a> du manuel "Apprendre à programmer en Python de Gérad Swimmen", il commente en détail les fichiers serveur et client ci-dessous. Essaie de comprendre leur fonctionnement lors de leur exécution.</p>
+<p>Lis le <a href="../files/AppPython_Chap19_Socket.pdf"><strong>chapitre 9 sur les sockets</strong></a> du manuel "Apprendre à programmer en Python de Gérad Swimmen", il commente en détail les fichiers serveur et client ci-dessous. </p>
 </li>
 <li>
-<p>Crée 2 fichiers <strong>socket_serveur.py</strong>, <strong>socket_client.py</strong> à partir du code ci-dessous et exéctute le serveur puis le client dans <strong>2 terminaux idle différents</strong>.</p>
+<p>Récupère et décompresse les fichiers <a href="../files/socket_eleves.zip"><strong>template suivants</strong></a>. </p>
 </li>
 </ul>
+<p>Lis les codes ci-dessous des 2 fichiers <strong>socket_serveur.py</strong>, <strong>socket_client.py</strong> et essaie de bien comprendre leur fonctionnement lors de leur exécution.</p>
 </details>
 <details class="question">
 <summary>Code python</summary>
@@ -985,128 +986,141 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>    <span class="kn">import</span> <span class="nn">socket</span><span class="o">,</span> <span class="nn">sys</span>
 
-    <span class="n">HOST</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span>
-    <span class="n">PORT</span><span class="o">=</span><span class="mi">5000</span>
+    <span class="n">HOST</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span>   <span class="c1"># equivalent à une chaîne vide. Le socket est lié à toutes les interfaces locales</span>
+    <span class="n">PORT</span><span class="o">=</span><span class="mi">15550</span>       <span class="c1"># ports libres &gt; 1024</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Côté serveur:           Côté client:</span>
 <span class="sd">    1 - socket()            1 - socket()</span>
-<span class="sd">    2 - bind()              2 - connect()</span>
+<span class="sd">    2 - bind()              </span>
 <span class="sd">    3 - listen()</span>
-
+<span class="sd">                            2 - connect()</span>
 <span class="sd">    4 - accept()</span>
 
-<span class="sd">    5 - send(), recv()      3 - recv(), send()</span>
+<span class="sd">                            3 - send()</span>
+<span class="sd">    5 - recv()</span>
+<span class="sd">        send()</span>
+<span class="sd">                            recv()</span>
 <span class="sd">    6 - close()             4 - close()</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1">####################################################################################</span>
+
+    <span class="c1">##############################################################################</span>
     <span class="c1"># 1</span>
     <span class="c1"># Création d&#39;un objet socket </span>
     <span class="c1"># AF_INET: précise que l&#39;adr est du type intenrent ipv4</span>
-    <span class="c1"># SOCK_STREAM : précise que la transmission est une connexion en continue utilisant </span>
-    <span class="c1"># le protocole TCP</span>
+    <span class="c1"># SOCK_STREAM : précise que la transmission est une connexion en continue utilisant le protocole TCP</span>
 
     <span class="n">socket_serveur</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
 
-    <span class="c1">####################################################################################</span>
+    <span class="c1">##############################################################################</span>
     <span class="c1"># 2</span>
     <span class="c1"># Tentative de liaison du socket d&#39;écoute à une adresse précise</span>
+
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">socket_serveur</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">HOST</span><span class="p">,</span><span class="n">PORT</span><span class="p">)</span>
+        <span class="n">socket_serveur</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span><span class="n">PORT</span><span class="p">))</span>
     <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;liaison du socket à l&#39;adr choisie a échoué&quot;</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span>
 
+
     <span class="k">while</span> <span class="mi">1</span><span class="p">:</span> 
-    <span class="c1">####################################################################################</span>
+    <span class="c1">##############################################################################</span>
     <span class="c1"># 3</span>
     <span class="c1"># serveur en attente d&#39;un requête client (2 requête max à accepter en //)</span>
     <span class="c1"># seveur écoute sur le PORT</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Serveur prêt, en attente de requête ...&quot;</span><span class="p">)</span>
         <span class="n">socket_serveur</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-    <span class="c1">####################################################################################</span>
+    <span class="c1">##############################################################################</span>
     <span class="c1"># 4</span>
     <span class="c1"># Etablissement de la connexion</span>
     <span class="c1"># accept interrompt le prog juqsu&#39;à l&#39;arrivée d&#39;une requête client. </span>
     <span class="c1"># Qd un client se connecte, le serveur accpet la connexion</span>
     <span class="c1"># accept() renvoie un tuple:</span>
-    <span class="c1"># - conn_client: nouvel objet de classe socket = socket de communication qui permet </span>
-    <span class="c1"># l&#39;échange de données avec le client</span>
+    <span class="c1"># - conn_client: nouvel objet de classe socket = socket de communication qui permet l&#39;échange de </span>
+    <span class="c1"># données avec le client</span>
     <span class="c1"># - adr_client: adr du client (IP, PORT)</span>
-        <span class="n">conn_client</span><span class="p">,</span> <span class="n">adr_client</span> <span class="o">=</span> <span class="n">socket_server</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Client connecté, adr IP </span><span class="si">{}</span><span class="s2">, port </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">adr_client</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">adr_client</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">conn_client</span><span class="p">,</span> <span class="n">adr_client</span> <span class="o">=</span> <span class="n">socket_serveur</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Client connecté, adr IP </span><span class="si">{}</span><span class="s2">, port </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">adr_client</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">adr_client</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 
-    <span class="c1">####################################################################################</span>
+    <span class="c1">##############################################################################</span>
     <span class="c1"># 5</span>
     <span class="c1"># Dialogue avec le client</span>
-        <span class="k">pass</span>
 
-    <span class="c1">####################################################################################</span>
+        <span class="n">msgClient</span> <span class="o">=</span> <span class="n">conn_client</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;Utf8&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&gt;&quot;</span><span class="p">,</span> <span class="n">msgClient</span><span class="p">)</span>
+
+        <span class="n">msgServeur</span> <span class="o">=</span><span class="s2">&quot;Enchanté, bienvenue sur le serveur Marcel&quot;</span>
+        <span class="n">conn_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msgServeur</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;Utf8&quot;</span><span class="p">))</span>   
+
+    <span class="c1">##############################################################################</span>
     <span class="c1"># 6</span>
     <span class="c1"># Fermeture de la connexion</span>
-        <span class="n">connexion</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;fin&quot;</span><span class="p">,</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+        <span class="n">conn_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;fin&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">))</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connexion interrompue&quot;</span><span class="p">)</span>
-        <span class="n">connexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">conn_client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>    <span class="c1"># Code AppPython + nsi_socket pour les explications</span>
-    <span class="c1"># https://info.blaisepascal.fr/nsi-sockets-python</span>
+<div class="highlight"><pre><span></span><code>    <span class="kn">import</span> <span class="nn">socket</span><span class="o">,</span> <span class="nn">sys</span>
 
-    <span class="kn">import</span> <span class="nn">socket</span><span class="o">,</span> <span class="nn">sys</span>
+    <span class="n">HOST</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span>
+    <span class="n">PORT</span><span class="o">=</span><span class="mi">15550</span>
 
-    <span class="n">HOST</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span>
-    <span class="n">PORT</span><span class="o">=</span><span class="mi">5000</span>
-
-    <span class="c1">####################################################################################</span>
+    <span class="c1">##############################################################################</span>
     <span class="c1"># 1</span>
+    <span class="c1"># Création d&#39;un objet socket </span>
     <span class="n">socket_client</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
 
-    <span class="c1">####################################################################################</span>
+    <span class="c1">##############################################################################</span>
     <span class="c1"># 2</span>
     <span class="c1"># Envoi d&#39;une requête de connexion au serveur</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">socket_client</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">HOST</span><span class="p">,</span><span class="n">PORT</span><span class="p">)</span>
+        <span class="n">socket_client</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">))</span>
     <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;la connexion a échoué&quot;</span><span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span>
-
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La connexion a échoué.&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;connexion établie avec le serveur&quot;</span><span class="p">)</span>
 
-    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span> 
-    <span class="c1">####################################################################################</span>
-    <span class="c1"># 3</span>
-    <span class="c1"># serveur en attente d&#39;un requête client (2 requête max à accepter en //</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Serveur prêt, en attente de requête ...&quot;</span><span class="p">)</span>
-        <span class="n">socket_serveur</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1">##############################################################################</span>
+    <span class="c1"># 3) Dialogue avec le serveur :</span>
 
-    <span class="c1">####################################################################################</span>
-    <span class="c1"># 4</span>
-    <span class="c1"># Etablissement de la connexion</span>
-    <span class="c1"># accept interrompt le prog juqsu&#39;à l&#39;arrivée d&#39;une requête client</span>
-    <span class="c1"># accept() renvoie un tuple:</span>
-    <span class="c1"># - conn_client: nouvel objet de classe socket = socket de communication qui permet</span>
-    <span class="c1"># l&#39;échange de données avec le client</span>
-    <span class="c1"># - adr_client: adr du client (IP, PORT)</span>
-        <span class="n">conn_client</span><span class="p">,</span> <span class="n">adr_client</span> <span class="o">=</span> <span class="n">socket_server</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Client connecté, adr IP </span><span class="si">{}</span><span class="s2">, port </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">adr_client</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">adr_client</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="c1"># Envoie d&#39;un message au client</span>
+    <span class="n">msgClient</span> <span class="o">=</span> <span class="s2">&quot;Bonjour serveur, je suis Brigitte&quot;</span>
+    <span class="n">socket_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msgClient</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;Utf8&quot;</span><span class="p">))</span>
 
-    <span class="c1">####################################################################################</span>
-    <span class="c1"># 5</span>
-    <span class="c1"># Dialogue avec le client</span>
-        <span class="k">pass</span>
+    <span class="c1">#Réception du message du serveur</span>
+    <span class="n">msgServeur</span> <span class="o">=</span> <span class="n">socket_client</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;Utf8&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;S&gt;&quot;</span><span class="p">,</span> <span class="n">msgServeur</span><span class="p">)</span>
 
-    <span class="c1">####################################################################################</span>
-    <span class="c1"># 6</span>
-    <span class="c1"># Fermeture de la connexion</span>
-        <span class="n">connexion</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;fin&quot;</span><span class="p">,</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connexion interrompue&quot;</span><span class="p">)</span>
-        <span class="n">connexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="c1">##############################################################################</span>
+    <span class="c1"># 4) Fermeture de la connexion :</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connexion interrompue.&quot;</span><span class="p">)</span>
+    <span class="n">socket_client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 </div>
 </div>
 </div>
+</details>
+<details class="success" open="open">
+<summary>Console idle socket_serveur.py</summary>
+<div class="highlight"><pre><span></span><code>```console
+    &gt;&gt;&gt; Serveur prêt, en attente de requête ...
+        Client connecté, adr IP 127.0.0.1, port 58703
+        C&gt; Bonjour serveur, je suis Brigitte
+        Connexion interrompue
+        Serveur prêt, en attente de requête ...
+```
+</code></pre></div>
+</details>
+<details class="success" open="open">
+<summary>Console idle socket_client.py</summary>
+<div class="highlight"><pre><span></span><code>```console
+    &gt;&gt;&gt; Connexion établie avec le serveur
+        S&gt; Enchanté, bienvenue sur le serveur Marcel
+        Connexion interrompue..
+```
+</code></pre></div>
 </details>
 <div class="admonition info">
 <p class="admonition-title">Mémo des principales méthodes de socket</p>
@@ -1136,7 +1150,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 </tr>
 <tr>
 <td style="text-align: left;">send(data[, flags])</td>
-<td style="text-align: left;">envoye des données mais il se peut que pas toutes le soit</td>
+<td style="text-align: left;">envoye des données</td>
 </tr>
 <tr>
 <td style="text-align: left;">recv(buflen[, flags])</td>
@@ -1150,7 +1164,299 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 </table>
 </div>
 <details class="question" open="open">
-<summary>Exercice</summary>
+<summary>Exercice 1</summary>
+<ul>
+<li>
+<p>Le code est le même que le précédent, mais épuré de ses commentaires; tu peux t'en servir de mémo. Avec ton voisin, modifie les adresses IP pour pouvoir comuniquer entre vous.</p>
+</li>
+<li>
+<p>la lettre <strong>C&gt;</strong> ou <strong>S&gt;</strong> en début de ligne précise si le message vient du Client ou du serveur</p>
+</li>
+</ul>
+<details class="success" open="open">
+<summary>Console idle socket_serveur.py</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">exo1_serveur.py</th>
+<th style="text-align: left;">exo1_client.py</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">&gt;&gt;&gt; Serveur prêt, en attente de requête ...</td>
+<td style="text-align: left;">&gt;&gt;&gt;</td>
+</tr>
+<tr>
+<td style="text-align: left;">Client connecté, adr IP 127.0.0.1, port 59296</td>
+<td style="text-align: left;">Connexion établie avec le serveur</td>
+</tr>
+<tr>
+<td style="text-align: left;">C&gt; Bonjour serveur, je suis Brigitte</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S&gt; Enchanté, bienvenue sur le serveur Marcel</td>
+</tr>
+<tr>
+<td style="text-align: left;">Connexion interrompue</td>
+<td style="text-align: left;">Connexion interrompue</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="question" open="open">
+<summary>Exercice 2</summary>
+<ul>
+<li>A partir du code précédent, modifie les fichiers pour obtenir le résultat ci-dessous.</li>
+</ul>
+<details class="success" open="open">
+<summary>Console idle socket_serveur.py</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">exo2_serveur.py</th>
+<th style="text-align: left;">exo2_client.py</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">&gt;&gt;&gt; Serveur prêt, en attente de requête ...</td>
+<td style="text-align: left;">&gt;&gt;&gt;</td>
+</tr>
+<tr>
+<td style="text-align: left;">Client connecté, adr IP 127.0.0.1, port 59296</td>
+<td style="text-align: left;">Connexion établie avec le serveur</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S&gt; Bienvenue sur le serveur Marcel, que puis-je faire pour vous ?</td>
+</tr>
+<tr>
+<td style="text-align: left;">C&gt; Bonjour serveur, je suis Brigitte</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Connexion interrompue</td>
+<td style="text-align: left;">Connexion interrompue</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="question" open="open">
+<summary>Exercice 3</summary>
+<p>A partir du code précédent, complète les fichiers pour obtenir le résultat ci-dessous. Attention, les messages sont entrés par les utilisateurs au clavier.</p>
+<details class="success" open="open">
+<summary>Console idle socket_serveur.py</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">exo3_serveur.py</th>
+<th style="text-align: left;">exo3_client.py</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">&gt;&gt;&gt; Serveur prêt, en attente de requête ...</td>
+<td style="text-align: left;">&gt;&gt;&gt;</td>
+</tr>
+<tr>
+<td style="text-align: left;">Client connecté, adr IP 127.0.0.1, port 59296</td>
+<td style="text-align: left;">Connexion établie avec le serveur</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S&gt; Bienvenue sur le serveur Marcel, que puis-je faire pour vous ?</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">C&gt; Bonjour Marcel, est-ce que tu me reçois ?</td>
+</tr>
+<tr>
+<td style="text-align: left;">C&gt; Bonjour Marcel, est-ce que tu me reçois ?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">S&gt; Oui, je te reçois très bien</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S&gt; Oui, je te reçois très bien</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">C&gt; ... etc</td>
+</tr>
+<tr>
+<td style="text-align: left;">S&gt; ... etc</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Connexion interrompue</td>
+<td style="text-align: left;">Connexion interrompue</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="question" open="open">
+<summary>Exercice 4</summary>
+<p>Modifie le code précédent pour envoyer du client vers le serveur et vice-versa, les coordonnées (j,i) entrées au clavier.
+Pour celà tu dois d'un côté les concaténer pour les envoyer en une chaîne de caractères:
+<div class="highlight"><pre><span></span><code>    <span class="n">j</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;C&gt; Jr Client entre j: &quot;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;C&gt; Jr Client entre i: &quot;</span><span class="p">)</span>
+    <span class="n">msgClient</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="n">i</span>
+</code></pre></div>
+et de l'autre, accéder à chaque caractère :
+<div class="highlight"><pre><span></span><code>    <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">msgClient</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">msgClient</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></p>
+<details class="success" open="open">
+<summary>Console idle socket_serveur.py</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">exo4_coor_serveur.py</th>
+<th style="text-align: left;">exo4_coor_client.py</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">&gt;&gt;&gt; Serveur prêt, en attente de requête ...</td>
+<td style="text-align: left;">&gt;&gt;&gt;</td>
+</tr>
+<tr>
+<td style="text-align: left;">Client connecté, adr IP 127.0.0.1, port 59296</td>
+<td style="text-align: left;">Connexion établie avec le serveur</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S&gt; Bienvenue sur le serveur Marcel, entre tes coordonnées</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">C&gt; Jr Client entre j: 2</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">C&gt; Jr Client entre i: 3</td>
+</tr>
+<tr>
+<td style="text-align: left;">C&gt; 3 2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">S&gt; Jr Serveur entre j: 1</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">S&gt; Jr Serveur entre i: 0</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S&gt; 0 1</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">C&gt; ... etc</td>
+</tr>
+<tr>
+<td style="text-align: left;">S&gt; ... etc</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Connexion interrompue</td>
+<td style="text-align: left;">Connexion interrompue</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="question" open="open">
+<summary>Exercice 5</summary>
+<p>Modifie le code précédent pour envoyer du client vers le serveur, la position et la couleur que l'on souhaite modifier dans une liste.
+La liste est déclararée et mise à jour des 2 côtés serveur / client.</p>
+<p>Tu pourras côté client envoyer les 2 variables dans un tuple converti en chaîne de caractères.
+<div class="highlight"><pre><span></span><code>    <span class="n">pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;C&gt; position: &quot;</span><span class="p">))</span>
+    <span class="n">coul</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;C&gt; couleur: &quot;</span><span class="p">)</span>
+    <span class="n">msgClient</span> <span class="o">=</span> <span class="nb">str</span><span class="p">((</span><span class="n">pos</span><span class="p">,</span><span class="n">coul</span><span class="p">))</span>
+</code></pre></div>
+puis de l'autre, les re-convertir en tuple afin d'accéder à chaque variable:
+<div class="highlight"><pre><span></span><code>    <span class="n">pos</span><span class="p">,</span> <span class="n">coul</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">msgClient</span><span class="p">)</span>
+</code></pre></div></p>
+<details class="success" open="open">
+<summary>Console idle socket_serveur.py</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">exo4_coor_serveur.py</th>
+<th style="text-align: left;">exo4_coor_client.py</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">&gt;&gt;&gt; Serveur prêt, en attente de requête ...</td>
+<td style="text-align: left;">&gt;&gt;&gt;</td>
+</tr>
+<tr>
+<td style="text-align: left;">Client connecté, adr IP 127.0.0.1, port 59296</td>
+<td style="text-align: left;">Connexion établie avec le serveur</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S&gt; Vous êtes connecté au serveur Marcel. Quel est ton nom, prénom et classe ?</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">C&gt; nom, prénom et classe: REYMONDIE Yves 6TT</td>
+</tr>
+<tr>
+<td style="text-align: left;">C&gt; nom, prénom et classe: REYMONDIE Yves 6TT</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S&gt; Bonjour REYMONDIE Yves 6TT et bienvenue !</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">['rouge', 'vert', 'bleu', 'jaune', 'violet']</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">C&gt; position: 1</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">C&gt; couleur: orange</td>
+</tr>
+<tr>
+<td style="text-align: left;">C&gt; 1 orange</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">['rouge', 'orange', 'bleu', 'jaune', 'violet']</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">['rouge', 'orange', 'bleu', 'jaune', 'violet']</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">C&gt; ... etc</td>
+</tr>
+<tr>
+<td style="text-align: left;">Connexion interrompue</td>
+<td style="text-align: left;">Connexion interrompue</td>
+</tr>
+</tbody>
+</table>
+</details>
 </details><script type="text/javascript">
 CONFIG.needMermaid = false;
 CONFIG.overlordClasses = [];
