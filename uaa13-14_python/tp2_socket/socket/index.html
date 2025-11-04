@@ -882,6 +882,19 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    TP2 Socket
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -893,6 +906,70 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comment-communiquent-des-machines-distantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment communiquent des machines distantes?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comment-atteindre-le-bon-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment atteindre le bon service?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-socket-cest-quoi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un socket c'est quoi?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#socket-et-jeu-de-plateau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Socket et jeu de plateau
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-plusieurs-taches-en-parallele-a-laide-de-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion de plusieurs tâches en parallèle à l’aide de threads
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1063,6 +1140,59 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comment-communiquent-des-machines-distantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment communiquent des machines distantes?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comment-atteindre-le-bon-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment atteindre le bon service?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-socket-cest-quoi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un socket c'est quoi?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#socket-et-jeu-de-plateau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Socket et jeu de plateau
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-plusieurs-taches-en-parallele-a-laide-de-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion de plusieurs tâches en parallèle à l’aide de threads
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1079,6 +1209,25 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 
 
 <h1 id="uaa13-14-tp2-socket">UAA13-14 TP2 Socket</h1>
+<div class="admonition info">
+<p class="admonition-title">Introduction</p>
+<p>Cette introduction est issue du site <a href="https://python.doctor/page-reseaux-sockets-python-port"><strong>python-doctor</strong></a></p>
+<p>Le sujet de ce chapitre est de pouvoir utiliser un service sur une machine distante.</p>
+<h2 id="comment-communiquent-des-machines-distantes">Comment communiquent des machines distantes?</h2>
+<p>Des machines distantes peuvent communiquer entre elles grâce à leur <strong>adresse IP</strong> . Une machine <strong>cliente</strong> (c'est à dire qui demande un service) contacte une machine <strong>serveur</strong> qui répondra à sa demande. On a donc une logique de client-serveur . L'un fait une demande, l'autre lui apporte une réponse.</p>
+<h2 id="comment-atteindre-le-bon-service">Comment atteindre le bon service?</h2>
+<p>Un serveur peut cependant héberger plusieurs services. Par exemple un serveur peut héberger un serveur web mais également un serveur de messagerie.</p>
+<p>Alors comment se connecter au bon service? En utilisant les ports . Les ports les plus connus sont 21 pour le FTP, 80 pour le HTTP, 443 pour le HTTPS, le 22 pour le SSH, 110 pour le service POP, etc.</p>
+<p>Si vous voulez voir sur quels ports tournent vos services vous pouvez exécuter la commande suivante:</p>
+<div class="highlight"><pre><span></span><code>    sudo cat /etc/services
+</code></pre></div>
+<p>L'idée c'est que le client fasse une demande de ce type: 192.168.0.1:8888 (adresse IP 192.168.0.1 et port 8888 ) puis de créer un lien entre ce port 8888 et notre programme.</p>
+<p>Pour réaliser ce besoin on utilise des stockets.</p>
+<h2 id="un-socket-cest-quoi">Un socket c'est quoi?</h2>
+<p>En anglais un socket est un "trou" qui laisse passer des choses, comme une prise électrique, l'emplacement du processeur, ou une bouche.</p>
+<p>Le socket est donc dans notre cas une association au niveau de l'OS entre un programme qui tourne en boucle et le port de la machine qui lui a été dédié. On dit d'ailleurs que le programme écoute le port qui lui a été réservé. Il écoute le port et répond aux demandes faites par ce port.
+Socket et python</p>
+</div>
 <details class="question" open="open">
 <summary>Consignes</summary>
 <ul>
@@ -1091,8 +1240,14 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 <li>
 <p>Récupère et décompresse les fichiers <a href="../files/socket_eleves.zip"><strong>template suivants</strong></a>. </p>
 </li>
+<li>
+<p>Pour comprendre le fonctionnement des sockets avec python , nous allons travailler avec deux fichiers:    <strong>socket_serveur.py</strong> et <strong>socket_client.py</strong>.</p>
+<p><strong>socket_serveur.py</strong> sera sur le serveur et écoutera les demandes des clients.</p>
+<p><strong>socket_client.py</strong> sera donc exécuté sur la machine cliente, c'est lui qui fera la demande du service du serveur distant.</p>
+<p>Inutile de préciser que la logique client/serveur fonctionne également sur une même machine.  <br />
+Lis les codes ci-dessous des 2 fichiers <strong>socket_serveur.py</strong>, <strong>socket_client.py</strong> et essaie de bien comprendre leur fonctionnement lors de leur exécution.</p>
+</li>
 </ul>
-<p>Lis les codes ci-dessous des 2 fichiers <strong>socket_serveur.py</strong>, <strong>socket_client.py</strong> et essaie de bien comprendre leur fonctionnement lors de leur exécution.</p>
 </details>
 <details class="question">
 <summary>Code python</summary>
@@ -1572,10 +1727,149 @@ puis de l'autre, les re-convertir en tuple afin d'accéder à chaque variable:
 </tbody>
 </table>
 </details>
+</details>
+<h2 id="socket-et-jeu-de-plateau">Socket et jeu de plateau</h2>
+<details class="question" open="open">
+<summary>Consignes jeu de plateau</summary>
+<ul>
+<li>
+<p>Tu dois rendre ton jeu pour le <strong>vendredi 12 décembre avant minuit</strong> </p>
+</li>
+<li>
+<p>Reprends ton jeu précédent et intègre-le à socket: un joueur sera côté serveur, le 2ème côté client.
+Les coordonnées de jeu seront envoyés entre le client et le serveur, la msie à jour de la variable de jeu et l'affichage sera fait par les 2.</p>
+</li>
+<li>
+<p>Tu n'as pas le droit de t"aider ni d'internet, ni d'une IA. Ton évaluation tiendra principalement compte du travail fourni pendant les heures de cours.</p>
+</li>
+</ul>
+</details>
+<h2 id="gestion-de-plusieurs-taches-en-parallele-a-laide-de-threads">Gestion de plusieurs tâches en parallèle à l’aide de threads</h2>
+<div class="admonition info">
+<p class="admonition-title">Introduction</p>
+<p>Le problème de l'exemple précédent est que chaque connexion doit être traitée avant de pouvoir passer à la suivante. Il est donc plutôt conseillé de passer par des threading .</p>
+<ul>
+<li>
+<p>Lis le <a href="../files/AppPython_Chap19_Socket_Multi-threads.pdf"><strong>chapitre 19 sur les threads sockets</strong></a> du manuel "Apprendre à programmer en Python de Gérad Swimmen", il commente en détail les fichiers serveur et client ci-dessous avec des communications multi-threads. </p>
+</li>
+<li>
+<p>Lis les codes ci-dessous des 2 fichiers <strong>socket_threads_serveur.py</strong>, <strong>socket_threads_client.py</strong>, lance le serveur et 2 clients puis essaie de bien comprendre leur fonctionnement lors de leur exécution.</p>
+</li>
+</ul>
+</div>
+<details class="question">
+<summary>Code python</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="socket_threads_serveurpy" name="__tabbed_2" type="radio" /><input id="socket_threads_clientpy" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="socket_threads_serveurpy"><strong>socket_threads_serveur.py</strong></label><label for="socket_threads_clientpy"><strong>socket_threads_client.py</strong></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>    <span class="c1"># Définition d&#39;un serveur réseau gérant un système de CHAT simplifié.</span>
+    <span class="c1"># Utilise les threads pour gérer les connexions clientes en parallèle.</span>
+
+    <span class="n">HOST</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span> 
+    <span class="n">PORT</span><span class="o">=</span><span class="mi">15550</span>
+
+    <span class="kn">import</span> <span class="nn">socket</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">threading</span>
+
+    <span class="k">class</span> <span class="nc">ThreadClient</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+        <span class="c1"># dérivation d&#39;un objet thread pour gérer la connexion avec un client</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conn</span><span class="p">):</span>
+            <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">connexion</span> <span class="o">=</span> <span class="n">conn</span>
+
+        <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="c1"># Dialogue avec le client :</span>
+            <span class="n">nom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="c1"># Chaque thread possède un nom</span>
+            <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">msgClient</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connexion</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;Utf8&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">msgClient</span> <span class="ow">or</span> <span class="n">msgClient</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span><span class="s2">&quot;FIN&quot;</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="n">msgClient</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+                <span class="c1"># Faire suivre le message à tous les autres clients :</span>
+                <span class="k">for</span> <span class="n">cle</span> <span class="ow">in</span> <span class="n">conn_client</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">cle</span> <span class="o">!=</span> <span class="n">nom</span><span class="p">:</span> <span class="c1"># ne pas le renvoyer à l&#39;émetteur</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cle: &quot;</span><span class="p">,</span><span class="n">cle</span><span class="p">,</span><span class="n">nom</span><span class="p">)</span>
+
+                        <span class="n">conn_client</span><span class="p">[</span><span class="n">cle</span><span class="p">]</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;Utf8&quot;</span><span class="p">))</span>
+
+    <span class="c1"># Initialisation du serveur - Mise en place du socket :</span>
+    <span class="n">mySocket</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">mySocket</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La liaison du socket à l&#39;adresse choisie a échoué.&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Serveur prêt, en attente de requêtes ...&quot;</span><span class="p">)</span>
+    <span class="n">mySocket</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="c1"># Attente et prise en charge des connexions demandées par les clients :</span>
+    <span class="n">conn_client</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># dictionnaire des connexions clients</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">connexion</span><span class="p">,</span> <span class="n">adresse</span> <span class="o">=</span> <span class="n">mySocket</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+        <span class="c1"># Créer un nouvel objet thread pour gérer la connexion :</span>
+        <span class="n">th</span> <span class="o">=</span> <span class="n">ThreadClient</span><span class="p">(</span><span class="n">connexion</span><span class="p">)</span>
+        <span class="n">th</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="c1"># Mémoriser la connexion dans le dictionnaire :</span>
+        <span class="n">it</span> <span class="o">=</span> <span class="n">th</span><span class="o">.</span><span class="n">name</span> <span class="c1"># identifiant du thread</span>
+        <span class="n">conn_client</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="o">=</span> <span class="n">connexion</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Client </span><span class="si">%s</span><span class="s2"> connecté, adresse IP </span><span class="si">%s</span><span class="s2">, port </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">adresse</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">adresse</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="c1"># Dialogue avec le client :</span>
+        <span class="n">msg</span> <span class="o">=</span><span class="s2">&quot;Vous êtes connecté. Envoyez vos messages.&quot;</span>
+        <span class="n">connexion</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;Utf8&quot;</span><span class="p">))</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>   <span class="kn">import</span> <span class="nn">socket</span><span class="o">,</span> <span class="nn">sys</span>
+
+    <span class="n">HOST</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span>
+    <span class="n">PORT</span><span class="o">=</span><span class="mi">15550</span>
+
+    <span class="c1">####################################################################################################</span>
+    <span class="c1"># 1</span>
+    <span class="c1"># Création d&#39;un objet socket </span>
+    <span class="n">socket_client</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+
+    <span class="c1">####################################################################################################</span>
+    <span class="c1"># 2</span>
+    <span class="c1"># Envoi d&#39;une requête de connexion au serveur</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">socket_client</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La connexion a échoué.&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;connexion établie avec le serveur&quot;</span><span class="p">)</span>
+
+    <span class="c1">####################################################################################################</span>
+    <span class="c1"># 3) Dialogue avec le serveur :</span>
+    <span class="n">msgServeur</span> <span class="o">=</span> <span class="n">socket_client</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;Utf8&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;S&gt;&quot;</span><span class="p">,</span> <span class="n">msgServeur</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;En attente - réception d&#39;un message ...&quot;</span><span class="p">)</span>
+    <span class="n">msgServeur</span> <span class="o">=</span> <span class="n">socket_client</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;Utf8&quot;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;S&gt;&quot;</span><span class="p">,</span> <span class="n">msgServeur</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">msgServeur</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;FIN&quot;</span> <span class="ow">or</span> <span class="n">msgServeur</span> <span class="o">==</span><span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">msgClient</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;C&gt; &quot;</span><span class="p">)</span>
+        <span class="n">socket_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msgClient</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;Utf8&quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;En attente - réception d&#39;un message ...&quot;</span><span class="p">)</span>
+        <span class="n">msgServeur</span> <span class="o">=</span> <span class="n">socket_client</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;Utf8&quot;</span><span class="p">)</span>    
+
+    <span class="c1">####################################################################################################</span>
+    <span class="c1"># 4) Fermeture de la connexion :</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connexion interrompue.&quot;</span><span class="p">)</span>
+    <span class="n">socket_client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<details class="question" open="open">
+<summary>Consignes jeu de plateau</summary>
+<p>Mets à jour ton jeu de plateau pour qu'il fonctionne avec des threads.</p>
 </details><script type="text/javascript">
 CONFIG.needMermaid = false;
 CONFIG.overlordClasses = [];
-globalThis.PAGE_IDES_CONFIG = '.\x1e{}\x1e0a0b.'
+globalThis.PAGE_IDES_CONFIG = '.\x1e}{\x1e0b0a.'
 </script>
 
 
