@@ -27,13 +27,13 @@ If not, see <https://www.gnu.org/licenses/>.
       
       
       
-        <link rel="canonical" href="http://0.0.0.0/uaa13-14_python/tp3_tkinter/tkinter/">
+        <link rel="canonical" href="http://0.0.0.0/uaa11_python/z_bac_sable/bac_sable/">
       
       
-        <link rel="prev" href="../../tp2_socket/socket/">
+        <link rel="prev" href="../../tp7_listes_imbriquees/tp5_jeu/">
       
       
-        <link rel="next" href="../tkinter_trieles/tkinter/">
+        <link rel="next" href="../../../uaa13-14_python/tp1_jeu/jeu/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -41,7 +41,7 @@ If not, see <https://www.gnu.org/licenses/>.
     
     
       
-        <title>1. Prise en main de Tkinter - Technique de Transition Informatique</title>
+        <title>Bac à sable - Technique de Transition Informatique</title>
       
     
     
@@ -69,6 +69,14 @@ If not, see <https://www.gnu.org/licenses/>.
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.43.1/css/jquery.terminal.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.43.1/js/jquery.terminal.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.min.js" integrity="sha512-GQpIYSKNIPIC763JKTNALj+t18/nfLdzw5gITgFGa31aK/4NmjyPKsfqrjh7CuzpJaG3nqEleeVcWUhHad9Axg==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.min.js" integrity="sha512-iK7yTkCkv7MbFwTqRgHTbmIqoiiLq6BsyNjymnFyB5a7pEQwYThj9QIgqBy9+XPPwj7+hAEHyR2npOHL1bz4Qg==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
 
 <script src="../../../js-libs/0-config.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
 
@@ -150,7 +158,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
     <div data-md-component="skip">
       
         
-        <a href="#uaa13-14-tp3-tkinter" class="md-skip">
+        <a href="#bac-a-sable" class="md-skip">
           Aller au contenu
         </a>
       
@@ -186,7 +194,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. Prise en main de Tkinter
+              Bac à sable
             
           </span>
         </div>
@@ -415,18 +423,20 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -442,7 +452,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             UAA11 Python
@@ -456,7 +466,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/intro/intro/" class="md-nav__link">
+      <a href="../../intro/intro/" class="md-nav__link">
         
   
   
@@ -479,7 +489,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp1_var/tp1_var/" class="md-nav__link">
+      <a href="../../tp1_var/tp1_var/" class="md-nav__link">
         
   
   
@@ -502,7 +512,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp2_fonctions/tp2_fonc/" class="md-nav__link">
+      <a href="../../tp2_fonctions/tp2_fonc/" class="md-nav__link">
         
   
   
@@ -525,7 +535,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp3_tests/tp3_tests/" class="md-nav__link">
+      <a href="../../tp3_tests/tp3_tests/" class="md-nav__link">
         
   
   
@@ -586,7 +596,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp4_boucles/tp4_boucles_cond/" class="md-nav__link">
+      <a href="../../tp4_boucles/tp4_boucles_cond/" class="md-nav__link">
         
   
   
@@ -609,7 +619,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp4_boucles/tp4_boucles_iter/" class="md-nav__link">
+      <a href="../../tp4_boucles/tp4_boucles_iter/" class="md-nav__link">
         
   
   
@@ -632,7 +642,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp4_boucles/tp4_boucles_mini_prj/" class="md-nav__link">
+      <a href="../../tp4_boucles/tp4_boucles_mini_prj/" class="md-nav__link">
         
   
   
@@ -701,7 +711,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp5_listes_string/tp5-1_string/" class="md-nav__link">
+      <a href="../../tp5_listes_string/tp5-1_string/" class="md-nav__link">
         
   
   
@@ -724,7 +734,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp5_listes_string/tp5-2_listes/" class="md-nav__link">
+      <a href="../../tp5_listes_string/tp5-2_listes/" class="md-nav__link">
         
   
   
@@ -747,7 +757,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp5_listes_string/tp5-3_listes_string_mini_prj/" class="md-nav__link">
+      <a href="../../tp5_listes_string/tp5-3_listes_string_mini_prj/" class="md-nav__link">
         
   
   
@@ -778,7 +788,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp6_struct_complexes/tp6_struct_complexes/" class="md-nav__link">
+      <a href="../../tp6_struct_complexes/tp6_struct_complexes/" class="md-nav__link">
         
   
   
@@ -839,7 +849,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp7_listes_imbriquees/tp1_algo_boucles_imbriquees/" class="md-nav__link">
+      <a href="../../tp7_listes_imbriquees/tp1_algo_boucles_imbriquees/" class="md-nav__link">
         
   
   
@@ -862,7 +872,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp7_listes_imbriquees/tp2-3_fc_listes_imbriquees/" class="md-nav__link">
+      <a href="../../tp7_listes_imbriquees/tp2-3_fc_listes_imbriquees/" class="md-nav__link">
         
   
   
@@ -885,7 +895,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp7_listes_imbriquees/tp4_exo/" class="md-nav__link">
+      <a href="../../tp7_listes_imbriquees/tp4_exo/" class="md-nav__link">
         
   
   
@@ -908,7 +918,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa11_python/tp7_listes_imbriquees/tp5_jeu/" class="md-nav__link">
+      <a href="../../tp7_listes_imbriquees/tp5_jeu/" class="md-nav__link">
         
   
   
@@ -936,10 +946,30 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../uaa11_python/z_bac_sable/bac_sable/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Bac à sable
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -950,6 +980,33 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bac-a-sable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bac à sable
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -966,20 +1023,18 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -995,7 +1050,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             UAA13-14 Python
@@ -1009,7 +1064,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp1_jeu/jeu/" class="md-nav__link">
+      <a href="../../../uaa13-14_python/tp1_jeu/jeu/" class="md-nav__link">
         
   
   
@@ -1032,7 +1087,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp2_socket/socket/" class="md-nav__link">
+      <a href="../../../uaa13-14_python/tp2_socket/socket/" class="md-nav__link">
         
   
   
@@ -1052,20 +1107,18 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
         
           
           <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
@@ -1081,7 +1134,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7_3">
             <span class="md-nav__icon md-icon"></span>
             TP3 Tkinter
@@ -1092,19 +1145,10 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../uaa13-14_python/tp3_tkinter/tkinter/" class="md-nav__link">
         
   
   
@@ -1115,7 +1159,6 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
 
       </a>
-      
     </li>
   
 
@@ -1128,7 +1171,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../tkinter_trieles/tkinter/" class="md-nav__link">
+      <a href="../../../uaa13-14_python/tp3_tkinter/tkinter_trieles/tkinter/" class="md-nav__link">
         
   
   
@@ -1159,7 +1202,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp4_recursivite/recursivite/" class="md-nav__link">
+      <a href="../../../uaa13-14_python/tp4_recursivite/recursivite/" class="md-nav__link">
         
   
   
@@ -1221,8 +1264,23 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bac-a-sable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bac à sable
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1239,28 +1297,49 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
                   
 
 
-<h1 id="uaa13-14-tp3-tkinter">UAA13-14 TP3 Tkinter</h1>
-<details class="question" open="open">
-<summary>Cours de référence</summary>
-<p>Voici 2 cours de référence: </p>
+  <h1>Bac à sable</h1>
+
+<h2 id="bac-a-sable">Bac à sable</h2>
 <ul>
 <li>
-<p>le <a href="../files/AppPython_Chap8_Tkinter.pdf"><strong>chapitre 8 sur Tkinter</strong></a> du manuel "Apprendre à programmer en Python de Gérad Swimmen". </p>
+<p><a href="https://pythontutor.com/visualize.html#mode=edit">Python Tutor en ligne</a>
+(pour le debug pas à pas)</p>
 </li>
 <li>
-<p>la <a href="../files/tkinter_ortiz_manuel.pdf"><strong>documentation Tkinter</strong></a> de Pascal Ortiz. </p>
+<p>IDE dans le navigateur:</p>
 </li>
 </ul>
-<p>Voici également un <a href="../files/nsi_tutopythontkinter_memo.pdf"><strong>mémo</strong></a> et une <a href="../files/nsi_decouverte_tkinter.pdf"><strong>découverte de Tkinter</strong></a> en quelques pages pour les ,lycéens.</p>
-</details>
-<details class="question" open="open">
-<summary>TP de découverte</summary>
-<p>Suis les <a href="../files/uaa4_projet_tkinter_V03.pdf"><strong>consignes de découverte de tkinter</strong></a> (pdf)</p>
-</details><script type="text/javascript">
+<div id="global_editor_b1d5781111d84f7b3fe45a0852e59758cd7a87e5" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_b1d5781111d84f7b3fe45a0852e59758cd7a87e5"></div><span id="comment_editor_b1d5781111d84f7b3fe45a0852e59758cd7a87e5" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_b1d5781111d84f7b3fe45a0852e59758cd7a87e5" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard & stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"></div></div></div></div>
+
+<div class="py_mk_hidden" id="solution_editor_b1d5781111d84f7b3fe45a0852e59758cd7a87e5"></div>
+<ul>
+<li><a href="https://console.basthon.fr/">IDE en ligne Baston</a></li>
+</ul><script type="text/javascript">
 CONFIG.needMermaid = false;
-CONFIG.overlordClasses = [];
-globalThis.PAGE_IDES_CONFIG = '.\x1e}{\x1e0b0a.'
-</script>
+CONFIG.overlordClasses = ["Terminal", "GlobalRunnersManager", "Ide"];
+globalThis.PAGE_IDES_CONFIG = '.\x1eow:}60I9,redgt8b4 q.ia2k3-slm{uh_vc1x[y]p5f7n\x1e0D010k0l0u0n0a0j0G0p0J0l0P0R0o0J0,0%0o0q0Q0R0p0y0Q0k0q0P0v0f0o0P0w0k0P0h0R0P0o0I0l0R0v0o0R11010c0r0T0O0M0G0S0v0C0k1e0r010p0v0I0G0A0v0p0B0k0t1i010i1q0k0S0H0G0I0a0S0n1G0n1p011D1F1H0G1N0j0C1J1L1N1M1Q1S010E0A0k0!1K1M1O1%1E011K0j1-1!1:1f1R1=0O0E1y0u1u1N0A0n0A1;1q1+0I0j0k0n1V0k25271|1(0O0a252f1X1Z1/1$2j1~2m2e1.1#1P2t1F0K0I0B0E0l0V1p0L0N1=0k2C2E2G0l0G1n0n0F0a0l2i0r2J2L2N2F0V0G0x0b2X2Z1q1i2T1L0G0B0u0p2+011i2;2?272K2-0M0O0u0G0b0F0X1o1f0S0E0B0B1=2c1u2=0C0X1p0z0J1=34362{252I2~010v0E0Y0G0j0E0S1p0Q0v0B1+3d3z0G0m0j0a0E0O3j3l1q0Z2G0!0u0S3I3K3M3O1=1+0s3x3z282_3K0Q0u1z3)0v0n1N0C0O262;0k0Q2z1q0g0S3,0S0X0M1(3u3w0B0a0m0G0v0A1+0j3|0n3y0k1=1@0!2c0C0A2R4b0x1p0f1=0F4b1J0F0k0I0x0#0n3A1f3C3E4i1q4v4o4k4C4E0r4G3F4J4w2c0H0k3D4N3B3D4R014K1Z3z1W4Z4H1=0u4o1G2b301N0l1p4g0E4I014.0G4V4e4+4#0C0v0K0G0u2G2{0S2g1p0y4t1q3h3V570k595b1f0y1=2G2b4W1+4a3;0k3?3^2:1*1,1Z583C3-0E2c1Q0V0X0Z1(2G1t0n0u0H3:5j250l3L2e0Q0Z1v4z2c264^4h3!2U0b0G1L0B1j4b4d5O2:1,3K0j4o5X0!2a5#2X4Q4{0A0j1u4K0F1Q0h0e0I0q0h0y0o0e0y0l0h0q0v0y110J0k0e1x0l0e0l0o0l0l0J0e0k0h0h0Q0f0P0e6x0p100e0o1x0k6g0o0y1s6x0e0h150p0l0f0k0w0e1(5T2(0k432A010n0b0a1Z3E514{2M2l504F4!610n5U3v1J6~0a0Q0Q1p0w0f5e1?6~0^0V1s4A5%4`0d0d.'
+</script><script src="../../../js-per-pages/0-generic-python-snippets-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-error_logs-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-packagesInstaller-install-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-runtimeManager-runtime-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/2-0-runnersManager-runners.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/2-pyodideSectionsRunner-runner-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/3-terminalRunner-term.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-0-idesManager-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-ideLogistic-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-ideRunner-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/start-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
 
 
 
