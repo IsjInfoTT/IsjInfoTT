@@ -27,13 +27,13 @@ If not, see <https://www.gnu.org/licenses/>.
       
       
       
-        <link rel="canonical" href="http://0.0.0.0/uaa11_python/tp6_struct_complexes/tp6_struct_complexes/">
+        <link rel="canonical" href="http://0.0.0.0/uaa5_python/tp3_var/tp3_var/">
       
       
-        <link rel="prev" href="../tp6-3_dico/">
+        <link rel="prev" href="../../tp2_boucles/tp2_boucles/">
       
       
-        <link rel="next" href="../../tp7_listes_imbriquees/tp1_algo_boucles_imbriquees/">
+        <link rel="next" href="../../tp4_input/tp4_input/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -41,7 +41,7 @@ If not, see <https://www.gnu.org/licenses/>.
     
     
       
-        <title>UAA11 TP6 - Les structures comples: listes, chaînes, tupples et dictionnaires - Technique de Transition Informatique</title>
+        <title>TP3 Variables - Technique de Transition Informatique</title>
       
     
     
@@ -69,6 +69,14 @@ If not, see <https://www.gnu.org/licenses/>.
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.43.1/css/jquery.terminal.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.43.1/js/jquery.terminal.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.min.js" integrity="sha512-GQpIYSKNIPIC763JKTNALj+t18/nfLdzw5gITgFGa31aK/4NmjyPKsfqrjh7CuzpJaG3nqEleeVcWUhHad9Axg==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.min.js" integrity="sha512-iK7yTkCkv7MbFwTqRgHTbmIqoiiLq6BsyNjymnFyB5a7pEQwYThj9QIgqBy9+XPPwj7+hAEHyR2npOHL1bz4Qg==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
 
 <script src="../../../js-libs/0-config.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
 
@@ -150,7 +158,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
     <div data-md-component="skip">
       
         
-        <a href="#uaa11-tp6-les-structures-comples-listes-chaines-tupples-et-dictionnaires" class="md-skip">
+        <a href="#uaa5-tp3-les-variables" class="md-skip">
           Aller au contenu
         </a>
       
@@ -186,7 +194,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UAA11 TP6 - Les structures comples: listes, chaînes, tupples et dictionnaires
+              TP3 Variables
             
           </span>
         </div>
@@ -349,18 +357,20 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -376,7 +386,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             UAA5 Python
@@ -390,7 +400,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa5_python/intro/intro/" class="md-nav__link">
+      <a href="../../intro/intro/" class="md-nav__link">
         
   
   
@@ -413,12 +423,288 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../../uaa5_python/tp9_string/tp9_string/" class="md-nav__link">
+      <a href="../../tp1_intructions/tp1_instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP1 Suites d'instructions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp2_boucles/tp2_boucles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP2 Boucles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    TP3 Variables
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP3 Variables
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-decouverte" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Découverte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Remédiation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-bac-a-sable" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Bac à sable
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp4_input/tp4_input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP4 Lecture d'entrées input
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp5_tests/tp5_tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP5 Tests et conditions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp6_str_avancees/tp6_str_avancees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP6 Structures avancées
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp7_booleens/tp7_booleens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP7 Conditions avancées (booléens)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp8_while/tp8_while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP8 Répétions conditionnées While
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp9_string/tp9_string/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     TP9 Chaînes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp10_listes/tp10_listes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP10 Listes
     
   </span>
   
@@ -484,20 +770,18 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -513,7 +797,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             UAA11 Python
@@ -527,7 +811,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../intro/intro/" class="md-nav__link">
+      <a href="../../../uaa11_python/intro/intro/" class="md-nav__link">
         
   
   
@@ -550,7 +834,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp1_var/tp1_var/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp1_var/tp1_var/" class="md-nav__link">
         
   
   
@@ -573,7 +857,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp2_fonctions/tp2_fonc/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp2_fonctions/tp2_fonc/" class="md-nav__link">
         
   
   
@@ -596,7 +880,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp3_tests/tp3_tests/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp3_tests/tp3_tests/" class="md-nav__link">
         
   
   
@@ -657,7 +941,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp4_boucles/tp4_boucles_cond/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp4_boucles/tp4_boucles_cond/" class="md-nav__link">
         
   
   
@@ -680,7 +964,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp4_boucles/tp4_boucles_iter/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp4_boucles/tp4_boucles_iter/" class="md-nav__link">
         
   
   
@@ -703,7 +987,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp4_boucles/tp4_boucles_mini_prj/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp4_boucles/tp4_boucles_mini_prj/" class="md-nav__link">
         
   
   
@@ -772,7 +1056,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp5_listes_string/tp5-1_string/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp5_listes_string/tp5-1_string/" class="md-nav__link">
         
   
   
@@ -795,7 +1079,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp5_listes_string/tp5-2_listes/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp5_listes_string/tp5-2_listes/" class="md-nav__link">
         
   
   
@@ -818,7 +1102,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp5_listes_string/tp5-3_listes_string_mini_prj/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp5_listes_string/tp5-3_listes_string_mini_prj/" class="md-nav__link">
         
   
   
@@ -846,20 +1130,18 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
         
           
           <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
@@ -875,7 +1157,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_7">
             <span class="md-nav__icon md-icon"></span>
             TP6 Structures complexes
@@ -889,7 +1171,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../tp6-1_methodes/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp6_struct_complexes/tp6-1_methodes/" class="md-nav__link">
         
   
   
@@ -912,7 +1194,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../tp6-2_tupples/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp6_struct_complexes/tp6-2_tupples/" class="md-nav__link">
         
   
   
@@ -935,7 +1217,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../tp6-3_dico/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp6_struct_complexes/tp6-3_dico/" class="md-nav__link">
         
   
   
@@ -1004,7 +1286,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp7_listes_imbriquees/tp1_algo_boucles_imbriquees/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp7_listes_imbriquees/tp1_algo_boucles_imbriquees/" class="md-nav__link">
         
   
   
@@ -1027,7 +1309,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp7_listes_imbriquees/tp2-3_fc_listes_imbriquees/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp7_listes_imbriquees/tp2-3_fc_listes_imbriquees/" class="md-nav__link">
         
   
   
@@ -1050,7 +1332,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp7_listes_imbriquees/tp4_exo/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp7_listes_imbriquees/tp4_exo/" class="md-nav__link">
         
   
   
@@ -1073,7 +1355,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../tp7_listes_imbriquees/tp5_jeu/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp7_listes_imbriquees/tp5_jeu/" class="md-nav__link">
         
   
   
@@ -1104,7 +1386,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../z_bac_sable/bac_sable/" class="md-nav__link">
+      <a href="../../../uaa11_python/z_bac_sable/bac_sable/" class="md-nav__link">
         
   
   
@@ -1405,9 +1687,27 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-tbd" class="md-nav__link">
+  <a href="#1-decouverte" class="md-nav__link">
     <span class="md-ellipsis">
-      1. TBD
+      1. Découverte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Remédiation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-bac-a-sable" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Bac à sable
     </span>
   </a>
   
@@ -1430,26 +1730,63 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
                   
 
 
-<h1 id="uaa11-tp6-les-structures-comples-listes-chaines-tupples-et-dictionnaires">UAA11 TP6 - Les structures comples: listes, chaînes, tupples et dictionnaires</h1>
-<p><strong>Notions abordées</strong> : 
-TBD</p>
-<p><strong>Mémo</strong></p>
+<h1 id="uaa5-tp3-les-variables">UAA5 TP3 - Les variables</h1>
+<p><strong>Notions abordées</strong> : </p>
+<ul>
+<li>calcule de formules et résolution de problèmes</li>
+<li>compteurs</li>
+</ul>
+<p><strong>Consignes</strong></p>
+<ul>
+<li>Crée un fichier "<strong>memo.txt</strong>" que tu complèteras avec ce que tu as appris au fur et à mesure de ton avancement dans le cours.</li>
+</ul>
+<div style="page-break-before: always;"></div>
+
+<h2 id="1-decouverte">1. Découverte</h2>
+<p>TBD</p>
+<h2 id="2-remediation">2. Remédiation</h2>
+<p>TBD</p>
+<h2 id="3-bac-a-sable">3. Bac à sable</h2>
 <ul>
 <li>
-<p>Prends connaissance du cours sur les <a href="../NSI%20Premi%C3%A8re%20Partie%201%20Chapitre%207%20Tuples.pdf"><strong>tuples</strong></a>, les <a href="../NSI%20Premi%C3%A8re%20Partie%201%20Chapitre%209%20Dictionnaires.pdf"><strong>dictionnaires</strong></a>, fais les activités ci-dessous puis réponds aux questions <strong>QCM</strong> du pdf.</p>
+<p><a href="https://pythontutor.com/visualize.html#mode=edit">Python Tutor en ligne</a>
+(pour le debug pas à pas)</p>
 </li>
 <li>
-<p>Tu peux tester ton code avec l'IDE du chapitre "TBD. Bac à sable"</p>
-</li>
-<li>
-<p>Complète ton fichier "<strong>memo</strong>" que tu complèteras avec ce que tu as appris au fur et à mesure de ton avancement dans le cours.</p>
+<p>IDE dans le navigateur:</p>
 </li>
 </ul>
-<h2 id="1-tbd">1. TBD</h2><script type="text/javascript">
+<div id="global_editor_1574bddb75c78a6fd2251d61e2993b5146201319" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_1574bddb75c78a6fd2251d61e2993b5146201319"></div><span id="comment_editor_1574bddb75c78a6fd2251d61e2993b5146201319" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_1574bddb75c78a6fd2251d61e2993b5146201319" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard & stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"></div></div></div></div>
+
+<div class="py_mk_hidden" id="solution_editor_1574bddb75c78a6fd2251d61e2993b5146201319"></div>
+<ul>
+<li><a href="https://console.basthon.fr/">Baston IDE en ligne</a></li>
+</ul><script type="text/javascript">
 CONFIG.needMermaid = false;
-CONFIG.overlordClasses = [];
-globalThis.PAGE_IDES_CONFIG = '.\x1e{}\x1e0a0b.'
-</script>
+CONFIG.overlordClasses = ["Ide", "Terminal", "GlobalRunnersManager"];
+globalThis.PAGE_IDES_CONFIG = '.\x1erie.[ly4ptbo:1v0}u m,{39dfwxcgk256I_qh]7na-s8\x1e0v010c0y0b0j0l0a0J0n0G0N0h0k0y0y0k0N0G0C0N0S0P0H0z0y0F0F0G0n0y0H0n0c0F0x0x0w0k0|0h0H0F0p0n0w0n0x010m0s0T0i0g0J0O0P0t0c1g0s010j0i0w0J0o0P0a0d1k010u1s0c0O0o0J0C0l0O0j1G0j1r011D1F1H0J1N0a0t1J1L1N1M1Q1S010r0R0c0!1K1M1O1%1E011K0a1-1!1:1h1R1=0i0r0k0f0b0C1V0c0R0j0R1;1s1+0C0a0c0j2527291|1(0i0l27251X1Z1/1$2k1~2n2g1.1#1P2u1F0B0C0f0r0y0V1r0e0M1=0c2D2F2H0y0J1p0j0L0l0y2j0s2K2M2O2G0V0J0E0A2Y2!1s1k2U1L0J220k2,011k2=0b2@012L2.0g0i0b0J0A0L0X1q1h0O0r0f0f1=2e24220t0X1r0Q0n1=35372{272J2 010P0r0Y0J0a0r0O1r0z0P0f1+3e3A0J0D0a0l0r0i3k3m1s0Z2H0!0b0O3J3L3N3P1=1+0K3y3A2a2_3L0z0b0f381s1(0P0j1N0t0i282=0c0z2A1s0I0O3-0O0X0g3=3w0l2=0l0D0J0P0R1+0a3 0j3z0c1=1@0!2e0t0R2S4e0E1r0p1=0L4e1J0L0c0C0E0J0k0j3B1h3D3F4l1s4y4r4n4F4H3C3E3G4N4z2e0o0c3E4R4I0s4K4V014O1Z3A1W4T4L1=0b4r1G2d311N0y1r4j0r4M014?1x1,3 4)500t0P0B0J0b2H2{0O261r0w4w1s3i3W5c0c5e5g1h0w1=2H2d4!1+4d3@0c3_3{2;1*1,1Z5d3D3.0r2e1Q0V0X0Z1(2H0P0C0j0b1y1N0J270y3M2g0z0Z5Y4C2e284}4k3#2V0A0J1L0f1l4e4g5U2;1,3L0a4r5%0!2c5+2Y563#0a244O0L1Q0x0H0C0h140S0H0w0y0x0h0P0w0c0|0c0H0P0*0H0y0S0+0n0H0c130z0p0G0 0H0k0F6s0=0k0c6k0S150P6A0H0x0G0S0*0p110H1(5Z2)0c462B1t0A491K3F4:4*2N2m4h6;505Z5#1J3w5=0z0z1r1a5j1?6~0z0c0V0k5S4u1h4~0c0q0q.'
+</script><script src="../../../js-per-pages/0-generic-python-snippets-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-error_logs-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-packagesInstaller-install-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-runtimeManager-runtime-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/2-0-runnersManager-runners.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/2-pyodideSectionsRunner-runner-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/3-terminalRunner-term.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-0-idesManager-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-ideLogistic-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-ideRunner-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/start-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
 
 
 

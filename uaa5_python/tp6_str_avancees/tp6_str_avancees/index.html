@@ -27,28 +27,28 @@ If not, see <https://www.gnu.org/licenses/>.
       
       
       
-        <link rel="canonical" href="http://0.0.0.0/uaa8_secu_linux5TT/linux/">
+        <link rel="canonical" href="http://0.0.0.0/uaa5_python/tp6_str_avancees/tp6_str_avancees/">
       
       
-        <link rel="prev" href="../../uaa7_sql/bd/">
+        <link rel="prev" href="../../tp5_tests/tp5_tests/">
       
       
-        <link rel="next" href="../../uaa11_python/intro/intro/">
+        <link rel="next" href="../../tp7_booleens/tp7_booleens/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>UAA8 Linux - Technique de Transition Informatique</title>
+        <title>TP6 Structures avancées - Technique de Transition Informatique</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -56,7 +56,7 @@ If not, see <https://www.gnu.org/licenses/>.
     
     
 
-<script type="importmap">{"imports": {"functools": "../../js-libs/functools.js", "jsLogger": "../../js-libs/jsLogger.js", "process_and_gui": "../../js-libs/process_and_gui.js", "0-generic-python-snippets-pyodide": "../../js-per-pages/0-generic-python-snippets-pyodide.js", "1-error_logs-pyodide": "../../js-per-pages/1-error_logs-pyodide.js", "1-packagesInstaller-install-pyodide": "../../js-per-pages/1-packagesInstaller-install-pyodide.js", "1-runtimeManager-runtime-pyodide": "../../js-per-pages/1-runtimeManager-runtime-pyodide.js", "2-0-runnersManager-runners": "../../js-per-pages/2-0-runnersManager-runners.js", "2-pyodideSectionsRunner-runner-pyodide": "../../js-per-pages/2-pyodideSectionsRunner-runner-pyodide.js", "3-btnRunner-py_btn": "../../js-per-pages/3-btnRunner-py_btn.js", "3-terminalRunner-term": "../../js-per-pages/3-terminalRunner-term.js", "4-0-idesManager-ide": "../../js-per-pages/4-0-idesManager-ide.js", "4-ideLogistic-ide": "../../js-per-pages/4-ideLogistic-ide.js", "4-ideRunner-ide": "../../js-per-pages/4-ideRunner-ide.js", "5-ideTester-ides_test": "../../js-per-pages/5-ideTester-ides_test.js", "qcms-qcm": "../../js-per-pages/qcms-qcm.js", "start-pyodide": "../../js-per-pages/start-pyodide.js", "overlord": "../../js-scripts/overlord.js", "subscriptions": "../../js-scripts/subscriptions.js"}}</script>
+<script type="importmap">{"imports": {"functools": "../../../js-libs/functools.js", "jsLogger": "../../../js-libs/jsLogger.js", "process_and_gui": "../../../js-libs/process_and_gui.js", "0-generic-python-snippets-pyodide": "../../../js-per-pages/0-generic-python-snippets-pyodide.js", "1-error_logs-pyodide": "../../../js-per-pages/1-error_logs-pyodide.js", "1-packagesInstaller-install-pyodide": "../../../js-per-pages/1-packagesInstaller-install-pyodide.js", "1-runtimeManager-runtime-pyodide": "../../../js-per-pages/1-runtimeManager-runtime-pyodide.js", "2-0-runnersManager-runners": "../../../js-per-pages/2-0-runnersManager-runners.js", "2-pyodideSectionsRunner-runner-pyodide": "../../../js-per-pages/2-pyodideSectionsRunner-runner-pyodide.js", "3-btnRunner-py_btn": "../../../js-per-pages/3-btnRunner-py_btn.js", "3-terminalRunner-term": "../../../js-per-pages/3-terminalRunner-term.js", "4-0-idesManager-ide": "../../../js-per-pages/4-0-idesManager-ide.js", "4-ideLogistic-ide": "../../../js-per-pages/4-ideLogistic-ide.js", "4-ideRunner-ide": "../../../js-per-pages/4-ideRunner-ide.js", "5-ideTester-ides_test": "../../../js-per-pages/5-ideTester-ides_test.js", "qcms-qcm": "../../../js-per-pages/qcms-qcm.js", "start-pyodide": "../../../js-per-pages/start-pyodide.js", "overlord": "../../../js-scripts/overlord.js", "subscriptions": "../../../js-scripts/subscriptions.js"}}</script>
 
 
 
@@ -70,15 +70,23 @@ If not, see <https://www.gnu.org/licenses/>.
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
-<script src="../../js-libs/0-config.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.43.1/js/jquery.terminal.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.min.js" integrity="sha512-GQpIYSKNIPIC763JKTNALj+t18/nfLdzw5gITgFGa31aK/4NmjyPKsfqrjh7CuzpJaG3nqEleeVcWUhHad9Axg==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.min.js" integrity="sha512-iK7yTkCkv7MbFwTqRgHTbmIqoiiLq6BsyNjymnFyB5a7pEQwYThj9QIgqBy9+XPPwj7+hAEHyR2npOHL1bz4Qg==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="../../../js-libs/0-config.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
 
 <script type="text/javascript">
 if(!window.CONFIG) window.CONFIG={}
 CONFIG.argsFigureDivId="figure1"
 CONFIG.exportZipWithNames=false
 CONFIG.exportZipPrefix=""
-CONFIG.baseUrl="../.."
-CONFIG.buttonIconsDirectory="../../assets\\images"
+CONFIG.baseUrl="../../.."
+CONFIG.buttonIconsDirectory="../../../assets\\images"
 CONFIG.editorFontFamily="monospace"
 CONFIG.editorFontSize=15
 CONFIG.inServe=false
@@ -89,31 +97,31 @@ CONFIG.siteUrl="http://0.0.0.0/"
 CONFIG.version="4.4.2"
 CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "comments": {"em": 17, "msg": "(D\u00e9s-)Active le code apr\u00e8s la ligne <code># Tests</code> (insensible \u00e0 la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)", "kbd": "Ctrl+I"}, "splitScreen": {"em": 23, "msg": "Entrer ou sortir du mode \"deux colonnes\"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)", "kbd": ""}, "splitModePlaceholder": {"msg": "\u00c9diteur dans l'autre colonne"}, "fullScreen": {"em": 10, "msg": "Entrer ou sortir du mode \"plein \u00e9cran\"<br>(<kbd>Esc</kbd>)", "kbd": "Esc"}, "feedback": {"em": 19, "msg": "Tronquer ou non le feedback dans les terminaux (sortie standard & stacktrace / relancer le code pour appliquer)", "kbd": ""}, "wrapTerm": {"em": 19, "msg": "Si activ\u00e9, le texte copi\u00e9 dans le terminal est joint sur une seule ligne avant d'\u00eatre copi\u00e9 dans le presse-papier", "kbd": ""}, "runScript": {"msg": "Script lanc\u00e9...", "format": "info"}, "installStart": {"msg": "Installation de paquets python. Ceci peut prendre un certain temps...", "format": "info"}, "installDone": {"msg": "Installations termin\u00e9es !", "format": "info"}, "refresh": {"msg": "Une version plus r\u00e9cente du code existe.\nVeuillez copier vos \u00e9ventuelles modifications puis r\u00e9initialiser l'IDE.", "format": "warning"}, "validation": {"msg": "Validation - ", "format": "info"}, "editorCode": {"msg": "\u00c9diteur", "format": "info"}, "publicTests": {"msg": "Tests publics", "format": "info"}, "secretTests": {"msg": "Tests secrets", "format": "info"}, "successMsg": {"msg": "OK", "format": "success"}, "successMsgNoTests": {"msg": "Termin\u00e9 sans erreur.", "format": "info"}, "unforgettable": {"msg": "N'oubliez pas de faire une validation !", "format": "warning"}, "successHead": {"msg": "Bravo !", "format": "success"}, "successHeadExtra": {"msg": "Vous avez r\u00e9ussi tous les tests !"}, "successTail": {"msg": "Pensez \u00e0 lire"}, "failHead": {"msg": "Dommage !", "format": "warning"}, "revealCorr": {"msg": "le corrig\u00e9"}, "revealJoin": {"msg": "et"}, "revealRem": {"msg": "les commentaires"}, "failTail": {"msg": "est maintenant disponible", "plural": "sont maintenant disponibles"}, "titleCorr": {"msg": "Solution"}, "titleRem": {"msg": "Remarques"}, "corr": {"msg": "\ud83d\udc0d Proposition de correction"}, "rem": {"msg": "Remarques"}, "pyBtn": {"em": 9, "msg": "Ex\u00e9cuter le code", "kbd": ""}, "play": {"em": 9, "msg": "Ex\u00e9cuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)", "kbd": "Ctrl+S"}, "check": {"em": 9, "msg": "Valider<br><kbd>Ctrl</kbd>+<kbd>Enter</kbd><br>(Clic droit pour l'historique)", "kbd": ""}, "download": {"em": 0, "msg": "T\u00e9l\u00e9charger", "kbd": ""}, "upload": {"em": 0, "msg": "T\u00e9l\u00e9verser", "kbd": ""}, "restart": {"em": 0, "msg": "R\u00e9initialiser l'\u00e9diteur", "kbd": ""}, "save": {"em": 0, "msg": "Sauvegarder dans le navigateur", "kbd": ""}, "zip": {"em": 14, "msg": "Archiver les codes des IDEs exportables de la page", "kbd": ""}, "corrBtn": {"em": 0, "msg": "Tester la correction (serve)", "kbd": ""}, "show": {"em": 0, "msg": "Afficher corr & REMs", "kbd": ""}, "attemptsLeft": {"msg": "\u00c9valuations restantes"}, "testsDone": {"msg": "Tests termin\u00e9s", "format": "info"}, "testIdes": {"em": 7, "msg": "Lance tous les tests...", "kbd": ""}, "testStop": {"em": 6, "msg": "Arr\u00eate les tests", "kbd": ""}, "test1Ide": {"em": 7, "msg": "Lance ce test", "kbd": ""}, "loadIde": {"em": 10, "msg": "Configure l'IDE avec ces donn\u00e9es", "kbd": ""}, "qcmTitle": {"msg": "Question", "plural": "Questions"}, "qcmMaskTip": {"em": 11, "msg": "Les r\u00e9ponses resteront cach\u00e9es...", "kbd": ""}, "qcmCheckTip": {"em": 11, "msg": "V\u00e9rifier les r\u00e9ponses", "kbd": ""}, "qcmRedoTip": {"em": 9, "msg": "Recommencer", "kbd": ""}, "tipTrash": {"em": 15, "msg": "Supprimer du navigateur les codes enregistr\u00e9s pour Technique de Transition Informatique", "kbd": ""}, "figureAdmoTitle": {"msg": "Votre figure"}, "figureText": {"msg": "Votre trac\u00e9 sera ici"}, "p5Start": {"em": 0, "msg": "D\u00e9marre l'animation", "kbd": ""}, "p5Stop": {"em": 0, "msg": "Arr\u00eate l'animation", "kbd": ""}, "p5Step": {"em": 0, "msg": "Avance d'une image", "kbd": ""}, "pickerFailure": {"msg": "Veuillez cliquer sur la page entre deux utilisations des raccourcis clavier ou utiliser un bouton, afin de pouvoir t\u00e9l\u00e9verser un fichier."}, "zipAskForNames": {"msg": "Veuillez pr\u00e9ciser votre/vos noms (cha\u00eene vide interdite) :"}}
 </script>
-<script src="../../js-libs/0-legacy-subscriber.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+<script src="../../../js-libs/0-legacy-subscriber.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
 
-<script src="../../js-libs/functools.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+<script src="../../../js-libs/functools.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
 
-<script src="../../js-libs/jsLogger.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+<script src="../../../js-libs/jsLogger.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
 
-<script src="../../js-libs/mathjax-libs.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+<script src="../../../js-libs/mathjax-libs.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
 
-<script src="../../js-libs/process_and_gui.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+<script src="../../../js-libs/process_and_gui.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
 
-<link href="../../pyodide-css/0-generic.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+<link href="../../../pyodide-css/0-generic.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
-<link href="../../pyodide-css/btns-header.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+<link href="../../../pyodide-css/btns-header.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
-<link href="../../pyodide-css/history.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+<link href="../../../pyodide-css/history.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
-<link href="../../pyodide-css/hourglass.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+<link href="../../../pyodide-css/hourglass.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
-<link href="../../pyodide-css/ide.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+<link href="../../../pyodide-css/ide.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
-<link href="../../pyodide-css/qcm.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+<link href="../../../pyodide-css/qcm.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
-<link href="../../pyodide-css/terminal.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+<link href="../../../pyodide-css/terminal.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
-<link href="../../pyodide-css/testing.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+<link href="../../../pyodide-css/testing.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
 
@@ -124,7 +132,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -150,7 +158,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
     <div data-md-component="skip">
       
         
-        <a href="#uaa8-operating-system-os-le-gestionnaire-de-fichier-sous-linux" class="md-skip">
+        <a href="#uaa5-tp6-structures-avancees-challenge" class="md-skip">
           Aller au contenu
         </a>
       
@@ -166,7 +174,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../.." title="Technique de Transition Informatique" class="md-header__button md-logo" aria-label="Technique de Transition Informatique" data-md-component="logo">
+    <a href="../../.." title="Technique de Transition Informatique" class="md-header__button md-logo" aria-label="Technique de Transition Informatique" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -186,7 +194,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UAA8 Linux
+              TP6 Structures avancées
             
           </span>
         </div>
@@ -290,7 +298,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Technique de Transition Informatique" class="md-nav__button md-logo" aria-label="Technique de Transition Informatique" data-md-component="logo">
+    <a href="../../.." title="Technique de Transition Informatique" class="md-nav__button md-logo" aria-label="Technique de Transition Informatique" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -308,7 +316,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -330,7 +338,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa4_python_prj/python_prj/" class="md-nav__link">
+      <a href="../../../uaa4_python_prj/python_prj/" class="md-nav__link">
         
   
   
@@ -349,18 +357,20 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -376,7 +386,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             UAA5 Python
@@ -390,7 +400,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa5_python/intro/intro/" class="md-nav__link">
+      <a href="../../intro/intro/" class="md-nav__link">
         
   
   
@@ -413,7 +423,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa5_python/tp1_intructions/tp1_instructions/" class="md-nav__link">
+      <a href="../../tp1_intructions/tp1_instructions/" class="md-nav__link">
         
   
   
@@ -436,7 +446,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa5_python/tp2_boucles/tp2_boucles/" class="md-nav__link">
+      <a href="../../tp2_boucles/tp2_boucles/" class="md-nav__link">
         
   
   
@@ -459,7 +469,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa5_python/tp3_var/tp3_var/" class="md-nav__link">
+      <a href="../../tp3_var/tp3_var/" class="md-nav__link">
         
   
   
@@ -482,7 +492,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa5_python/tp4_input/tp4_input/" class="md-nav__link">
+      <a href="../../tp4_input/tp4_input/" class="md-nav__link">
         
   
   
@@ -505,7 +515,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa5_python/tp5_tests/tp5_tests/" class="md-nav__link">
+      <a href="../../tp5_tests/tp5_tests/" class="md-nav__link">
         
   
   
@@ -525,10 +535,32 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../uaa5_python/tp6_str_avancees/tp6_str_avancees/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    TP6 Structures avancées
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -539,6 +571,53 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-decouverte" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Découverte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Remédiation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-bac-a-sable" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Bac à sable
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -551,7 +630,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa5_python/tp7_booleens/tp7_booleens/" class="md-nav__link">
+      <a href="../../tp7_booleens/tp7_booleens/" class="md-nav__link">
         
   
   
@@ -574,7 +653,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa5_python/tp8_while/tp8_while/" class="md-nav__link">
+      <a href="../../tp8_while/tp8_while/" class="md-nav__link">
         
   
   
@@ -597,7 +676,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa5_python/tp9_string/tp9_string/" class="md-nav__link">
+      <a href="../../tp9_string/tp9_string/" class="md-nav__link">
         
   
   
@@ -620,7 +699,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa5_python/tp10_listes/tp10_listes/" class="md-nav__link">
+      <a href="../../tp10_listes/tp10_listes/" class="md-nav__link">
         
   
   
@@ -650,7 +729,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa7_sql/bd/" class="md-nav__link">
+      <a href="../../../uaa7_sql/bd/" class="md-nav__link">
         
   
   
@@ -669,19 +748,10 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../uaa8_secu_linux5TT/linux/" class="md-nav__link">
         
   
   
@@ -692,7 +762,6 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
 
       </a>
-      
     </li>
   
 
@@ -742,7 +811,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/intro/intro/" class="md-nav__link">
+      <a href="../../../uaa11_python/intro/intro/" class="md-nav__link">
         
   
   
@@ -765,7 +834,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp1_var/tp1_var/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp1_var/tp1_var/" class="md-nav__link">
         
   
   
@@ -788,7 +857,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp2_fonctions/tp2_fonc/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp2_fonctions/tp2_fonc/" class="md-nav__link">
         
   
   
@@ -811,7 +880,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp3_tests/tp3_tests/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp3_tests/tp3_tests/" class="md-nav__link">
         
   
   
@@ -872,7 +941,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp4_boucles/tp4_boucles_cond/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp4_boucles/tp4_boucles_cond/" class="md-nav__link">
         
   
   
@@ -895,7 +964,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp4_boucles/tp4_boucles_iter/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp4_boucles/tp4_boucles_iter/" class="md-nav__link">
         
   
   
@@ -918,7 +987,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp4_boucles/tp4_boucles_mini_prj/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp4_boucles/tp4_boucles_mini_prj/" class="md-nav__link">
         
   
   
@@ -987,7 +1056,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp5_listes_string/tp5-1_string/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp5_listes_string/tp5-1_string/" class="md-nav__link">
         
   
   
@@ -1010,7 +1079,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp5_listes_string/tp5-2_listes/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp5_listes_string/tp5-2_listes/" class="md-nav__link">
         
   
   
@@ -1033,7 +1102,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp5_listes_string/tp5-3_listes_string_mini_prj/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp5_listes_string/tp5-3_listes_string_mini_prj/" class="md-nav__link">
         
   
   
@@ -1102,7 +1171,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp6_struct_complexes/tp6-1_methodes/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp6_struct_complexes/tp6-1_methodes/" class="md-nav__link">
         
   
   
@@ -1125,7 +1194,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp6_struct_complexes/tp6-2_tupples/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp6_struct_complexes/tp6-2_tupples/" class="md-nav__link">
         
   
   
@@ -1148,7 +1217,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp6_struct_complexes/tp6-3_dico/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp6_struct_complexes/tp6-3_dico/" class="md-nav__link">
         
   
   
@@ -1217,7 +1286,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp7_listes_imbriquees/tp1_algo_boucles_imbriquees/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp7_listes_imbriquees/tp1_algo_boucles_imbriquees/" class="md-nav__link">
         
   
   
@@ -1240,7 +1309,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp7_listes_imbriquees/tp2-3_fc_listes_imbriquees/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp7_listes_imbriquees/tp2-3_fc_listes_imbriquees/" class="md-nav__link">
         
   
   
@@ -1263,7 +1332,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp7_listes_imbriquees/tp4_exo/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp7_listes_imbriquees/tp4_exo/" class="md-nav__link">
         
   
   
@@ -1286,7 +1355,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/tp7_listes_imbriquees/tp5_jeu/" class="md-nav__link">
+      <a href="../../../uaa11_python/tp7_listes_imbriquees/tp5_jeu/" class="md-nav__link">
         
   
   
@@ -1317,7 +1386,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa11_python/z_bac_sable/bac_sable/" class="md-nav__link">
+      <a href="../../../uaa11_python/z_bac_sable/bac_sable/" class="md-nav__link">
         
   
   
@@ -1385,7 +1454,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa13-14_python/tp1_jeu/jeu/" class="md-nav__link">
+      <a href="../../../uaa13-14_python/tp1_jeu/jeu/" class="md-nav__link">
         
   
   
@@ -1408,7 +1477,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa13-14_python/tp2_socket/socket/" class="md-nav__link">
+      <a href="../../../uaa13-14_python/tp2_socket/socket/" class="md-nav__link">
         
   
   
@@ -1469,7 +1538,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa13-14_python/tp3_tkinter/tkinter/" class="md-nav__link">
+      <a href="../../../uaa13-14_python/tp3_tkinter/tkinter/" class="md-nav__link">
         
   
   
@@ -1492,7 +1561,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa13-14_python/tp3_tkinter/tkinter_trieles/tkinter/" class="md-nav__link">
+      <a href="../../../uaa13-14_python/tp3_tkinter/tkinter_trieles/tkinter/" class="md-nav__link">
         
   
   
@@ -1523,7 +1592,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa13-14_python/tp4_recursivite/recursivite/" class="md-nav__link">
+      <a href="../../../uaa13-14_python/tp4_recursivite/recursivite/" class="md-nav__link">
         
   
   
@@ -1546,7 +1615,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa13-14_python/tp5_prepa_sup/prepa_sup/" class="md-nav__link">
+      <a href="../../../uaa13-14_python/tp5_prepa_sup/prepa_sup/" class="md-nav__link">
         
   
   
@@ -1576,7 +1645,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
   
     <li class="md-nav__item">
-      <a href="../../uaa12_web/web/" class="md-nav__link">
+      <a href="../../../uaa12_web/web/" class="md-nav__link">
         
   
   
@@ -1611,6 +1680,41 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-decouverte" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Découverte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Remédiation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-bac-a-sable" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Bac à sable
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1626,16 +1730,60 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
                   
 
 
-<h1 id="uaa8-operating-system-os-le-gestionnaire-de-fichier-sous-linux">UAA8 - Operating System (OS) : Le gestionnaire de fichier sous linux</h1>
+<h1 id="uaa5-tp6-structures-avancees-challenge">UAA5 TP6 - Structures avancées ( <mark>!!! CHALLENGE !!!</mark> )</h1>
+<p><strong>Notions abordées</strong> : </p>
+<p>TBD</p>
+<p><strong>Consignes</strong></p>
 <ul>
-<li><a href="../UAA8_os_linux_gestionnaire_fichiers_V05.pdf"><strong>Cours et Travaux pratiques</strong></a> (pdf)</li>
-<li><a href="../memo_commandes_unix_a_l.pdf"><strong>Mémo commandes linux (a-l)</strong></a> (pdf)</li>
-<li><a href="../memo_commandes_unix_m_z.pdf"><strong>Mémo commandes linux (m-z)</strong></a> (pdf)</li>
+<li>Crée un fichier "<strong>memo.txt</strong>" que tu complèteras avec ce que tu as appris au fur et à mesure de ton avancement dans le cours.</li>
+</ul>
+<div style="page-break-before: always;"></div>
+
+<h2 id="1-decouverte">1. Découverte</h2>
+<p>TBD</p>
+<h2 id="2-remediation">2. Remédiation</h2>
+<p>TBD</p>
+<h2 id="3-bac-a-sable">3. Bac à sable</h2>
+<ul>
+<li>
+<p><a href="https://pythontutor.com/visualize.html#mode=edit">Python Tutor en ligne</a>
+(pour le debug pas à pas)</p>
+</li>
+<li>
+<p>IDE dans le navigateur:</p>
+</li>
+</ul>
+<div id="global_editor_b3f0c7f6bb763af1be91d9e74eabfeb199dc1f1f" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_b3f0c7f6bb763af1be91d9e74eabfeb199dc1f1f"></div><span id="comment_editor_b3f0c7f6bb763af1be91d9e74eabfeb199dc1f1f" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_b3f0c7f6bb763af1be91d9e74eabfeb199dc1f1f" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard & stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"></div></div></div></div>
+
+<div class="py_mk_hidden" id="solution_editor_b3f0c7f6bb763af1be91d9e74eabfeb199dc1f1f"></div>
+<ul>
+<li><a href="https://console.basthon.fr/">Baston IDE en ligne</a></li>
 </ul><script type="text/javascript">
 CONFIG.needMermaid = false;
-CONFIG.overlordClasses = [];
-globalThis.PAGE_IDES_CONFIG = '.\x1e{}\x1e0a0b.'
-</script>
+CONFIG.overlordClasses = ["Ide", "Terminal", "GlobalRunnersManager"];
+globalThis.PAGE_IDES_CONFIG = '.\x1erie.[ly4ptbo:1v0}u m,3{9dfwxcgk256I_qh]7na-s8\x1e0w010c0y0b0j0l0a0J0k0v0z0p0C0N0z0H0k0k0N0H0v0P0z0n0k0c0x0n0y0x0c0N0h0c0P0k0z0c0k0n0x0x0y0C0n0@0z010m0s0T0i0g0J0O0P0t0c1g0s010j0i0H0J0R0j0!0P0o0P0O0C0c0c0R0d1k010u1s0c0O0o0J0C0l0O0j1O0j1r011L1N1P0J1V0a0t1R1T1V1U1Y1!010r0R0c0!1S1U1W1/1M011S0a1^1,1{1h1Z1}0i0r0k0f0b0C1%1H0j0R1|1s1?0C0a0c0j2d1y2g241:0i0l1y2d1)1+1`1.2r262u2n1_1-1X2B1N0B0C0f0r0y0V1r0e0M1}0c2K2M2O0y0J1p0j0L0l0y2q0s2R2T2V2N0V0J0E0A2)2+1s1k2#1T0J2a0k2?011k2|0b2~012S2^0g0i0b0J0A0L0X1q1h0O0r0f0f1}2l2c2a0t0X1r0Q0n1}3c3e321y2Q36010P0r0Y0J0a0r0O1r0z0P0f1?3l3H0J0D0a0l0r0i3r3t1s0Z2O0!0b0O3Q3S3U3W1}1?0K3F3H2h303S0z0b0f3f1s1:0P0j1V0t0i2f2|0c0z2H1s0I0O3@0O0X0g3|3D0l2|0l0D0J0P0R1?0a461z0r0c1}1 0!2l0t0R2Z4l0E1r0p1}0L4l1R0L0c0C0E0#0j3I1h3K3M4s1s4F4y4u4M4O0s4Q3N4T4G2l0o120f4X3J3L4#014U1+3H1(4-4R1}0b4y1O2k381V0y1r4q4S014{0J4)4o4^4/0t0P0B0J0b2O320O1H1r0v4D1s3p3%5g0c5i5k1h0v1}2O2k121?4k3~0c40422{1=1@1+5h3K3^0r2l1Y0V0X0Z1:2O0P0C0j0b1C1V1x0j0y3T2n0z0Z1x4J2l2f523G540R2$0A0J1T0f1l4l4n5Y2{1@3S0a4y5+0!2j5/2)4!5?0a2c4U0L1Y0x0H0C0h0x0v0S0;0}0h0P0v0c0G0n0c0H130y0H0y0S0y0y0n0H0`0x0(0G0H6G0k0F6x0S130c0v6C0v0k0P6G0H0x0G0S0k0y0p0c0F0H1:1y2Y0E0c4d2I1t0A4g1S3M5a542U2t594P4.5?5%5)1R3D5`0z1f1h0F0p5n1~78150V6X4K5;4r0q0q.'
+</script><script src="../../../js-per-pages/0-generic-python-snippets-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-error_logs-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-packagesInstaller-install-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-runtimeManager-runtime-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/2-0-runnersManager-runners.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/2-pyodideSectionsRunner-runner-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/3-terminalRunner-term.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-0-idesManager-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-ideLogistic-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-ideRunner-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/start-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
 
 
 
@@ -1715,17 +1863,17 @@ src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"><
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
 
 
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
-<script src="../../js-scripts/overlord.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+<script src="../../../js-scripts/overlord.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
 
-<script src="../../js-scripts/subscriptions.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+<script src="../../../js-scripts/subscriptions.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
 
 
 
