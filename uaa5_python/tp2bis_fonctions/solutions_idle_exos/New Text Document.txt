@@ -1,0 +1,10 @@
+
+def salutations(nom, repet):
+    print("Bonjour", nom)
+    for loop in range(repet):
+        print("Comment ça va ?")
+    print()
+    
+salutations("Mohamed", 5)
+salutations("Ayoub", 3)
+salutations("Daniel", 6)
