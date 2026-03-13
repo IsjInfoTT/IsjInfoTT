@@ -27,13 +27,13 @@ If not, see <https://www.gnu.org/licenses/>.
       
       
       
-        <link rel="canonical" href="http://0.0.0.0/uaa13-14_python/tp1_jeu/jeu/">
+        <link rel="canonical" href="http://0.0.0.0/uaa13-14_python/tp5_tris/tris/">
       
       
-        <link rel="prev" href="../../../uaa11_python/z_bac_sable/bac_sable/">
+        <link rel="prev" href="../../tp4_recursivite/recursivite/">
       
       
-        <link rel="next" href="../../tp2_socket/socket/">
+        <link rel="next" href="../../tp6_prepa_sup/prepa_sup/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -41,7 +41,7 @@ If not, see <https://www.gnu.org/licenses/>.
     
     
       
-        <title>TP1 Jeu de plateau - Technique de Transition Informatique</title>
+        <title>TP5 Techniques de recherche et tris - Technique de Transition Informatique</title>
       
     
     
@@ -150,7 +150,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
     <div data-md-component="skip">
       
         
-        <a href="#uaa13-14-tp1-jeu-de-plateau" class="md-skip">
+        <a href="#uaa13-14-tp5-techniques-de-recherche-et-de-tri" class="md-skip">
           Aller au contenu
         </a>
       
@@ -186,7 +186,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TP1 Jeu de plateau
+              TP5 Techniques de recherche et tris
             
           </span>
         </div>
@@ -1397,19 +1397,10 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../tp1_jeu/jeu/" class="md-nav__link">
         
   
   
@@ -1420,7 +1411,6 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
 
       </a>
-      
     </li>
   
 
@@ -1568,10 +1558,19 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../tp5_tris/tris/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1582,6 +1581,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
 
       </a>
+      
     </li>
   
 
@@ -1674,141 +1674,15 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
                   
 
 
-<h1 id="uaa13-14-tp1-jeu-de-plateau">UAA13-14 TP1 Jeu de plateau</h1>
-<details class="question" open="open">
-<summary>Consignes générales</summary>
+<h1 id="uaa13-14-tp5-techniques-de-recherche-et-de-tri">UAA13-14 TP5 Techniques de recherche et de tri</h1>
 <ul>
 <li>
-<p>Tu as 2 séances maximum pour faire / refaire les <strong>chapitres 1, 2, 3</strong> sur les listes imbriquées (TP7 de l'UAA11)</p>
+<p>Les consignes de ce chapitre proviennent du site d'<a href="https://cours-nsi.forge.apps.education.fr/terminale/0.Intro/preambule/"><strong>Apprentissage de python au lycée</strong></a> en classe de Termianle NSI en France.</p>
 </li>
 <li>
-<p>Tu as 3 semaines de plus pour écrire ton jeu et le rendre pour le <strong>vendredi 3 octobre avant minuit</strong> </p>
+<p>Télécharge les <a href="../NSI%20Terminale%20Partie%202%20Chapitre%202%20Diviser%20pour%20r%C3%A9gner.ipynb"><strong>Consignes</strong></a> et ouvre-les avec <strong>Visual Studio Code</strong>.</p>
 </li>
-<li>
-<p>Le jeu ne doit pas être complet, demande à ton professeur jusqu'où coder en fonction de ton choix. L'objectif est de manipuler une liste imbriquée à 2 dimensions simple.</p>
-</li>
-<li>
-<p>Tu dois absolument écrire le code pour les <strong>2 joueurs</strong>.</p>
-</li>
-<li>
-<p>Tu n'as pas le droit de t"aider ni d'internet, ni d'une IA. Ton évaluation tiendra principalement compte du travail fourni pendant les heures de cours.</p>
-</li>
-</ul>
-</details>
-<details class="question" open="open">
-<summary>xo</summary>
-<p><div style="text-align: center;">
-<img alt="xo" src="../images/xo.jpg" width="20%" />
-</div></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Le code doit être complet</p>
-</div>
-</details>
-<details class="question" open="open">
-<summary>Puissance 4</summary>
-<p><div style="text-align: center;">
-<img alt="Puissance4" src="../images/puissance4.jpg" width="30%" />
-</div>
-<a href="../files/puissance4.pdf"><strong>Règles du jeu</strong></a> (pdf)</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Le code doit contenir au minimumle le placement des jetons des 2 joueurs</p>
-</div>
-</details>
-<details class="question" open="open">
-<summary>Pente</summary>
-<p><div style="text-align: center;">
-<img alt="pente" src="../images/pente.jpg" width="30%" />
-</div>
-<a href="../files/pente.pdf"><strong>Règles du jeu</strong></a> (pdf)</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Le code doit contenir au minimumle placement des pionts des 2 joueurs et la prise des pionts adverses.</p>
-</div>
-</details>
-<details class="question" open="open">
-<summary>Bataille navale</summary>
-<p><div style="text-align: center;">
-<img alt="bataille navale" src="../images/bataille_navale.jpg" width="30%" />
-</div>
-<a href="../files/bataille_navale.pdf"><strong>Règles du jeu</strong></a> (pdf)</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Le code doit contenir au minimumle "tir" des 2 joueurs et la vérification si un bateau est touché ou pas, ainsi que l'affiche des cases jouées.</p>
-</div>
-</details>
-<details class="question" open="open">
-<summary>Jeu de dame</summary>
-<p><div style="text-align: center;">
-<img alt="dame" src="../images/dame.jpg" width="20%" />
-</div>
-<a href="../files/dame.pdf"><strong>Règles du jeu</strong></a> (pdf)</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Le code doit contenir au minimumle déplacement des points des 2 joueurs.</p>
-</div>
-</details>
-<details class="question" open="open">
-<summary>Echecs</summary>
-<p><div style="text-align: center;">
-<img alt="echecs" src="../images/echecs.jpg" width="20%" />
-</div>
-<a href="../files/echecs.pdf"><strong>Règles du jeu</strong></a> (pdf)</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Le code doit contenir au minimumle déplacement des points des 2 joueurs.</p>
-</div>
-</details>
-<details class="question" open="open">
-<summary>Echecs chinois</summary>
-<p><div style="text-align: center;">
-<img alt="echecs chinois" src="../images/echecs_chinois.jpg" width="30%" />
-</div>
-<a href="../files/echecs_chinois.pdf"><strong>Règles du jeu</strong></a> (pdf)</p>
-</details>
-<details class="question" open="open">
-<summary>Jeu de go</summary>
-<p><div style="text-align: center;">
-<img alt="jeu de go" src="../images/jeu_de_go.jpg" width="30%" />
-</div>
-<a href="../files/jeu_de_go.pdf"><strong>Règles du jeu</strong></a> (pdf)</p>
-</details>
-<details class="question" open="open">
-<summary>Othello</summary>
-<p><div style="text-align: center;">
-<img alt="othello" src="../images/othello.png" width="30%" />
-</div>
-<a href="../files/othello.pdf"><strong>Règles du jeu</strong></a> (pdf)</p>
-</details>
-<details class="question" open="open">
-<summary>Qawale</summary>
-<p><div style="text-align: center;">
-<img alt="qawale" src="../images/qawale.webp" width="30%" />
-</div>
-<a href="../files/qawale.pdf"><strong>Règles du jeu</strong></a> (pdf)</p>
-</details>
-<details class="question" open="open">
-<summary>Quantik</summary>
-<p><div style="text-align: center;">
-<img alt="quantik" src="../images/quantik.webp" width="30%" />
-</div>
-<a href="../files/quantik.pdf"><strong>Règles du jeu</strong></a> (pdf)</p>
-</details>
-<details class="question" open="open">
-<summary>Shogi</summary>
-<p><div style="text-align: center;">
-<img alt="shogi" src="../images/shogi.jpg" width="30%" />
-</div>
-<a href="../files/shogi.pdf"><strong>Règles du jeu</strong></a> (pdf)</p>
-</details>
-<details class="question" open="open">
-<summary>Stratego</summary>
-<p><div style="text-align: center;">
-<img alt="stratego" src="../images/stratego.jpg" width="30%" />
-</div>
-<a href="../files/stratego.pdf"><strong>Règles du jeu</strong></a> (pdf)</p>
-</details><script type="text/javascript">
+</ul><script type="text/javascript">
 CONFIG.needMermaid = false;
 CONFIG.overlordClasses = [];
 globalThis.PAGE_IDES_CONFIG = '.\x1e}{\x1e0b0a.'

@@ -1,0 +1,2086 @@
+<!--
+pyodide-mkdocs-theme
+Copyleft GNU GPLv3 🄯 2024 Frédéric Zinelli
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.
+If not, see <https://www.gnu.org/licenses/>.
+-->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://0.0.0.0/uaa11_python/tp6_struct_complexes/tp6-2_tuples/">
+      
+      
+        <link rel="prev" href="../tp6-1_methodes/">
+      
+      
+        <link rel="next" href="../tp6-3_dico/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>2. Tuples - Technique de Transition Informatique</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+
+<script type="importmap">{"imports": {"functools": "../../../js-libs/functools.js", "jsLogger": "../../../js-libs/jsLogger.js", "process_and_gui": "../../../js-libs/process_and_gui.js", "0-generic-python-snippets-pyodide": "../../../js-per-pages/0-generic-python-snippets-pyodide.js", "1-error_logs-pyodide": "../../../js-per-pages/1-error_logs-pyodide.js", "1-packagesInstaller-install-pyodide": "../../../js-per-pages/1-packagesInstaller-install-pyodide.js", "1-runtimeManager-runtime-pyodide": "../../../js-per-pages/1-runtimeManager-runtime-pyodide.js", "2-0-runnersManager-runners": "../../../js-per-pages/2-0-runnersManager-runners.js", "2-pyodideSectionsRunner-runner-pyodide": "../../../js-per-pages/2-pyodideSectionsRunner-runner-pyodide.js", "3-btnRunner-py_btn": "../../../js-per-pages/3-btnRunner-py_btn.js", "3-terminalRunner-term": "../../../js-per-pages/3-terminalRunner-term.js", "4-0-idesManager-ide": "../../../js-per-pages/4-0-idesManager-ide.js", "4-ideLogistic-ide": "../../../js-per-pages/4-ideLogistic-ide.js", "4-ideRunner-ide": "../../../js-per-pages/4-ideRunner-ide.js", "5-ideTester-ides_test": "../../../js-per-pages/5-ideTester-ides_test.js", "qcms-qcm": "../../../js-per-pages/qcms-qcm.js", "start-pyodide": "../../../js-per-pages/start-pyodide.js", "overlord": "../../../js-scripts/overlord.js", "subscriptions": "../../../js-scripts/subscriptions.js"}}</script>
+
+
+
+      
+    
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.43.1/css/jquery.terminal.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.43.1/js/jquery.terminal.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.min.js" integrity="sha512-GQpIYSKNIPIC763JKTNALj+t18/nfLdzw5gITgFGa31aK/4NmjyPKsfqrjh7CuzpJaG3nqEleeVcWUhHad9Axg==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.min.js" integrity="sha512-iK7yTkCkv7MbFwTqRgHTbmIqoiiLq6BsyNjymnFyB5a7pEQwYThj9QIgqBy9+XPPwj7+hAEHyR2npOHL1bz4Qg==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="../../../js-libs/0-config.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script type="text/javascript">
+if(!window.CONFIG) window.CONFIG={}
+CONFIG.argsFigureDivId="figure1"
+CONFIG.exportZipWithNames=false
+CONFIG.exportZipPrefix=""
+CONFIG.baseUrl="../../.."
+CONFIG.buttonIconsDirectory="../../../assets\\images"
+CONFIG.editorFontFamily="monospace"
+CONFIG.editorFontSize=15
+CONFIG.inServe=false
+CONFIG.language="fr"
+CONFIG.pmtUrl="https://gitlab.com/frederic-zinelli/pyodide-mkdocs-theme"
+CONFIG.pythonLibs=[]
+CONFIG.siteUrl="http://0.0.0.0/"
+CONFIG.version="4.4.2"
+CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "comments": {"em": 17, "msg": "(D\u00e9s-)Active le code apr\u00e8s la ligne <code># Tests</code> (insensible \u00e0 la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)", "kbd": "Ctrl+I"}, "splitScreen": {"em": 23, "msg": "Entrer ou sortir du mode \"deux colonnes\"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)", "kbd": ""}, "splitModePlaceholder": {"msg": "\u00c9diteur dans l'autre colonne"}, "fullScreen": {"em": 10, "msg": "Entrer ou sortir du mode \"plein \u00e9cran\"<br>(<kbd>Esc</kbd>)", "kbd": "Esc"}, "feedback": {"em": 19, "msg": "Tronquer ou non le feedback dans les terminaux (sortie standard & stacktrace / relancer le code pour appliquer)", "kbd": ""}, "wrapTerm": {"em": 19, "msg": "Si activ\u00e9, le texte copi\u00e9 dans le terminal est joint sur une seule ligne avant d'\u00eatre copi\u00e9 dans le presse-papier", "kbd": ""}, "runScript": {"msg": "Script lanc\u00e9...", "format": "info"}, "installStart": {"msg": "Installation de paquets python. Ceci peut prendre un certain temps...", "format": "info"}, "installDone": {"msg": "Installations termin\u00e9es !", "format": "info"}, "refresh": {"msg": "Une version plus r\u00e9cente du code existe.\nVeuillez copier vos \u00e9ventuelles modifications puis r\u00e9initialiser l'IDE.", "format": "warning"}, "validation": {"msg": "Validation - ", "format": "info"}, "editorCode": {"msg": "\u00c9diteur", "format": "info"}, "publicTests": {"msg": "Tests publics", "format": "info"}, "secretTests": {"msg": "Tests secrets", "format": "info"}, "successMsg": {"msg": "OK", "format": "success"}, "successMsgNoTests": {"msg": "Termin\u00e9 sans erreur.", "format": "info"}, "unforgettable": {"msg": "N'oubliez pas de faire une validation !", "format": "warning"}, "successHead": {"msg": "Bravo !", "format": "success"}, "successHeadExtra": {"msg": "Vous avez r\u00e9ussi tous les tests !"}, "successTail": {"msg": "Pensez \u00e0 lire"}, "failHead": {"msg": "Dommage !", "format": "warning"}, "revealCorr": {"msg": "le corrig\u00e9"}, "revealJoin": {"msg": "et"}, "revealRem": {"msg": "les commentaires"}, "failTail": {"msg": "est maintenant disponible", "plural": "sont maintenant disponibles"}, "titleCorr": {"msg": "Solution"}, "titleRem": {"msg": "Remarques"}, "corr": {"msg": "\ud83d\udc0d Proposition de correction"}, "rem": {"msg": "Remarques"}, "pyBtn": {"em": 9, "msg": "Ex\u00e9cuter le code", "kbd": ""}, "play": {"em": 9, "msg": "Ex\u00e9cuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)", "kbd": "Ctrl+S"}, "check": {"em": 9, "msg": "Valider<br><kbd>Ctrl</kbd>+<kbd>Enter</kbd><br>(Clic droit pour l'historique)", "kbd": ""}, "download": {"em": 0, "msg": "T\u00e9l\u00e9charger", "kbd": ""}, "upload": {"em": 0, "msg": "T\u00e9l\u00e9verser", "kbd": ""}, "restart": {"em": 0, "msg": "R\u00e9initialiser l'\u00e9diteur", "kbd": ""}, "save": {"em": 0, "msg": "Sauvegarder dans le navigateur", "kbd": ""}, "zip": {"em": 14, "msg": "Archiver les codes des IDEs exportables de la page", "kbd": ""}, "corrBtn": {"em": 0, "msg": "Tester la correction (serve)", "kbd": ""}, "show": {"em": 0, "msg": "Afficher corr & REMs", "kbd": ""}, "attemptsLeft": {"msg": "\u00c9valuations restantes"}, "testsDone": {"msg": "Tests termin\u00e9s", "format": "info"}, "testIdes": {"em": 7, "msg": "Lance tous les tests...", "kbd": ""}, "testStop": {"em": 6, "msg": "Arr\u00eate les tests", "kbd": ""}, "test1Ide": {"em": 7, "msg": "Lance ce test", "kbd": ""}, "loadIde": {"em": 10, "msg": "Configure l'IDE avec ces donn\u00e9es", "kbd": ""}, "qcmTitle": {"msg": "Question", "plural": "Questions"}, "qcmMaskTip": {"em": 11, "msg": "Les r\u00e9ponses resteront cach\u00e9es...", "kbd": ""}, "qcmCheckTip": {"em": 11, "msg": "V\u00e9rifier les r\u00e9ponses", "kbd": ""}, "qcmRedoTip": {"em": 9, "msg": "Recommencer", "kbd": ""}, "tipTrash": {"em": 15, "msg": "Supprimer du navigateur les codes enregistr\u00e9s pour Technique de Transition Informatique", "kbd": ""}, "figureAdmoTitle": {"msg": "Votre figure"}, "figureText": {"msg": "Votre trac\u00e9 sera ici"}, "p5Start": {"em": 0, "msg": "D\u00e9marre l'animation", "kbd": ""}, "p5Stop": {"em": 0, "msg": "Arr\u00eate l'animation", "kbd": ""}, "p5Step": {"em": 0, "msg": "Avance d'une image", "kbd": ""}, "pickerFailure": {"msg": "Veuillez cliquer sur la page entre deux utilisations des raccourcis clavier ou utiliser un bouton, afin de pouvoir t\u00e9l\u00e9verser un fichier."}, "zipAskForNames": {"msg": "Veuillez pr\u00e9ciser votre/vos noms (cha\u00eene vide interdite) :"}}
+</script>
+<script src="../../../js-libs/0-legacy-subscriber.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="../../../js-libs/functools.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-libs/jsLogger.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-libs/mathjax-libs.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="../../../js-libs/process_and_gui.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<link href="../../../pyodide-css/0-generic.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+
+<link href="../../../pyodide-css/btns-header.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+
+<link href="../../../pyodide-css/history.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+
+<link href="../../../pyodide-css/hourglass.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+
+<link href="../../../pyodide-css/ide.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+
+<link href="../../../pyodide-css/qcm.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+
+<link href="../../../pyodide-css/terminal.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+
+<link href="../../../pyodide-css/testing.css" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<input type="checkbox" id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor">
+
+
+    
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="dark-blue" data-md-color-accent="dark-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#uaa11-tp6-2-les-tuples" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Technique de Transition Informatique" class="md-header__button md-logo" aria-label="Technique de Transition Informatique" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Technique de Transition Informatique
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Tuples
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="dark-blue" data-md-color-accent="dark-blue"  aria-label="Passer au mode nuit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode nuit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="dark-blue" data-md-color-accent="dark-blue"  aria-label="Passer au mode jour"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode jour" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Technique de Transition Informatique" class="md-nav__button md-logo" aria-label="Technique de Transition Informatique" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Technique de Transition Informatique
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Accueil en TT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa4_python_prj/python_prj/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UAA4 Projets Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UAA5 Python (4TT)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UAA5 Python (4TT)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa5_python/intro/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa5_python/tp1_intructions/tp1_instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP1 Suites d'instructions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa5_python/tp2_boucles/tp2_boucles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP2 Boucles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa5_python/tp2bis_fonctions/tp3_fonc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP2 Bis Fonctions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa5_python/tp3_var/tp3_var/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP3 Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa5_python/tp4_input/tp4_input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP4 Lecture d'entrées input
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa5_python/tp5_tests/tp5_tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP5 Tests et conditions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa5_python/tp6_str_avancees/tp6_str_avancees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP6 Structures avancées
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa5_python/tp7_booleens/tp7_booleens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP7 Conditions avancées (booléens)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa5_python/tp8_while/tp8_while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP8 Répétions conditionnées While
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa5_python/tp9_string/tp9_string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP9 Chaînes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa5_python/tp10_listes/tp10_listes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP10 Listes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa7_sql/bd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UAA7 SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa8_secu_linux5TT/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UAA8 Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UAA11 Python (5TT)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UAA11 Python (5TT)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp1_var/tp1_var/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP1 Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp2_fonctions/tp2_fonc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP2 Fonctions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp3_tests/tp3_tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP3 Tests
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TP4 Boucles
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            TP4 Boucles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp4_boucles/tp4_boucles_cond/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Boucles conditionnelles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp4_boucles/tp4_boucles_iter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Boucles itératives
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp4_boucles/tp4_boucles_mini_prj/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Boucles et mini projets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TP5 Chaînes et Listes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            TP5 Chaînes et Listes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp5_listes_string/tp5-1_string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Chaînes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp5_listes_string/tp5-2_listes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Listes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp5_listes_string/tp5-3_listes_string_mini_prj/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Mini projets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TP6 Structures complexes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            TP6 Structures complexes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp6-1_methodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Méthodes sur chaînes et listes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    2. Tuples
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Tuples
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-decouverte-des-tuples" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Découverte des tuples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-exercices" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Exercices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-bac-a-sable" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Bac à sable
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp6-3_dico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Dictionnaires
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TP7 Listes imbriquées
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            TP7 Listes imbriquées
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp7_listes_imbriquees/tp1_algo_boucles_imbriquees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Algorea - Boucles imbriquées
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp7_listes_imbriquees/tp2-3_fc_listes_imbriquees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2&3. Future coder - Listes imbriquées
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp7_listes_imbriquees/tp4_exo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Exercices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tp7_listes_imbriquees/tp5_jeu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Jeu de plateau
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../z_bac_sable/bac_sable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bac à sable
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UAA13-14 Python (6TT)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UAA13-14 Python (6TT)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa13-14_python/tp1_jeu/jeu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP1 Jeu de plateau
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa13-14_python/tp2_socket/socket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP2 Socket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TP3 Tkinter
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            TP3 Tkinter
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa13-14_python/tp3_tkinter/tkinter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Prise en main de Tkinter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa13-14_python/tp3_tkinter/tkinter_trieles/tkinter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Tuto Tkinter de P. Trieles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa13-14_python/tp4_recursivite/recursivite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP4 Récursivité
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa13-14_python/tp5_tris/tris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP5 Techniques de recherche et tris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa13-14_python/tp6_prepa_sup/prepa_sup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TP6 Préparation au supérieur
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uaa12_web/web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    U12 Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-decouverte-des-tuples" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Découverte des tuples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-exercices" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Exercices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-bac-a-sable" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Bac à sable
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+                  
+
+
+<h1 id="uaa11-tp6-2-les-tuples">UAA11 TP6-2 - Les tuples</h1>
+<p><strong>Notions abordées</strong> : 
+TBD</p>
+<p><strong>Mémo</strong></p>
+<ul>
+<li>
+<p>Prends connaissance du cours sur les <a href="../NSI%20Premi%C3%A8re%20Partie%201%20Chapitre%207%20Tuples.pdf"><strong>tuples</strong></a> puis réponds aux questions <strong>QCM</strong> du pdf.</p>
+</li>
+<li>
+<p>Tu peux tester ton code avec l'IDE du chapitre "TBD. Bac à sable"</p>
+</li>
+<li>
+<p>Complète ton fichier "<strong>memo</strong>" que tu complèteras avec ce que tu as appris au fur et à mesure de ton avancement dans le cours.</p>
+</li>
+</ul>
+<h2 id="1-decouverte-des-tuples">1. Découverte des tuples</h2>
+<details class="question">
+<summary>Découv 1 : Définir un tuple</summary>
+<ol>
+<li>
+<p>Complète dans le terminal la ligne ci-dessous de telle sorte que la variable <code>tpl</code> contienne le tuple <code>(1,2,4,8)</code>.
+    <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="o">...</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Complète la ligne ci-dessous de telle sorte que la variable <code>tpl</code> contienne un tuple de cinq éléments tous égaux à <span class="arithmatex">\(0\)</span>.
+    <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="o">...</span>
+</code></pre></div></p>
+</li>
+</ol>
+</details>
+<details class="question">
+<summary>Découv 2 : Afficher des éléments d'un tuple</summary>
+<ol>
+<li>
+<p>Qu'affiche la dernière ligne du code suivant ?
+    <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">tpl</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Complète le code ci-dessous pour qu'il affiche la troisième valeur du tuple <code>tpl</code> définie à la première ligne.
+    <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">tpl</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</code></pre></div></p>
+</li>
+</ol>
+</details>
+<details class="question">
+<summary>Découv 3 : Modifier des éléments d'un tuple</summary>
+<ol>
+<li>
+<p>Qu'affiche le code suivant ?
+    <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">tpl</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Qu'affiche à présent le code suivant ?
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">tpl</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">tpl</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Donne une explication de ces deux codes.</p>
+</li>
+<li>
+<p>Complète le code suivant de telle sorte que le tuple <code>tpl</code> défini à la première ligne devienne <code>(1,5,4,0,8)</code>.
+    <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="o">...</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Complète le code suivant de telle sorte que le tuple <code>tpl</code> définie à la première ligne devienne <code>(1,0,3,5,2)</code>.
+    <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="o">...</span>
+</code></pre></div></p>
+</li>
+</ol>
+</details>
+<details class="question">
+<summary>Découv 4 : Fonction <code>len</code></summary>
+<p>Qu'affiche la dernière ligne du code suivant ?
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
+</code></pre></div></p>
+</details>
+<div style="--n-buttons:2" class="term_wrapper"><div style="line-height:24px;--n-lines:10;" id="term_only_bc33ea4e26e5e1af1408321416956113a4658763" class="py_mk_wrapper term_solo py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard & stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div>
+
+<details class="question">
+<summary>Découv 5 : 1er et dernier éléments</summary>
+<p>Complète la fonction ci-dessous de façon à ce qu'elle renvoie le premier et le dernier élément du tuple <code>tlp</code> passé en paramètre. On fera deux tests pour vérifier que la donnée contenue dans <code>tpl</code> est bien un tuple et que celui-ci est non vide.
+Si ce n'est pas le cas la fonction renverra <code>(None, None)</code>.</p>
+<p><div id="global_editor_ad8379af8f82d650ed09612b0b00d11683c412bc" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_ad8379af8f82d650ed09612b0b00d11683c412bc"></div><span id="comment_editor_ad8379af8f82d650ed09612b0b00d11683c412bc" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_ad8379af8f82d650ed09612b0b00d11683c412bc" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard &amp; stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="check" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-check-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Valider<br><kbd>Ctrl</kbd>+<kbd>Enter</kbd><br>(Clic droit pour l'historique)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"><span class="compteur_txt">Évaluations restantes : </span><span id="compteur_editor_ad8379af8f82d650ed09612b0b00d11683c412bc">5</span>/<span id="compteur_editor_ad8379af8f82d650ed09612b0b00d11683c412bc-low">5</span></div></div></div></div></p>
+<div markdown="1" id="solution_editor_ad8379af8f82d650ed09612b0b00d11683c412bc"      class="py_mk_hidden" data-search-exclude >
+.128013ducvatgPfr.pl1 nSmyos=heb2i/050b0y0g0f0B0n0v0p0d0n0f0v0v0w010g0B0m010406050v0c0s0s0f0k0t040r0u0n0c0T0u0q050C0!0$0(0*0Y0m04050}0?100C0}0Y0b0B0e0L0N0P0R0x0B0h0x0n1e0x0g0W050G0z0n0y190O0Q011d1f1h1f0g1n1p1l0g0k0~0g0x0L0-0v0m0f0q0R0A011r1b010j0I0y0q0f0s0y1l1K1M1R1t1U1p1X1Z0W0a0p0i0k0u0m0u0v0B0:0q0p0E1I0k0k0y0d1{0?1$0q0~0C1G281D1F1E1m0b1(0R1h0q1W1^1l16180M1s2i0B2k0q0u2o1l0m210~26282C0Z1L1|2q1S2v0k0%0n0W0o252G282z0y282o2b0b1F2g2I1t0d2w1!0~2W0 2A2F1M2D2R052%0E2B2G2h010u0W0l2~2Q2/0Y0C2?2U112-0C2+292Y0?2c3c0f1o3538170X0?0E0G0I0v04.
+</div>
+</details>
+<details class="question">
+<summary>Découv 5 : Manipulation de tuples: somme, minimum et maximum</summary>
+<ol>
+<li>
+<p>Qu'affiche la dernière ligne du code suivant ?
+    <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Qu'affiche la dernière ligne du code suivant ?
+    <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Qu'affiche la dernière ligne du code suivant ?
+    <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
+</code></pre></div>
+<div style="--n-buttons:2" class="term_wrapper"><div style="line-height:24px;--n-lines:10;" id="term_only_0a57cb53ba59c46fc4b692527a38a87c78d84028" class="py_mk_wrapper term_solo py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard &amp; stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></p>
+</li>
+</ol>
+</details>
+<details class="question">
+<summary>Découv 6 : Tuple et fonction</summary>
+<p>Exécute le code suivant :</p>
+<p><div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">périmètre_aire_carré</span><span class="p">(</span><span class="n">cote</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">cote</span><span class="p">,</span> <span class="n">cote</span><span class="o">**</span><span class="mi">2</span>
+</code></pre></div>
+<div id="global_editor_dea419d5efd7075c98bfbda40727ac87376bd58c" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_dea419d5efd7075c98bfbda40727ac87376bd58c"></div><span id="comment_editor_dea419d5efd7075c98bfbda40727ac87376bd58c" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_dea419d5efd7075c98bfbda40727ac87376bd58c" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard &amp; stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="check" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-check-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Valider<br><kbd>Ctrl</kbd>+<kbd>Enter</kbd><br>(Clic droit pour l'historique)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"><span class="compteur_txt">Évaluations restantes : </span><span id="compteur_editor_dea419d5efd7075c98bfbda40727ac87376bd58c">5</span>/<span id="compteur_editor_dea419d5efd7075c98bfbda40727ac87376bd58c-low">5</span></div></div></div></div></p>
+<div markdown="1" id="solution_editor_dea419d5efd7075c98bfbda40727ac87376bd58c"      class="py_mk_hidden" data-search-exclude >
+.128013ducvatgPfr.pl1 nSmyos=heb2i/050b0y0g0f0B0n0v0p0d0n0f0v0v0w010g0B0m010406050v0c0s0s0f0k0t040r0u0n0c0T0u0q050C0!0$0(0*0Y0m04050}0?100C0}0Y0b0B0e0L0N0P0R0x0B0h0x0n1e0x0g0W050G0z0n0y190O0Q011d1f1h1f0g1n1p1l0g0k0~0g0x0L0-0v0m0f0q0R0A011r1b010j0I0y0q0f0s0y1l1K1M1R1t1U1p1X1Z0W0a0p0i0k0u0m0u0v0B0:0q0p0E1I0k0k0y0d1{0?1$0q0~0C1G281D1F1E1m0b1(0R1h0q1W1^1l16180M1s2i0B2k0q0u2o1l0m210~26282C0Z1L1|2q1S2v0k0%0n0W0o252G282z0y282o2b0b1F2g2I1t0d2w1!0~2W0 2A2F1M2D2R052%0E2B2G2h010u0W0l2~2Q2/0Y0C2?2U112-0C2+292Y0?2c3c0f1o3538170X0?0E0G0I0v04.
+</div>
+<p>Détermine ce que renvoie chacune des instructions suivantes :</p>
+<p><div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">mystere1</span> <span class="o">=</span> <span class="n">périmètre_aire_carré</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">mystere1</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">mystere21</span><span class="p">,</span> <span class="n">mystere22</span> <span class="o">=</span> <span class="n">périmètre_aire_carré</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">mystere21</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">mystere31</span><span class="p">,</span> <span class="n">mystere32</span> <span class="o">=</span> <span class="n">périmètre_aire_carré</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">mystere32</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">mystere4</span> <span class="o">=</span> <span class="n">périmètre_aire_carré</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">mystere4</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></p>
+</details>
+<h2 id="2-exercices">2. Exercices</h2>
+<details class="question">
+<summary>Exo1 : Initialisation d'un tuple</summary>
+<ol>
+<li>La fonction ci-dessous prend en paramètre un entier naturel non nul <code>n</code> et renvoie un tuple de <code>n</code> éléments tous égaux à <code>0</code>.</li>
+</ol>
+<p>Complète cette fonction.</p>
+<p><div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">init_tuple_0</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="o">...</span>  <span class="c1"># test d&#39;assertion sur n</span>
+        <span class="o">...</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
+<div id="global_editor_fc0105b60d0d6df32f2eb1e6d729c550941b1cc4" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_fc0105b60d0d6df32f2eb1e6d729c550941b1cc4"></div><span id="comment_editor_fc0105b60d0d6df32f2eb1e6d729c550941b1cc4" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_fc0105b60d0d6df32f2eb1e6d729c550941b1cc4" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard &amp; stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="check" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-check-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Valider<br><kbd>Ctrl</kbd>+<kbd>Enter</kbd><br>(Clic droit pour l'historique)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"><span class="compteur_txt">Évaluations restantes : </span><span id="compteur_editor_fc0105b60d0d6df32f2eb1e6d729c550941b1cc4">5</span>/<span id="compteur_editor_fc0105b60d0d6df32f2eb1e6d729c550941b1cc4-low">5</span></div></div></div></div></p>
+<div markdown="1" id="solution_editor_fc0105b60d0d6df32f2eb1e6d729c550941b1cc4"      class="py_mk_hidden" data-search-exclude >
+.128013ducvatgPfr.pl1 nSmyos=heb2i/050b0y0g0f0B0n0v0p0d0n0f0v0v0w010g0B0m010406050v0c0s0s0f0k0t040r0u0n0c0T0u0q050C0!0$0(0*0Y0m04050}0?100C0}0Y0b0B0e0L0N0P0R0x0B0h0x0n1e0x0g0W050G0z0n0y190O0Q011d1f1h1f0g1n1p1l0g0k0~0g0x0L0-0v0m0f0q0R0A011r1b010j0I0y0q0f0s0y1l1K1M1R1t1U1p1X1Z0W0a0p0i0k0u0m0u0v0B0:0q0p0E1I0k0k0y0d1{0?1$0q0~0C1G281D1F1E1m0b1(0R1h0q1W1^1l16180M1s2i0B2k0q0u2o1l0m210~26282C0Z1L1|2q1S2v0k0%0n0W0o252G282z0y282o2b0b1F2g2I1t0d2w1!0~2W0 2A2F1M2D2R052%0E2B2G2h010u0W0l2~2Q2/0Y0C2?2U112-0C2+292Y0?2c3c0f1o3538170X0?0E0G0I0v04.
+</div>
+<ol>
+<li>En t'aidant de la fonction écrite à la question 1, écris une fonction <code>init_tuple_valeur</code> prenant en paramètre un entier naturel <code>n</code> et une valeur <code>val</code>, et renvoyant un tuple de <code>n</code> éléments tous égaux à <code>val</code>.</li>
+</ol>
+<p><div id="global_editor_68c8f94c018a9bff2803e7172cd23ec83e7d8340" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_68c8f94c018a9bff2803e7172cd23ec83e7d8340"></div><span id="comment_editor_68c8f94c018a9bff2803e7172cd23ec83e7d8340" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_68c8f94c018a9bff2803e7172cd23ec83e7d8340" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard &amp; stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="check" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-check-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Valider<br><kbd>Ctrl</kbd>+<kbd>Enter</kbd><br>(Clic droit pour l'historique)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"><span class="compteur_txt">Évaluations restantes : </span><span id="compteur_editor_68c8f94c018a9bff2803e7172cd23ec83e7d8340">5</span>/<span id="compteur_editor_68c8f94c018a9bff2803e7172cd23ec83e7d8340-low">5</span></div></div></div></div></p>
+<div markdown="1" id="solution_editor_68c8f94c018a9bff2803e7172cd23ec83e7d8340"      class="py_mk_hidden" data-search-exclude >
+.128013ducvatgPfr.pl1 nSmyos=heb2i/050b0y0g0f0B0n0v0p0d0n0f0v0v0w010g0B0m010406050v0c0s0s0f0k0t040r0u0n0c0T0u0q050C0!0$0(0*0Y0m04050}0?100C0}0Y0b0B0e0L0N0P0R0x0B0h0x0n1e0x0g0W050G0z0n0y190O0Q011d1f1h1f0g1n1p1l0g0k0~0g0x0L0-0v0m0f0q0R0A011r1b010j0I0y0q0f0s0y1l1K1M1R1t1U1p1X1Z0W0a0p0i0k0u0m0u0v0B0:0q0p0E1I0k0k0y0d1{0?1$0q0~0C1G281D1F1E1m0b1(0R1h0q1W1^1l16180M1s2i0B2k0q0u2o1l0m210~26282C0Z1L1|2q1S2v0k0%0n0W0o252G282z0y282o2b0b1F2g2I1t0d2w1!0~2W0 2A2F1M2D2R052%0E2B2G2h010u0W0l2~2Q2/0Y0C2?2U112-0C2+292Y0?2c3c0f1o3538170X0?0E0G0I0v04.
+</div>
+</details>
+<h2 id="3-bac-a-sable">3. Bac à sable</h2>
+<ul>
+<li>
+<p><a href="https://pythontutor.com/visualize.html#mode=edit">Python Tutor en ligne</a>
+(pour le debug pas à pas)</p>
+</li>
+<li>
+<p>IDE dans le navigateur:</p>
+</li>
+</ul>
+<div id="global_editor_7b52009b64fd0a2a49e6d8a939753077792b0554" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_7b52009b64fd0a2a49e6d8a939753077792b0554"></div><span id="comment_editor_7b52009b64fd0a2a49e6d8a939753077792b0554" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_7b52009b64fd0a2a49e6d8a939753077792b0554" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard & stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"></div></div></div></div>
+
+<div class="py_mk_hidden" id="solution_editor_7b52009b64fd0a2a49e6d8a939753077792b0554"></div>
+<ul>
+<li><a href="https://console.basthon.fr/">Baston IDE en ligne</a>   </li>
+</ul><script type="text/javascript">
+CONFIG.needMermaid = false;
+CONFIG.overlordClasses = ["Terminal", "Ide", "GlobalRunnersManager"];
+globalThis.PAGE_IDES_CONFIG = '.\x1ek{8*xcNa-tgf6.Ul1An,4myow:V=bi3udv[Frqp5C )7S_9z}0](sEh!eL2I\x1e0b010j0(0K0v0T0x0s0p0w0T0C0f0E0E0(0h0u0(0*0m0(0N0(0q0h0l0q0u0X0c0E0*1b0q0m0U0N0m0q0q0E100m0N0c0R0m0E010z0P0,0M0_0s0h0v0(1x0P0-0M0m0i0*0T0j0F0M0p0(0!0n1B010t1I0(0s0H0T0f0?0.0s0j1H011X1Z1#1O0/0;1(1+1!1,1y1.1Y010F0!0/1%1)1`1-1/011(0K0K231_1+261~0M0F0C0p0D0f1=0!0j0!2f1I210f0K0(0j2n2p2r010M0x2o1=0:2c1*1{1I272C2E1^2I2A0(0e0f0p0F0G0(0G1H0I0Y1~2R2T2V2X0T1F0j0$0x0G2q1y2!2$2S2U2W0G0T0a0y2;0P2?1I1B2-0?0T2k0C2 0I2B0_372q2#320w0M0D0T0y0$0D0.1H0s0F0p0p1~2v2m2k0v3n1H0i0q1~3l3n0(360D2o2Z3f010h0F0j0x0T0K0F0s1H0l0h0p213u3T0T0k0K0x1Q3A3C1I0x0K2W2b0D0s3$3(3*1y3B1~210L3R3T2A0M2v0l0D3s2F0v2A2o0G3)2x0f3O0=0l0l1H0*0X0X1~4e2x0l0(2X0C0h0f0a1H0j3S0(0W2$0G3n3.0T0h0G1e0R0U190c0l0c0*0G1r0X2X0X0U1m0*0C0X4Z0X0G1n0m1e0f0u0q4Y0f1H1A1C1E1G1|0j1K1M1O1Q1S0!0i2W1(0F0H0N0T420(3y223:0s0D0/1V0w271!1$2O251|2T0h0!0!0P0S0j4u0a0z090s0P5z0P09015C5C0P0Z0+1_0K3W0f0(5B0F4l0(0X0P0G095P4T0U2u0D2v5T0h0s5q0p005V5Q0U0s0?0f5,5X0Q5B5D5_5x5A5T0(0l0P0T0T3=3n610Z210p0l0Q1y670l0n612o0a0B2!5{5A2W5 2h0!0$660(681Y0H6a0P6c6e0T6g0n0h0M0M1!0G0Z6v6k5z6m0P2C0M6r686w2v1P0K5y6y6f0j0a1V0x6P0Q6K5}5 3I0T580M0j0w6Q691y6T0F6V0P5/0j6x6s6d6Y4w2$1;0.2G5k2e1|272022772J016M57592b5b5d0K0Z4_0p6a6)5o210K6}0n7w5B5y5A7s0/7v7w6)6^6`7w0n1Y7I27292b7d1-7L2g2i2k2m0.2o2 3M5p7C6N2v7i0T7k0/0Z003C0*0t0E005@0B0B5G0g0?0(1Y7`0s0(6(1D7!7u7$587l7)0/5c7+0Z0Q7?7^0Z7~7|0P8h817B847h877*7m0Z3C8d0P7@5G3C0q8l836}8o5a897l0Z0Z0i0N0t3C0u0t8K0R8u8w8I8P8A7t8C7%8p8F8b4-0t0*8N8J8L7:0t8N000h7=8e8x7/8/7=272t6T2y7Y6M7W2p8c5w7z5z0M7s5x5x900!8c5|9d038j5N965q3)2j7l5T8/6E6s0/0P0p0h0P0l5:0j0D0?5}0P9a7I0P0%0P0e812W0p9C1T2p9d5z9f0S0D0P0H3)5q7 9U3)1S0V6N5o9s0h3I7t9B4y4u1T7R322D2x751@24782K2g9?2H5l1I9f0)9u2t9y9A2M6}2O5d1+5T0F0P1(2W9B5C7 0j3P0w0h0k0(5C1Y5=5R0P6D1R0D0L0F9r0!0w2oat0U0v0h9yaz581`5x9f6D0Kat0c5qaK9s5Nag5N2waV5q9aavab6}aF0jaF9)0s5;5W0(0U1UaN0P0OaW9`ae9N0P2RaF4oa,0vat4?6x9T3TaY2a0(6_av5O5-a+a:0UaV0HaF9haQbha/5-2W0v1F1+1Y0S0r0o0Jb6a@5Malb92vbc420x0Ha(9B9t6~0fa65y0#0g0A0n5h2^2)2Y2=3L2%2_2*2,2.2:3K2@2(2`2|2~b+3g343?3d2Z3b3H38013L1B3i3k3m3o1y3q3s3u0(3w0D3y2J3{1I3E0.3H3JbZ1~3N3P3 3U1y3W3Y8i013S3?3%3)0M3+1~3.3:62cv3^cy3`3,013}cn413(441S2AaI0.0v6/0!365~2J8K1Icl3Q0p0x0k4G8B4x4z4n3.2b7%cVaH0!4w1ycI0$5o1%0$c80a0`0jco9Cc-1Ic{cV7Nd1d3cq3Zd6c|2v0H0 0pda3V3Xdd01d7233T75c,aA1~6,1!2u3h0.bYd4du1I6,dh7udlcr1~aH0e622W3H7 2 0E4m1I3y3?0DdO2kdQ1H0E1~512v5o3GcR6.2p0=3?7b7O2/3G3W456_4@1Z4D3P0K272W4u9y0HaI3G4a4c0T9w2b8{2w2 4ydDcJ2.0yd/0^c*8W9z3?0/3(0KcVea6Ac86T2 dccs0!0K2md70$1-0E0q0N0G0l0{0X0u0c1v1i0u0}0h120c5M0C0E0u0m0l4W0f4!0m0C0m4,0N4Q4+e*0q0C164O3W4h150c190q0ceW8`0j2{0a0(5g791~0j0y3Q1(3YdIdn2R2CdHcpdmeAf2e84o4g4i1y4kdT284f4q4s5udt4Af81?ek0_0X0h0N0R0fe?0E4t0N5Ye!0l4+e+0U0*e.0R0h0Ee|1t0f0R0c4I1c0*0c4:b`1D1F1-4_1L1N1P1R9:1W735j9`7e5h74fC7Pf71Id;9 9{1}1Id9g29|327T2l8}49ew2wggg32B9~9^g6f~9}2Nf}2QbW2`b;01b#bX2+2wb)39b!gv2*2}gE2g0wb?b{39b`b^b~3h3jcfd{c53t1I3v3Hcbczcec23G2kci303Lc#cLfjdJgY3#cw3_0Pcd01cB223=3@cxg$cJ0(3~cucM5~45dj9^49fm4ffo0x4h4j4l4nfv4r0G4t4vfz4Bd|4E7j0 4,0U0Ge@0G0R0X0R0N0f0U0c0CeL0G10hB0*fW0f1t0E1u0Chxf01y4;0Tf.d{1Jf=4|f^4 513)0H0m1O1Re95:5ff f|2d7e5n5p5r5t4v935|5E5_5G5I755L5Nat5S5Ubo0K5!5NhJ5(9s5+bh5/a.aF5@i05E946*60cD640T6=6w6X6A6Z6i0Y6)7g206q6c6uiw6 6z6Baw6G6I815|7g6$iv6@2w6_6WiJ716#6%iC5~0PdwcT6:iT0P7G5y6|6~68iK6Zh=47gp2Ag5gb7fi%0MaFibb3a:0c4yd+ic1%0h2aaF0Z1(0.7qip5|i.0P0u0dje8ijn0d0d0*7Mc/i`1|9;2Bge7V9N7Yjxec9@jB1-8 jB926)9i0!981_7X9c9P9Q9g9%9jge9r0G9o6F1S0K9)9v9xeo9-jB9E9G9I5x9K9M7XjS9R9T9V206{5Nj{9#jV9)9+jY5N9.5M1U7w2Lgng1gtgla8jva10Pa3bNbP6N9?af1)bK0GaeaXai01akamaoaq1/i7av6E2kaKj%aCaEbhaHaJaAbta+0saO42aRaTaAaVkoahaZ4~j?9O9*1`be5Xbg5-a-bp5Xa?kPa^a`2da|2oa~0eb03Ob2b41Fb60Pb8a~babc9ua*a,1Sbkbhbmb0aFbrkNbvbxbz0!0DbB2w0.l3bFj%bHbJk%ahbMa5j+bRbTbVb-2Xgxgzb.b(2/gJ1ZgGf3b:cjb=2.b@0Db|2=gPlS3egKc0gU3p3rgXctc8g!3zcH3Dg(ch2J313M3O3Qh5g:dncug g^g`g|3;cEh0l,2sh3g/gc2BcN45hZ27d,i*cV1S0lcYckl?36c(em7Cfzc.2a3R58c=5oc^0Pc`c|0fc~4vdk1yefcsdpd90Cd2femGdf0(dh3XmD9vfk1~mH3)5JmpdEcVdx0KdzlDmEd501dFmol_csdLdNg)3=1Td#ftdVm;dPm@1yd$1Id(0 214GbDmed/0Ti|d?e99*2U2v1-2Xhse00 bO0De4cge7fv4FjEeem*6p0xej0?el8mbP6-2a3.etnqgi2zm.3|eC0TeE1-0X0*0hnQ0N0h0m0*0U0E0G4Y0c0q0U0l4!0NhS0E140*0f0*fL0Rn;e 5Mn!fQ0u4q0l0E0l1shM0Xn|fN0c4T4PeSf1f3f52Af9fb0xfdnIlKfh2Jez3|hc4d4fhffq0Pfshj4phlhnmwmFhqgyd}4FfQ0X0q0Xn)0m4$4$0meK1f0l0*0(0C0q0(oL0RnV0f0N0N4V4,oR0f4+f,1BhX4?f:4`f?4}1T0i2R0x0qis9@o:h;f{kg289th`5s5uh~5Ain01i25Ji5k(aui95-5Z5#ie5)ih5-ijk-a;im5`5Dip6M61632xiu6ciIi=71iAi$6niE6=iH6biYiy6!iM0s6H6Jpri iSpxiU6UiXpzpJi!8cpCi(m!i*6;pSi-iV6`i:ix6gi^goi}7a7to~6Mpuh$1S0T0X0Z0sjg5|nz0P9E0P9f909nnzj+0!bc0s6)7I7Fp+5yf@1S0Z7I0Qjtmri}jx2h9ljA7X1-q3p`qk3Gp~8z8v8f4m8V7#qzo:p}0Z0E8=0Z4mqQqH84qJf^qL8QqE5GqQ0tq!q$qo3|nGgkn0i%9ajKipjMjOq.5@jSq6jU9i0P9k2kjYj!9qj%bM9wa.klah9D7xj/9J6sk!5q9Pj_9Zj|9Yj 0(9$q{9tk3j%r70K9/k8bUgrjF76kdm7kfi}a2a4c8kla8ko1+kqksd?kukw0xanaparpb5SawkEaAkGaDk*5XkKaykMaMk:aPkS0PaU1SkWaY6}kZa$k$acl7bhk,aFk/9fa_rI1*k@6}a bok|r{j35Qb5lkl19Yeqbbj%l6bhr!a;bjbl7$ldbhlf1`lhbybAk:bClosfbG3(ltaclvrEnk9AlzrvlKlCdBl;lFb%gClIlElLb/lJ3bgMb^lUo*gQlYgTg(l#c6gYl)3xl+g_cIgUl/gxg.l^mSg;ctg?cFh1l cDl|cGs/q)h440kem9cPglmdcUcWmh1HcZl=cmc%c)nzmY28juc;2+mv1Hmyd8mBd0mJd3mFmUmzjutxmLtAcVdgdimRokded8mWdsm)egdwa.m$6/m(dCcsm,fis_dnm:dXm=d!m~m_g~t%m|dRd%gid*n4cStc35n9dOd^ndhZngd~nie2nle5iy4bnpebnGnsegnunw0@0_qa35eqnDh/u82uedtE2snKnM1|0u0N1fn^0fnT0Gf#1j0ChGn|0U0CuFoP4$0R1ahOeWf#0C0Re!eI4On}4TnTn,fUuG0hfT0X5Mo82|oagloc23oft!csfg3.ojmT2som1%oohgfrhig9hkfxhotPfAhrd~0T4)hOe$0ue(e~u!hHoOo40~0R0qoV0fnY0~hOvi4IeZ0Xo)4=f/4^o.p{o;o?o^qUp|e41S6_o|1:h?2P5mp05qp2h}6)p6p8i49/rT5Tb0ibpg5%piaFplil5^inpP5 pt5cpvi,p.iz6jv,6NpEiG9Upy70pXpLpNiP6lpQ6Pp)jjv=6!6OpZv^i)6/p(6 6Sqi6{0x6}w8p:kch@i{p@i}p_v/vz0TvFsgqm7wq15Ajxgarz01qsjzq+7Z8Wi(wuqAww3Xwy3C0NqO8KqS6}vD3Gwx6_qMq#qOq%5xqywNqKw!7m0R0t3BqO3{w@3Cw^w;w_8z8`q*9ajHq-jJwB9597qejP91q@j^q`9(q}9mjZiMj$j(r4sG5yr7j-r99Hrb9La$rf5rj`9Wj}rhk0rn9*839-rsk7qskbrywpke9~rCkisFrGknaalurLahahajlnrPkyrSkBrVr%aBrZaFr$aKkNa@r+j4kT5Nr/ktkY1Trda%k%r`k+9tikbhr~k;s11!s3k_k{skbis9uVk scl2szshpb0Uyasmlbsobole58lg5rlisv9fsxbEsg7$bIkqx?xPlybSsJgylLsSsLgB34b*lOyIyLgIgx33lQgNb_s!lWb}s$c13Fs)l%gZs-ccs:l.g*l:g-mks^tKs{m1l}cIs g~g@t2g`cKs^g8m8hfmacQn5tcmgmic!mktjmntZtzg9tomttqc@tstFc}c mRzhdotBmrtDogzttGmOtIzwu/zo52mXv3dvm!tSm%dBzstYu?s`t$dYm?dRt+dWzSt)0Pm i~umt=tbd.t_wrnat|d`nfoBd t:u2nme6u_eunrtmucfDzfnAuiesukevumnHzDupeD5oeF5mhB0l0G0Un$4%4%fXe|0~eSa;0cfVe+0C4r0mf#uxu$4)v8n(4Y5Y0U0 1v4K0ufW4K5~u(f4f6m7u,fceyu@yIoiuocJu_heu|oru~fuouv1ox4zozt 4F0Re?fsuFe,AefFnP0uADoLe|nW0UhCdSn;4K4YoG0N0uvuo+vw1If;4{qA1Uf`vJo~wnxJvLm7n9xKm7wEBnz3qt7UwJw~A5Burwi_p=ByBAsKb$sMgFyLlHyOg,b,BEsUyTgLyVsY30lVb|gRlZs(c4l$c7c9g#m301s;y/s?y=t6A7y^t1s~3/g}y_y cIz1B-Brt8mbckz8d.za1-5I44v/5gmjtimmtlzHzimrtpc?mwftmHtvtJASmVzvmKzxdptHmQzCy@mVdr0/AVtRdytUzMm*zOAVzRt(m}zZzVm{dZCJz!n1z%C0cVz*7cz,ncz.1|A,z;q,z?u4no4pnFA5uaeAeiz~ugepnCA2z`u9AVeBA96p1-e%A_fY1vAf0ufX15oS0m0hhSA{0G4%14Agn%1l1i0CoP4)D90(nX1e4t1i1j1shS4T13ALu*AOfau-ARs`u;tZy@C)u`2xophhftfofwhmfyv30W0W.'
+</script><script src="../../../js-per-pages/0-generic-python-snippets-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-error_logs-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-packagesInstaller-install-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-runtimeManager-runtime-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/2-0-runnersManager-runners.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/2-pyodideSectionsRunner-runner-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/3-terminalRunner-term.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-0-idesManager-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-ideLogistic-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-ideRunner-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/start-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  <div class="md-copyright_pyodide">
+    
+      <div class="md-copyright__highlight">
+        <p xmlns:cc="http://creativecommons.org/ns#"
+xmlns:dct="http://purl.org/dc/terms/">Partage ou adaptation possible selon les conditions de la
+licence <a
+href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+target="_blank" rel="license noopener noreferrer"
+style="display:inline-block;"> CC BY-NC-SA 4.0 <img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>
+
+      </div>
+    
+    
+  </div>
+  
+    <div class="md-copyright_pyodide">
+      <div>
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      <div id="pyodide-footer">
+        <a href="https://gitlab.com/frederic-zinelli/pyodide-mkdocs-theme" target="_blank" rel="noopener">
+          Pyodide MkDocs Theme
+        </a> v.4.4.2
+      </div>
+    </div>
+  
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+
+
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+<script src="../../../js-scripts/overlord.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-scripts/subscriptions.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+
+
+  </body>
+</html>
