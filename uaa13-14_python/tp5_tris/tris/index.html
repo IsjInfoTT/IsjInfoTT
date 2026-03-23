@@ -70,6 +70,14 @@ If not, see <https://www.gnu.org/licenses/>.
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.43.1/js/jquery.terminal.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.min.js" integrity="sha512-GQpIYSKNIPIC763JKTNALj+t18/nfLdzw5gITgFGa31aK/4NmjyPKsfqrjh7CuzpJaG3nqEleeVcWUhHad9Axg==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.min.js" integrity="sha512-iK7yTkCkv7MbFwTqRgHTbmIqoiiLq6BsyNjymnFyB5a7pEQwYThj9QIgqBy9+XPPwj7+hAEHyR2npOHL1bz4Qg==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
 <script src="../../../js-libs/0-config.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -1675,21 +1683,227 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 
 
 <h1 id="uaa13-14-tp5-techniques-de-recherche-et-de-tri">UAA13-14 TP5 Techniques de recherche et de tri</h1>
+<p><strong>Notions abordées</strong> : </p>
 <ul>
 <li>
-<p>Consignes <a href="../tri.pdf"><strong>découverte de méthodes de tri simples</strong></a></p>
+<p>Recherche d'un élément dans une liste triée</p>
 </li>
 <li>
-<p>Les consignes de ce chapitre proviennent du site d'<a href="https://cours-nsi.forge.apps.education.fr/terminale/0.Intro/preambule/"><strong>Apprentissage de python au lycée</strong></a> en classe de Termianle NSI en France.</p>
+<p>Techniques de tris: </p>
+<ul>
+<li>tri par insertion,</li>
+<li>tri sélection, </li>
+<li>tri à bulle</li>
+</ul>
+</li>
+</ul>
+<h1 id="technique-de-recherche-divisiser-pour-regner">Technique de recherche Divisiser pour régner</h1>
+<p>Les algorithmes de dichotomie présentés ci-dessous ont tous en commun de diviser par deux la taille la taille des données de travail à chaque étape. Cette méthode de résolution d'un problème est connue sous le nom de <strong>Diviser pour régner</strong>.</p>
+<p>Les résolutions proposées sont séquentielles mais si tu as déjà vu la <strong>récursivité</strong>, ce chapitre en est une très bonne application.</p>
+<details class="question">
+<summary>Decouv 1 : Nombre mystère</summary>
+<p>Reprends l'exercice <a href="../../../uaa11_python/tp4_boucles/tp4_boucles_cond#exo3_nb_mystere">UAA11 TP4 Boucles - Exo 3 : Nombre mystère</a>.</p>
+<p>Ecris une fonction <strong><code>nb_mystere_ia</code></strong> qui répond à l'énoncé inverse: l'utilisateur choisit un nombre et l'ordinateur doit trouver la réponse en 7 réponses maximum.</p>
+</details>
+<details class="question">
+<summary>Decouv 2: Recherche d'un mot dans un dictionnaire</summary>
+<p>Ecris une fonction <code>recherche_ds_dico(mot, dictionnaire)</code> qui recherche la définition d'un <code>mot</code> dans le <code>dictionnaire</code> fournis avec ce <a href="../files/liste_mots.zip">fichier</a>.</p>
+<p>Décompresse-le et importe-le dans ton programme python.</p>
+<p>Le dictionnaire est représenté sous la forme d’une listée triée par ordre alphabétique. Pour trouver la définition d’un mot dans le dictionnaire, on utilise l’algorithme de <strong>dichotomie</strong> suivant:</p>
+<ul>
+<li>
+<p>On regarde le mot situé au milieu du dictionnaire.
+    En fonction de sa position par rapport au mot cherché, on sait dans quelle moitié continuer la recherche : s’il est plus loin dans la liste alphabétique, il faut chercher dans la première moitié, sinon dans la deuxième,</p>
 </li>
 <li>
-<p>Télécharge les <a href="../NSI%20Terminale%20Partie%202%20Chapitre%202%20Diviser%20pour%20r%C3%A9gner.ipynb"><strong>Consignes</strong></a> et ouvre-les avec <strong>Visual Studio Code</strong> (faire aupravant le chapitre sur la récursivité)..</p>
+<p>On a à nouveau un demi-dictionnaire dans lequel chercher : on peut encore appliquer la même méthode.</p>
 </li>
-</ul><script type="text/javascript">
+</ul>
+</details>
+<details class="question">
+<summary>Decouv 3: Exponentielle rapide</summary>
+<div class="admonition warning">
+<p class="admonition-title">Algorithme</p>
+<p><span class="arithmatex">\(x^n\)</span> vaut x multiplié par lui-même n fois:
+<span class="arithmatex">\(x^n = x*x* ... *x\)</span> , avec n termes x et <span class="arithmatex">\(x^0\)</span> vaut 1</p>
+<p>Par exemple pour <span class="arithmatex">\(x^8 = x*x*x*x*x*x*x*x\)</span>, on demande à l’ordinateur de le calculer, il va effectuer <strong>7</strong> multiplications. </p>
+<p>Plus généralement, on peut calculer <span class="arithmatex">\(x^n\)</span> en effectuant n-1 multiplications.</p>
+<p>Reprends l'exercice **<a href="../../../uaa11_python/tp4_boucles/tp4_boucles_cond#exo13_multiplication">UAA11 TP4 Boucles - Exo 13 : Multiplications par additions successives**</a> pour avoir une première méthode simple de calcul de puissance.</p>
+<p>Cependant, on peut faire mieux, en remarquant que <span class="arithmatex">\(x^8 = x^4 * x^4\)</span> : si l’on calcule <span class="arithmatex">\(x^4\)</span> (avec la
+méthode simple, <span class="arithmatex">\(x^4 = x*x*x*x\)</span>, cela fait <strong>3</strong> multiplications), il suffit de le multiplier ensuite par
+lui-même pour obtenir <span class="arithmatex">\(x^8\)</span>, en faisant seulement <strong>1</strong> opération supplémentaire, soit <strong>4</strong> au total.</p>
+<p>On peut faire encore mieux en utilisant le fait que <span class="arithmatex">\(x^4 = x^2 * x^2\)</span> : on peut calculer <span class="arithmatex">\(x^4\)</span> en <strong>2</strong>
+multiplications, donc <span class="arithmatex">\(x^8\)</span> en <strong>3</strong> multiplications : c’est beaucoup mieux que les 7 multiplications
+initiales (au final, <span class="arithmatex">\(x^8 = (x^4 * x^4)^2\)</span>).</p>
+<p>Cependant, il reste un problème à résoudre : avec cette bonne idée, on peut calculer facilement
+<span class="arithmatex">\(x^2\)</span>, <span class="arithmatex">\(x^4\)</span>, <span class="arithmatex">\(x^8\)</span>, <span class="arithmatex">\(x^{16}\)</span>, <span class="arithmatex">\(x^{32}\)</span> etc., mais comment faire pour des puissances comme 7,
+13 ou 51 ?</p>
+<p>Plus généralement, on sait comment réduire efficacement le problème du calcul de <span class="arithmatex">\(x^n\)</span> quand
+n est pair, on a : </p>
+<p><span class="arithmatex">\(x^n = x^{n/2} * x^{n/2}\)</span>. </p>
+<p>Quand n est impair, la division par 2 donne un reste, cette méthode n’est donc pas utilisable directement. Cependant, il suffit de calculer <span class="arithmatex">\(x^{n-1}\)</span> (ce qui est facile puisque si n est impair, alors n-1 est pair), et de multiplier ensuite par x pour obtenir <span class="arithmatex">\(x^n\)</span> :</p>
+<ul>
+<li><span class="arithmatex">\(x^0 = 1\)</span></li>
+<li>si n est pair, <span class="arithmatex">\(x^n = x^{n/2} * x^{n/2}\)</span></li>
+<li>si n est impair, <span class="arithmatex">\(x^n = x^{n-1} * x\)</span>.</li>
+</ul>
+<p>Par exemple :</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(x^8 =(x^4)^2\)</span></p>
+<p><span class="arithmatex">\(= ((x^2)^2)^2\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(x^{10} = (x^5)^2\)</span></p>
+<p><span class="arithmatex">\(= (x * x^4)^2\)</span></p>
+<p><span class="arithmatex">\(= (x * (x^2)^2)^2\)</span></p>
+<p><span class="arithmatex">\(= x^2 * ((x^2)^2)^2\)</span></p>
+<p><span class="arithmatex">\(= xnimpair * xnpair\)</span></p>
+<p>où au départ:</p>
+<ul>
+<li>xpair = x</li>
+<li>ximpair =1</li>
+</ul>
+<p>et où à chaque itération:</p>
+<ul>
+<li><span class="arithmatex">\(n = n //2\)</span></li>
+<li><span class="arithmatex">\(xnpair = xnpair^2\)</span></li>
+<li>si n est impair: <span class="arithmatex">\(xnimpair = xnimpair * xnpair\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Ecris une fonction <code>**exp_rapide_iter(x, n)**</code> qui renvoie le calcul de <span class="arithmatex">\(x^n\)</span> en utilisant l'algorithme ci-dessus.</p>
+<div class="highlight"><pre><span></span><code>        <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">exp_rapide_iter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="o">==</span> <span class="mi">256</span>
+        <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">exp_rapide_iter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1024</span>
+        <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">exp_rapide_iter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8192</span>
+        <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">exp_rapide_iter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+        <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">exp_rapide_iter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+</code></pre></div>
+</details>
+<p>Sources: <a href="https://zestedesavoir.com/tutoriels/621/algorithmique-pour-lapprenti-programmeur/400_premiers-exemples-de-structures-de-donnees-et-dalgorithmes-courants/2023_une-classe-dalgorithme-non-naifs-diviser-pour-regner/">Zeste de savoir</a></p>
+<div id="global_editor_91032ad7bbcb6cf72875e8e8207dcfba80173f7c" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_91032ad7bbcb6cf72875e8e8207dcfba80173f7c"></div><span id="comment_editor_91032ad7bbcb6cf72875e8e8207dcfba80173f7c" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_91032ad7bbcb6cf72875e8e8207dcfba80173f7c" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard & stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"></div></div></div></div>
+
+<div class="py_mk_hidden" id="solution_editor_91032ad7bbcb6cf72875e8e8207dcfba80173f7c"></div>
+<h1 id="technique-de-tris">Technique de tris</h1>
+<div class="admonition warning">
+<p class="admonition-title">Algorithme</p>
+<p>Dans la vie courante, les deux verbes <strong>trier</strong> et <strong>classer</strong> ne sont pas synonymes. </p>
+<ul>
+<li>
+<p><strong>Trier</strong> ou effectuer un tri c’est répartir les éléments en paquets correspondant à un certain critère : par exemple séparer les déchets selon leur nature, les personnes d’une assemblée selon leur sexe ou selon leur langue maternelle.</p>
+<p><center> <img alt="tri" src="../images/tri.png" width="80%" /> </center></p>
+</li>
+<li>
+<p><strong>Classer</strong> ou effectuer un classement c’est mettre des éléments selon un certain ordre : par exemple ranger les personnes d’une assemblée de la plus petite à la plus grande, ou de la plus jeune à la plus âgée.</p>
+<p><center> <img alt="pokemon" src="../images/pokemon.png" width="80%" /> </center></p>
+</li>
+</ul>
+<p>En informatique le mot <strong>trier</strong> est à prendre avec le sens de <strong>classer</strong>.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Consigne</p>
+<p>Essaie de comprendre les descriptions des techniques de tris en regardant ces <a href="https://professeurb.github.io/articles/tris"><strong>animations de tri par insertion et sélection</strong></a> et cette  <a href="https://www.nsi-ljm.fr/exp2/tri"><strong>animation de tri à bulle</strong></a></p>
+</div>
+<h2 id="tri-par-insertion">Tri par insertion</h2>
+<div class="admonition warning">
+<p class="admonition-title">Principe</p>
+<p>on prend un élément et on le fait reculer à sa place parmi les éléments déjà triés à gauche.</p>
+</div>
+<details class="question">
+<summary>Decouv 4: Tri par insertion</summary>
+<p>Ecris une fonction <code>tri_insertion_decroissant(lst)</code> qui renvoie la liste <code>lst</code> triée par insertion par ordre décroisant.</p>
+<div class="highlight"><pre><span></span><code>        <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">tri_insertion_decroissant</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre></div>
+</details>
+<h2 id="tri-par-selection">Tri par sélection</h2>
+<div class="admonition warning">
+<p class="admonition-title">Principe</p>
+<p>on parcourt la liste pour trouver le minimum, on l'échange avec le 1er élément puis on recommence avec le reste de la liste.</p>
+</div>
+<details class="question">
+<summary>Decouv 5: Tri par sélection</summary>
+<p>Ecris une fonction <code>tri_selection croissant(lst)</code> qui renvoie la liste <code>lst</code> triée par sélection par ordre croissant.</p>
+<div class="highlight"><pre><span></span><code>        <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">tri_selection</span> <span class="n">croissant</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+</code></pre></div>
+</details>
+<h2 id="tri-a-bulle">Tri à bulle</h2>
+<div class="admonition warning">
+<p class="admonition-title">Principe</p>
+<p>On compare les éléments voisins 2 à 2 et on les échange s'ils sont dans le mauvais ordre.
+Les plus grands éléments remontent comme une bulle vers la fin.</p>
+<p>C'est la technique employé pour résoudre l'exercice <a href="../../../uaa11_python/tp3_tests/tp3_tests#exo6_3nbs_croissants">UAA11 TP4 Boucles - Exo 3 : Nombre mystère</a>.</p>
+</div>
+<details class="question">
+<summary>Decouv 6: Tri à bulle</summary>
+<p>Ecris une fonction <code>tri_bulle_decroissant(lst)</code> qui renvoie la liste <code>lst</code> triée à bulle par ordre décroisant.</p>
+<div class="highlight"><pre><span></span><code>        <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">tri_bulle_decroissant</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre></div>
+</details>
+<p>Source: <a href="https://nsi.lycee-experimental.org/algo/tris/"><strong>Lycée Expériemntal de Saint Nazaire</strong></a> en classe de Termianle NSI en France.</p>
+<h1 id="exercices">Exercices</h1>
+<details class="question">
+<summary>Exo 1 : Recherche d'un nombre dans une liste triée</summary>
+<p>Ecris une fonction <code>recherche_ds_lst(lst, nb)</code> qui recherche le nombre <code>nb</code> dans la liste triée <code>lst</code> et renvoie l'indice du nombre dans la liste s'il est présent ou -1 s'il ne l'est pas. </p>
+<p>Applique la méthode <strong>Diviser pour régner</strong>.</p>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">recherche_dichotomique</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+
+    <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">recherche_dichotomique</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+
+    <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">recherche_dichotomique</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div>
+</details>
+<details class="question">
+<summary>Exo 2: Tri de listes</summary>
+<p>Si tu as vu la récursivité, applique la méthode <strong>Diviser pou régner</strong> pour écrire une fonction <code>tri_croissant(lst)</code> qui renvoie la liste <code>lst</code> triée par ordre croissant.</p>
+<div class="highlight"><pre><span></span><code>        <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">tri_croissant</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+</code></pre></div>
+</details>
+<details class="question">
+<summary>Exo 3: Insertion dans une liste</summary>
+<p>Ecris une fonction <code>insere(nb, lst)</code> qui à partir d'une liste <code>lst</code> triée, renvoie une liste triée contenant <code>nb</code>.</p>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">insere</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">insere</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">25</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">insere</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</code></pre></div>
+</details>
+<details class="question">
+<summary>Exo 4: Fusion de 2 listes</summary>
+<p>Ecris un fonction <code>fusion(lst1, lst2)</code> qui renvoie les 2 listes <code>lst1</code>, <code>lst2</code>  fusionnées et triées par ordre croissant.</p>
+<p>Attention ! On présume que les deux listes de départ sont préalablement triées.</p>
+<p>Il est donc irrationnel de faire une simple concaténation des deux listes de départ, puis d'opérer un tri. Il faut au contraire prendre les deux listes, et avancer dans l'un puis dans l'autre selon celui des deux éléments qui est le plus petit et de construire au fur et à mesure la 3ème liste (ainsi directement trié).</p>
+<p>C’est comme quand on se trouve face à deux tas de papiers déjà triés et qu'on veut les réunir, il existe une méthode bien plus économique (et donc, bien plus rationnelle...) que de les mettre l’un sur l’autre et de retrier la pile… </p>
+<div class="highlight"><pre><span></span><code>        <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">fusion</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+        <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">fusion</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="p">[])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+        <span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">fusion</span><span class="p">([],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+</code></pre></div>
+</details>
+<p>Source: <a href="https://cours-nsi.forge.apps.education.fr/terminale/0.Intro/preambule/"><strong>Apprentissage de python au lycée</strong></a> en classe de Termianle NSI en France.</p><script type="text/javascript">
 CONFIG.needMermaid = false;
-CONFIG.overlordClasses = [];
-globalThis.PAGE_IDES_CONFIG = '.\x1e}{\x1e0b0a.'
-</script>
+CONFIG.overlordClasses = ["Ide", "GlobalRunnersManager", "Terminal"];
+globalThis.PAGE_IDES_CONFIG = '.\x1eb du8]fgsr}3tch{67i_klv1m:.ne,x4pw2-[qo9ay0I5\x1e0p010C0c0s0m0M0j0t0N0x0Q0l0I0O0c0r0a0a0n0a0q0n0g0r0I0e0r0S0C0e0}0I0Q0r0c0?0a0O0e0Q0x0r0l0@0n010z0b0T0G0P0t0B0O0y0C1e0b010m0j0s0i0A1i010D1q0C0B0w0t0n0M0B0m1B0m1p011y1A1C0t1I0j0y1E1G1I1H1L1N010d0i0C0!1F1H1J1Y1z011F0j1(1V1+1f1M1-0G0d0a0v0s0n1Q0C0i0m0i1,1q1$0n0j0C0m2022241@1Z0G0M22201S1U1*1X2f1_2i2b1)1W1K2p1A0E0n0v0d0c0V1p0K0f1-0C2y2A2C0c0t1n0m0o0M0c2e0b2F2H2J2B0V0t0u0H2T2V1q1i2P1G0t1}0a2%011i2-0s2/012G2)0P0G0s0t0H0o0X1o1f0B0d0v0v1-291 1}0y0X1p0J0x1-30322?222E2`010O0d0Y0t0j0d0B1p0g0O0v1$393v0t0h0j0M0d0G3f3h1q0Z2C0!0s0B3E3G3I3K1-1$0L3t3v252;3G0g0s0v331q1Z0O0m1I0y0G232-0C0g2v1q0R0B3(0B0X0P3-3r0M2-0M0h0t0O0i1$0j3`1s0d0C1-1/0!290y0i2N490u1p0Q1-0o491E0o0C0n0u0t0a0m3w1f3y3A4g1q4t4m4i4A4C3x3z3B4I4u290w0C3z4M4D0b4F4Q014J1U3v1R4O4G1-1u0t1B282|1I0c1p4e4H014.4U4c4+4#0y0O0E0t0s2C2?0B211p0l4r1q3d3R550C57591f0l1-2C284V1$483/0C3;3?2,1#1%1U563y3)0d291L0V0X0Z1Z2C0O0n0m0s0w3.5h220c3H2b0g0Z0t2729234^3u4`0i2Q0H0t1G0v1j494b5N2,1%3G0j4m5W0!5Z2a2T4!5(0j1 4J0o1L0N0=0F0N0l0e0q0l0c0N0F0O0l0C0S0x0C0q0O0a0c0q0c0e0c0c0x0q0C0N0N0g0Q0S0q6x0a0I6n0e6p0C6e0e0l156x0q0N0S0e6q0Q0C0I0q1Z5S2!0C412w1r0H441F3A4 4`2I2h4~4E4P5(0m5T3r1E6}0M0g0g1p105c1.6}0g0C0V154y5$4f0k0k.'
+</script><script src="../../../js-per-pages/0-generic-python-snippets-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-error_logs-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-packagesInstaller-install-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/1-runtimeManager-runtime-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/2-0-runnersManager-runners.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/2-pyodideSectionsRunner-runner-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/3-terminalRunner-term.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-0-idesManager-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-ideLogistic-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/4-ideRunner-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../../js-per-pages/start-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
 
 
 
