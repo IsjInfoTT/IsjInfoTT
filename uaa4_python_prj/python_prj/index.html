@@ -1673,7 +1673,158 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 
 
 <h1 id="uaa4-mini-projets-python">UAA4 - Mini projets Python</h1>
-<p>Liste de <a href="../uaa4_python_mini_projet_V02.pdf"><strong>mini projets</strong></a> de programmation impérative en python (pdf)</p><script type="text/javascript">
+<p>Liste de <a href="../uaa4_python_mini_projet_V02.pdf"><strong>mini projets</strong></a> de programmation impérative en python (pdf)</p>
+<h1 id="jeu-de-nim-ford-boyard">Jeu de nim (Ford Boyard)</h1>
+<p><center> <img alt="fort_boyard" src="../images/fort_boyard.png" width="80%" /> </center></p>
+<p><strong>Prérequis : <mark>input(), if ... else, while</mark></strong></p>
+<details class="info">
+<summary>Règles du jeu</summary>
+<p>20 bâtonnets en bois sont alignés les uns à côté des autres au centre de la table.</p>
+<p>A tour de rôle chacun des 2 concurrents va devoir en retirer 1, 2 ou 3 à l'endroit de
+leur choix, le but étant de laisser le dernier bâtonnet à son adversaire. Il leur faudra
+donc calculer et ne pas retirer de bâtonnet(s) au hasard.</p>
+<p>Celui qui se retrouve avec le dernier bâtonnet a perdu.</p>
+</details>
+<details class="question">
+<summary>Consignes</summary>
+<ul>
+<li>Ecris une 1ère version à <strong>2 joueurs</strong> dont voici la séquence:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    <span class="o">||||||||||||||||||||</span>
+    <span class="n">Joueur</span> <span class="n">n</span><span class="err">°</span> <span class="mi">1</span>
+    <span class="n">Combien</span> <span class="n">de</span> <span class="n">batonnets</span> <span class="n">retires</span> <span class="o">-</span> <span class="n">tu</span> <span class="err">?</span> <span class="mi">3</span>
+    <span class="o">|||||||||||||||||</span> <span class="o">...</span>
+    <span class="n">Joueur</span> <span class="n">n</span><span class="err">°</span> <span class="mi">2</span>
+    <span class="n">Combien</span> <span class="n">de</span> <span class="n">batonnets</span> <span class="n">retires</span> <span class="o">-</span> <span class="n">tu</span> <span class="err">?</span> <span class="mi">2</span>
+    <span class="o">|||||||||||||||</span> <span class="o">.....</span>
+    <span class="n">Joueur</span> <span class="n">n</span><span class="err">°</span> <span class="mi">1</span>
+    <span class="n">Combien</span> <span class="n">de</span> <span class="n">batonnets</span> <span class="n">retires</span> <span class="o">-</span> <span class="n">tu</span> <span class="err">?</span> <span class="mi">3</span>
+    <span class="o">...</span> <span class="n">etc</span> <span class="o">...</span>
+    <span class="o">|||</span> <span class="o">.................</span>
+    <span class="n">Joueur</span> <span class="n">n</span><span class="err">°</span> <span class="mi">2</span>
+    <span class="n">Combien</span> <span class="n">de</span> <span class="n">batonnets</span> <span class="n">retires</span> <span class="o">-</span> <span class="n">tu</span> <span class="err">?</span> <span class="mi">2</span>
+    <span class="n">Le</span> <span class="n">joueur</span> <span class="n">n</span><span class="err">°</span> <span class="mi">2</span> <span class="n">a</span> <span class="n">gagné</span> <span class="err">!</span>
+</code></pre></div>
+<ul>
+<li>Ecris une 2ème version où un joueur peut jouer <strong>contre l’ordinateur</strong>. Pour cela, implémente <a href="https://www.fan-fortboyard.fr/pages/emission/conseil/batonnets.html"><strong>l’algorithme proposé par Fort Boyard</strong></a> qui devrait rendre ton programme (presuqe) imbattable.</li>
+</ul>
+</details>
+<details class="info">
+<summary>Aide à l'écriture en python</summary>
+<p>Complète le code pour un joueur puis adapte-le pour 2 joueurs ou contre l'ordinateur</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">nbbat</span> <span class="o">=</span> <span class="o">...</span>      <span class="c1"># nombre de batonnets au départ</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>      <span class="c1"># boucle infinie</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="o">*</span> <span class="o">...</span> <span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="o">*</span> <span class="o">...</span> <span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+        <span class="n">nbretire</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Combien de batonnets retires - tu ? &quot;</span><span class="p">))</span>
+        <span class="n">nbbat</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># calcul du nombre de batonnets restant</span>
+        <span class="k">if</span> <span class="o">...</span>  <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le joueur n° 1 a gagné !&quot;</span><span class="p">)</span>
+                <span class="k">break</span>    <span class="c1"># fin de la boucle infinie</span>
+        <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<h1 id="jeu-du-pendu">Jeu du pendu</h1>
+<p><center> <img alt="pendu" src="../images/pendu.png" width="60%" /> </center></p>
+<p><strong>Prérequis :</strong></p>
+<ul>
+<li>1ère version : <strong><mark>input(), if ... else, while et chaînes de caractères,</mark></strong></li>
+<li>2ème version : <strong><mark>listes à 1 dimension,</mark></strong></li>
+<li>3ème version : <strong><mark>lecture de fichier.</mark></strong></li>
+</ul>
+<details class="info">
+<summary>Règles du jeu</summary>
+<p>Le Pendu est un jeu consistant à trouver un mot en devinant quelles sont les lettres qui le composent.</p>
+</details>
+<details class="question">
+<summary>Consignes</summary>
+<p><strong>Ecris un programme en 3 versions :</strong></p>
+<ul>
+<li>1ère version: un 1er joueur choisit un mot de 8 lettres maximum, un 2ème joueur tente de trouver les lettres composant le mot.</li>
+<li>2ème version : l’ordinateur choisit un mot au hasard dans une liste fournie.</li>
+<li>3ème version : l’ordinateur choisit un mot dans un fichier (un dictionnaire).</li>
+</ul>
+<p><strong>Séquence de jeu de la 2ème version:</strong></p>
+<ul>
+<li>À chaque coup, le joueur saisit une lettre.</li>
+<li>Si la lettre figure dans le mot, l’ordinateur affiche le mot avec les lettres déjà trouvées. Celles qui sont pas encore trouvées sont remplacées par des barres (_).</li>
+<li>Le joueur a 6 chances. Au delà, il a perdu.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    <span class="n">Jeu</span> <span class="n">du</span> <span class="n">pendu</span><span class="p">:</span> <span class="n">tu</span> <span class="k">as</span> <span class="mi">6</span> <span class="n">vies</span> <span class="n">pour</span> <span class="n">trouver</span> <span class="n">le</span> <span class="n">mot</span>
+    <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span>
+    <span class="n">Choisis</span> <span class="n">une</span> <span class="n">lettre</span>
+    <span class="n">w</span>
+    <span class="n">Raté</span> <span class="err">!</span>
+    <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span>
+    <span class="n">Encore</span> <span class="mi">6</span> <span class="n">lettres</span> <span class="n">à</span> <span class="n">trouver</span> <span class="err">!</span> <span class="n">Il</span> <span class="n">te</span> <span class="n">reste</span><span class="p">:</span> <span class="mi">5</span> <span class="n">vies</span>
+    <span class="n">Choisis</span> <span class="n">une</span> <span class="n">lettre</span>
+    <span class="n">j</span>
+    <span class="n">Bravo</span> <span class="err">!</span>
+    <span class="n">j</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span>
+    <span class="n">UAA4</span> <span class="n">TP</span> <span class="n">Mini</span> <span class="n">projet</span> <span class="n">Python</span> <span class="o">-</span> <span class="n">V02</span> <span class="n">M</span><span class="o">.</span> <span class="n">Reymondie</span> <span class="o">-</span> <span class="mi">4</span><span class="n">TInfo</span> <span class="mi">9</span>
+    <span class="n">Encore</span> <span class="mi">5</span> <span class="n">lettres</span> <span class="n">à</span> <span class="n">trouver</span> <span class="err">!</span> <span class="n">Il</span> <span class="n">te</span> <span class="n">reste</span><span class="p">:</span> <span class="mi">5</span> <span class="n">vies</span>
+    <span class="n">Choisis</span> <span class="n">une</span> <span class="n">lettre</span>
+    <span class="n">j</span>
+    <span class="n">Bravo</span> <span class="err">!</span>
+    <span class="o">...</span> <span class="n">mais</span> <span class="n">tu</span> <span class="k">as</span> <span class="n">déjà</span> <span class="n">choisi</span> <span class="n">cette</span> <span class="n">lettre</span>
+    <span class="n">j</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span>
+    <span class="err">…</span>
+    <span class="err">…</span>
+    <span class="n">j</span> <span class="n">a</span> <span class="n">m</span> <span class="n">_</span> <span class="n">o</span> <span class="n">n</span>
+    <span class="n">Encore</span> <span class="mi">1</span> <span class="n">lettres</span> <span class="n">à</span> <span class="n">trouver</span> <span class="err">!</span> <span class="n">Il</span> <span class="n">te</span> <span class="n">reste</span><span class="p">:</span> <span class="mi">5</span> <span class="n">vies</span>
+    <span class="n">Choisis</span> <span class="n">une</span> <span class="n">lettre</span>
+    <span class="n">b</span>
+    <span class="n">Bravo</span> <span class="err">!</span>
+    <span class="n">j</span> <span class="n">a</span> <span class="n">m</span> <span class="n">b</span> <span class="n">o</span> <span class="n">n</span>
+    <span class="n">Bravo</span><span class="p">,</span> <span class="n">tu</span> <span class="k">as</span> <span class="n">gagné</span> <span class="err">!</span>
+</code></pre></div>
+</details>
+<details class="info">
+<summary>Aide à l'écriture en python - 1ère version</summary>
+<div class="highlight"><pre><span></span><code>      <span class="k">def</span> <span class="nf">affiche</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)):</span>
+                 <span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">()</span>
+
+      <span class="n">mot</span> <span class="o">=</span> <span class="s2">&quot;laitue&quot;</span>            <span class="c1"># mot à trouver écrit dans le code</span>
+      <span class="n">masque</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;_&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">mot</span><span class="p">)</span>     <span class="c1"># définit laliste &quot;masque&quot; de la même taille que mot </span>
+                                <span class="c1"># on complètera la liste au fur et à mesure avec les lettres trouvées.</span>
+      <span class="n">affiche</span><span class="p">(</span><span class="n">masque</span><span class="p">)</span>           <span class="c1"># affiche masque</span>
+
+    <span class="k">while</span> <span class="kc">True</span> <span class="p">:</span>
+        <span class="n">lettre</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choisis une lettre&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">lettre</span> <span class="ow">in</span> <span class="n">mot</span><span class="p">:</span>     <span class="c1"># permet de vérifier si mot contient lettre</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bravo !&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">lettre</span> <span class="ow">in</span> <span class="o">...</span> <span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;... mais tu as déjà choisi cette lettre&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mot</span><span class="p">)):</span> <span class="c1"># parcours de mot</span>
+                    <span class="k">if</span> <span class="o">...</span> <span class="p">:</span>
+                        <span class="o">...</span> <span class="o">=</span> <span class="n">lettre</span>
+        <span class="k">if</span> <span class="o">...</span>
+            <span class="k">break</span>
+        <span class="n">affiche</span><span class="p">(</span><span class="n">masque</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<details class="info">
+<summary>Aide à l'écriture en python - 2ème version</summary>
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
+    <span class="n">liste_mots</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;laitue&quot;</span><span class="p">,</span> <span class="s2">&quot;hareng&quot;</span><span class="p">,</span> <span class="s2">&quot;jambon&quot;</span><span class="p">,</span> <span class="s2">&quot;pharynx&quot;</span><span class="p">,</span> <span class="s2">&quot;phoque&quot;</span><span class="p">,</span> <span class="s2">&quot;langue&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;stylo&quot;</span><span class="p">,</span><span class="s2">&quot;agent&quot;</span><span class="p">,</span><span class="s2">&quot;fromage&quot;</span><span class="p">,</span><span class="s2">&quot;whisky&quot;</span><span class="p">,</span><span class="s2">&quot;billet&quot;</span><span class="p">,</span><span class="s2">&quot;boyaux&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;laser&quot;</span><span class="p">,</span><span class="s2">&quot;joystick&quot;</span><span class="p">,</span><span class="s2">&quot;crane&quot;</span><span class="p">,</span><span class="s2">&quot;joyeux&quot;</span><span class="p">,</span><span class="s2">&quot;cahier&quot;</span><span class="p">,</span><span class="s2">&quot;camping&quot;</span><span class="p">,</span><span class="s2">&quot;argent&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;rivage&quot;</span><span class="p">,</span><span class="s2">&quot;physique&quot;</span><span class="p">,]</span>
+    <span class="n">mot</span><span class="o">=</span><span class="n">choice</span><span class="p">(</span><span class="n">liste_mots</span><span class="p">)</span>  <span class="c1"># tirage d&#39;un mot au hazard dans la liste</span>
+</code></pre></div>
+</details>
+<details class="info">
+<summary>Aide à l'écriture en python - 3ème version</summary>
+<p>Télécharge ce <a href="../files/liste_mots.zip">fichier</a>, décompresse-le et place le à côté de ton fichier python.</p>
+<p>Le dictionnaire est représenté sous la forme d’une listée triée par ordre alphabétique.</p>
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
+    <span class="kn">from</span> <span class="nn">liste_mots</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># import de la liste de mots</span>
+    <span class="n">mot</span><span class="o">=</span><span class="n">choice</span><span class="p">(</span><span class="n">liste_mots</span><span class="p">)</span>    <span class="c1"># tirage au hazrad d&#39;un mot  </span>
+</code></pre></div>
+</details><script type="text/javascript">
 CONFIG.needMermaid = false;
 CONFIG.overlordClasses = [];
 globalThis.PAGE_IDES_CONFIG = '.\x1e{}\x1e0a0b.'
