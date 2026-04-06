@@ -70,6 +70,14 @@ If not, see <https://www.gnu.org/licenses/>.
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" rel="stylesheet"/>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.43.1/js/jquery.terminal.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.min.js" integrity="sha512-GQpIYSKNIPIC763JKTNALj+t18/nfLdzw5gITgFGa31aK/4NmjyPKsfqrjh7CuzpJaG3nqEleeVcWUhHad9Axg==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.min.js" integrity="sha512-iK7yTkCkv7MbFwTqRgHTbmIqoiiLq6BsyNjymnFyB5a7pEQwYThj9QIgqBy9+XPPwj7+hAEHyR2npOHL1bz4Qg==" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
+
 <script src="../../js-libs/0-config.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -339,6 +347,19 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    UAA4 Projets Python
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -350,6 +371,94 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jeu-de-nim-ford-boyard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jeu de nim (Ford Boyard)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jeu-du-pendu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jeu du pendu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jeu-dxo-et-introduction-aux-listes-imbriquees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jeu d'XO et Introduction aux listes imbriquées
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jeu d&#39;XO et Introduction aux listes imbriquées">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test12-liste-de-chaines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test1&amp;2 - Liste de chaines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test3-parcours-de-listes-imbriquees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test3 - Parcours de listes imbriquées
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test4-affichage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test4 - Affichage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test5-application-au-jeu-dxo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test5 - Application au jeu d'XO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1657,6 +1766,83 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jeu-de-nim-ford-boyard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jeu de nim (Ford Boyard)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jeu-du-pendu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jeu du pendu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jeu-dxo-et-introduction-aux-listes-imbriquees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jeu d'XO et Introduction aux listes imbriquées
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jeu d&#39;XO et Introduction aux listes imbriquées">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test12-liste-de-chaines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test1&amp;2 - Liste de chaines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test3-parcours-de-listes-imbriquees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test3 - Parcours de listes imbriquées
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test4-affichage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test4 - Affichage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test5-application-au-jeu-dxo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test5 - Application au jeu d'XO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1674,7 +1860,7 @@ CONFIG.lang={"tests": {"msg": "\n\n# Tests\n\n", "as_pattern": "#\\s*Tests"}, "c
 
 <h1 id="uaa4-mini-projets-python">UAA4 - Mini projets Python</h1>
 <p>Liste de <a href="../uaa4_python_mini_projet_V02.pdf"><strong>mini projets</strong></a> de programmation impérative en python (pdf)</p>
-<h1 id="jeu-de-nim-ford-boyard">Jeu de nim (Ford Boyard)</h1>
+<h2 id="jeu-de-nim-ford-boyard">Jeu de nim (Ford Boyard)</h2>
 <p><center> <img alt="fort_boyard" src="../images/fort_boyard.png" width="80%" /> </center></p>
 <p><strong>Prérequis : <mark>input(), if ... else, while</mark></strong></p>
 <details class="info">
@@ -1723,7 +1909,7 @@ donc calculer et ne pas retirer de bâtonnet(s) au hasard.</p>
         <span class="nb">print</span><span class="p">()</span>
 </code></pre></div>
 </details>
-<h1 id="jeu-du-pendu">Jeu du pendu</h1>
+<h2 id="jeu-du-pendu">Jeu du pendu</h2>
 <p><center> <img alt="pendu" src="../images/pendu.png" width="60%" /> </center></p>
 <p><strong>Prérequis :</strong></p>
 <ul>
@@ -1824,11 +2010,141 @@ donc calculer et ne pas retirer de bâtonnet(s) au hasard.</p>
     <span class="kn">from</span> <span class="nn">liste_mots</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># import de la liste de mots</span>
     <span class="n">mot</span><span class="o">=</span><span class="n">choice</span><span class="p">(</span><span class="n">liste_mots</span><span class="p">)</span>    <span class="c1"># tirage au hazrad d&#39;un mot  </span>
 </code></pre></div>
+</details>
+<h2 id="jeu-dxo-et-introduction-aux-listes-imbriquees">Jeu d'XO et Introduction aux listes imbriquées</h2>
+<p><center> <img alt="xo" src="../images/xo.png" width="20%" /> </center></p>
+<p>Ces exercices ont été écris à partir du site <a href="https://fr.futurecoder.io/course/#IntroducingNestedLists">futurecoder</a></p>
+<h3 id="test12-liste-de-chaines"><strong>Test1&amp;2 - Liste de chaines</strong></h3>
+<details class="question">
+<summary>Test1</summary>
+<p>A partir de la liste de chaînes <code>["abc", "def", "ghi"]</code>, affiche la seconde chaîne de la liste puis affiche la première lettre de cette seconde chaîne.</p>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">chaines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;def&quot;</span><span class="p">,</span> <span class="s2">&quot;ghi&quot;</span><span class="p">]</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">mot</span><span class="o">=</span><span class="n">chaines</span><span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mot</span><span class="p">)</span>
+    <span class="k">def</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mot</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+    <span class="n">d</span>       
+</code></pre></div>
+<p>Il y a un moyen plus court. <code>chaines[1]</code> est une expression comme une autre et les indices comme <code>[0]</code> peuvent être utilisés sur n'importe quelle expression, pas seulement sur les variables. Tu peux donc sauter la variable intermédiaire et le faire en une seule ligne :</p>
+<div class="highlight"><pre><span></span><code>    <span class="nb">print</span><span class="p">(</span><span class="n">chaines</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div>
+<p>Regarde bien cette syntaxe. Si elle te semble nouvelle et fantaisiste, elle ne l'est pas. Il s'agit simplement de la syntaxe habituelle avec des indices, appliquée deux fois.</p>
+</details>
+<details class="question">
+<summary>Test2</summary>
+<p>En utilisant cette syntaxe, affiche la dernière lettre de l'avant-dernière chaîne dans la liste chaines. Tu devrais utiliser une expression unique. Ta solution devrait fonctionner pour toute liste non vide de chaînes. </p>
+</details>
+<div id="global_editor_472b07b9fcf2c2451e8781e944bf5f77cd8457c8" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_472b07b9fcf2c2451e8781e944bf5f77cd8457c8"></div><span id="comment_editor_472b07b9fcf2c2451e8781e944bf5f77cd8457c8" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_472b07b9fcf2c2451e8781e944bf5f77cd8457c8" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard & stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"></div></div></div></div>
+
+<div class="py_mk_hidden" id="solution_editor_472b07b9fcf2c2451e8781e944bf5f77cd8457c8"></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Appliquer l'indice deux fois peut être encore plus puissant. Nous pouvons l'utiliser non seulement sur une liste de chaînes de caractères, mais aussi sur une liste de listes. </p>
+<div class="admonition question">
+<p class="admonition-title">Qu'affiche le programme suivant ?</p>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">chaines</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;there&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;comment&#39;</span><span class="p">,</span> <span class="s1">&#39;allez&#39;</span><span class="p">,</span> <span class="s1">&#39;vous&#39;</span><span class="p">]]</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chaines</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div>
+</div>
+<p>Comme tu peux le voir, Python nous permet d'utiliser des listes imbriquées : une liste dont chaque élément est une autre liste (on préfère les qualifier de sous-listes).</p>
+</div>
+<h3 id="test3-parcours-de-listes-imbriquees"><strong>Test3 - Parcours de listes imbriquées</strong></h3>
+<details class="question">
+<summary>Test4</summary>
+<p>Dans la liste précédente, remplace 'comment' par 'how'</p>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">chaines</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;there&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;comment&#39;</span><span class="p">,</span> <span class="s1">&#39;allez&#39;</span><span class="p">,</span> <span class="s1">&#39;vous&#39;</span><span class="p">]]</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">chaines</span><span class="p">[</span><span class="o">...</span><span class="p">][</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+</code></pre></div>
+</details>
+<h3 id="test4-affichage"><strong>Test4 - Affichage</strong></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Tu peux utiliser une boucle imbriquée pour itérer sur chaque élément et sous-élément d'une liste imbriquée. Par exemple, considére cette liste imbriquée.</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">nombres</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">91</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">93</span><span class="p">]]</span>
+
+    <span class="n">jmax</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nombres</span><span class="p">)</span>     <span class="c1"># 4</span>
+    <span class="n">imax</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nombres</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># 3</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">jmax</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imax</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">nombres</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>Regarde attentivement le code. Tu peux itérer avec 2 compteurs:</p>
+<ul>
+<li>
+<p>la 1ère boucle <code>for</code> parcourt la liste gràce à un 1er compteur <code>j</code> qui compte le nombre de sous listes ( ici 4 ),</p>
+</li>
+<li>
+<p>la 2ème boucle  <code>for</code> parcourt chaque sous-liste grâce à un compteur <code>i</code> qui compte le nombre d'entiers (ici 3).</p>
+</li>
+</ul>
+<p>Si tu te représentes cette liste dans un plan, <code>j</code> parcourt les <strong>lignes</strong> et <code>i</code> parcourt les <strong>colonnes</strong>.</p>
+</div>
+<div id="global_editor_12c6fc06c99a462375eeb3f43dfd832b08ca9e17" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_12c6fc06c99a462375eeb3f43dfd832b08ca9e17"></div><span id="comment_editor_12c6fc06c99a462375eeb3f43dfd832b08ca9e17" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_12c6fc06c99a462375eeb3f43dfd832b08ca9e17" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard & stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"></div></div></div></div>
+
+<div class="py_mk_hidden" id="solution_editor_12c6fc06c99a462375eeb3f43dfd832b08ca9e17"></div>
+<h3 id="test5-application-au-jeu-dxo"><strong>Test5 - Application au jeu d'XO</strong></h3>
+<details class="question">
+<summary>Test5</summary>
+<ol>
+<li>
+<p>Ecris une liste imbriquée <code>lstxo</code> de dimension 3x3 contenant 9 cases vides représentées par  <code>'-'</code></p>
+</li>
+<li>
+<p>Ecris une fonction affiche() qui affiche le contenu de <code>lstxo</code>
+    <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">affiche</span><span class="p">()</span>
+    <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+    <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+    <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Ecris le code qui permet à un utilisateur de sélectionner par ses coordonnées (j,i) la case qu'il souhaite modifier par une <code>X</code></p>
+<div class="highlight"><pre><span></span><code>    <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+    <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+    <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+    <span class="n">Quels</span> <span class="n">sont</span> <span class="n">les</span> <span class="n">coordonnées</span> <span class="n">de</span> <span class="n">la</span> <span class="n">case</span> <span class="n">que</span> <span class="n">tu</span> <span class="n">souhaite</span> <span class="n">sélectionner</span> <span class="err">?</span>
+    <span class="n">j</span> <span class="p">:</span> <span class="mi">2</span>
+    <span class="n">i</span> <span class="p">:</span> <span class="mi">1</span>
+    <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+    <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+    <span class="o">-</span> <span class="n">X</span> <span class="o">-</span>            
+</code></pre></div>
+</li>
+<li>
+<p>Fais de même pour un 2ème joueur puis rajoute une boucle pour que les 2 joueurs puisse sélectionner une case à tour de rôle.</p>
+</li>
+</ol>
+<p><div id="global_editor_d435a6cdd786300dff204ee7c2ef942d3e9034e2" class="py_mk_ide"><div class="py_mk_wrapper md-typeset"><div class="comment_py_mk_wrapper"><div is_v="false" mode="" id="editor_d435a6cdd786300dff204ee7c2ef942d3e9034e2"></div><span id="comment_editor_d435a6cdd786300dff204ee7c2ef942d3e9034e2" class="comment tooltip">###<span style="--tool_shift: 95%;width:17em;" class="tooltiptext bottom">(Dés-)Active le code après la ligne <code># Tests</code> (insensible à la casse)<br>(<kbd>Ctrl</kbd>+<kbd>I</kbd>)</span></span><div class="ide-split-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M3,3H11V5H3V3M13,3H21V5H13V3M3,7H11V9H3V7M13,7H21V9H13V7M3,11H11V13H3V11M13,11H21V13H13V11M3,15H11V17H3V15M13,15H21V17H13V15M3,19H11V21H3V19M13,19H21V21H13V19Z" /> </svg><span style="--tool_shift: 95%;width:23em;" class="tooltiptext bottom">Entrer ou sortir du mode "deux colonnes"<br>(<kbd>Alt+:</kbd> ; <kbd>Ctrl</kbd> pour inverser les colonnes)</span></div><div class="ide-full-screen tooltip svg-switch-btn twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">   <path d="M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z" /> </svg><span style="--tool_shift: 95%;width:10em;" class="tooltiptext bottom">Entrer ou sortir du mode "plein écran"<br>(<kbd>Esc</kbd>)</span></div></div><div style="--n-buttons:2" class="term_wrapper"><div is_v="False" style="line-height:24px;--n-lines:10;" id="term_editor_d435a6cdd786300dff204ee7c2ef942d3e9034e2" class="term_editor py_mk_terminal"></div><div class="term_btns_wrapper"><div class="twemoji stdout-ctrl tooltip"><svg viewBox="0 0 24 24" fill="none"     stroke="var(--md-default-fg-color)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"     xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <g>   <path d="M 4,21.4 V 2.6 C 4,2.3 4.3,2 4.6,2 h 11.65 c 0.16,0 0.31,0.06 0.42,0.18 l 3.15,3.15 C 19.94,5.44 20,5.59 20,5.75 V 21.4 C 20,21.73 19.73,22 19.4,22 H 4.6 C 4.3,22 4,21.73 4,21.4 Z" ></path>   <path d="M 16,5.4 V 2.35 C 16,2.16 16.16,2 16.35,2 c 0.09,0 0.18,0.03 0.25,0.10 l 3.29,3.29 C 19.96,5.46 20,5.55 20,5.65 20,5.84 19.84,6 19.65,6 H 16.6 C 16.27,6 16,5.73 16,5.4 Z" ></path>   <path d="m 8,9.25 h 8" ></path>   <path d="M 7.9,13.25 H 15.9"></path>   <path d="M 7.9,11.25 H 14.4" ></path>   <path d="M 7.9,19.25 H 14.4" ></path>   <path d="m 7.9,15.25 h 8" ></path>   <path d="M 7.9,17.25 H 11.9" ></path>   <path d="m 8,5.25 h 4" ></path>   <path d="m 8,7.25 h 4" ></path> </g> <g><path class="stdout-x-ray-svg" d="M 3,11.4 v 6 L 21,13.8 V 7.7 Z" style="fill:var(--md-default-bg-color);stroke-width:0;" ></path></g> </svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Tronquer ou non le feedback dans les terminaux (sortie standard &amp; stacktrace / relancer le code pour appliquer)</span></div><div class="stdout-wraps-btn tooltip svg-switch-btn twemoji deactivated"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M7 21H5V3h2v18m7-18h-2v6h2V3m0 12h-2v6h2v-6m5-3-3-3v2H9v2h7v2l3-3Z"> </path></svg><span style="--tool_shift: 97%;width:19em;" class="tooltiptext bottom">Si activé, le texte copié dans le terminal est joint sur une seule ligne avant d'être copié dans le presse-papier</span></div></div></div></div><div class="ide_buttons_div_wrapper"><div class="ide_buttons_div"><button type="button" btn_kind="play" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../..\assets\images\icons8-play-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;width:9em;" class="tooltiptext bottom">Exécuter le code<br>(<kbd>Ctrl</kbd>+<kbd>S</kbd>)</span></button><button type="button" btn_kind="download" style="margin-left:1em; margin-right:0.2em;" class="tooltip "><img src="../..\assets\images\icons8-download-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Télécharger</span></button><button type="button" btn_kind="upload" style="margin-left:0.2em; margin-right:1em;" class="tooltip "><img src="../..\assets\images\icons8-upload-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Téléverser</span></button><button type="button" btn_kind="restart" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../..\assets\images\icons8-restart-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Réinitialiser l'éditeur</span></button><button type="button" btn_kind="save" style="margin-left:0.2em; margin-right:0.2em;" class="tooltip "><img src="../..\assets\images\icons8-save-64.png" class="skip_light_box" /><span style="--tool_shift: 50%;" class="tooltiptext bottom">Sauvegarder dans le navigateur</span></button></div><div class="compteur_wrapper"><div class="compteur"></div></div></div></div></p>
+<div markdown="1" id="solution_editor_d435a6cdd786300dff204ee7c2ef942d3e9034e2"      class="py_mk_hidden" data-search-exclude >
+</div>
 </details><script type="text/javascript">
 CONFIG.needMermaid = false;
-CONFIG.overlordClasses = [];
-globalThis.PAGE_IDES_CONFIG = '.\x1e{}\x1e0a0b.'
-</script>
+CONFIG.overlordClasses = ["Terminal", "Ide", "GlobalRunnersManager"];
+globalThis.PAGE_IDES_CONFIG = '.\x1e20lv6.9:1o[qh7xIbyc,mgau4jde8}-tf_kn] 3sip5wr{\x1e0T010B0A0O0F0j0S0H0y0n0a0q0b0n0q0g0G0s0G0a0s0a0y0Q0i0B0C0n0C0`0g0y0y0q0G0Q0G0n0n0s0A0C0^180C010h0L0U0P0r0H0J0w0u0B1f0L011j0F0m0j0J0H0P0S0z0f1j010t1r0B0J0d0H0s1w0F1H0F1q011E1G1I0H1N0S0u1K1M1O1Q1S010x0N0B0#1L0J1N1.1$1F011L0S1,1!1:1g1R1=0P0x0q0c0O0s1V0B0N0F0N1;1r1*0s0S0B0F2527291|1%0P0j27251X1Z1.1#2k1~2n2g1-1/1P2u1G0o0s0c0x0A0W1q0k0K1=0B2D2F2H0A0H1o1u0j0A2j0L2K2M2O2G0W0H0I0R2X2Z1r1t1v1x220q2+1s1k2;292L2-0r0P0O0H0R0m0Y1p1g0J0x0c0c1=2e24220u0Y1q0E0i1=31330H22272J2{010w0x0Z0H0S0x0J1q0G0w0c1*3a3x0H0v0S0j0x0P3g3i1r0!2H0#0O1x3H3J3L1g3h1=1*0l3v3x2a1s3I0G0O0c341r1%0w0F1N0u0P283m0B0G2A1r0p0J3+0J0Y0r3:3t0j3m0j0v0H0w0N1*0S3}0F3w0B1=1@0#2e0u0N2S4c0I1q0b1=0m4c1K0m0B0s0I0H0q0F3y1g3A3C4j1r4w4p4l4D4F3z3B3D4L4x2e0d0B3B4P4G0L4I4T014M1Z3x1W4R4J1=0O4p1H2d2}1N0A1q4h0x4K014;0H4X4f4.4(0u0w0o0H0O2H3m3S261q0M4u1r3e1x5a0B5c0J5e1g0M1=2H2d4Y1*4b3=0B3@3_1w0H1)1+1Z5b3A3,0x2e1Q0W0Y0!1%2H0w0s0F0O0d3;5m270A3J2g0G0!0H2c2e284{4i3Z1v0R0H1w0c1k4c4e5U5C1+3I0S4p5%0#5*2f2X4%4~0N0S244M0m1Q0g0e0s0y0g0M0C0e0M0A100w0M0B0_0B0e0w0q0A0e1a0A0A0i0e0B0g0.0b0Q0e6C0q0a6t0C6v0B6m0C0M0q0w6C0e0g0Q0C6w0b0B0a0e1%5Z2(0B442B010F0R471L3C544~2N2m534H4S670F5!3t1K730j0G0G1q0a0b5h1?730G0B0W6U4B5-4}0D2M0X0Z0#0i0=0e0/0b6f6F0w0y0e0a0M0n0Q7g0q0M0G0y6m0G1a0M0)0b0C0s0w0g0B0i0n1q1i1k1m1o1Q2.5C1z1B1D2M1U2y2t3/7,1J1W1Y7.1{7:1r5E1_2s7_1}1r4O7^3}801s2022241N2i3(632g8a5,6/2m2o7?2r2z3(8i2x1`841%2N2E2$4`1g2,0V2#2Q2S2f1v2W3p2!8u8B2)2+3q7%2:0O2=2J2@5c8Q8M2}2 3k1N1q36383a4A5c3e3}3Y1r8Y5m3n3}8y3s3u3w4#663E3T3I3K3M1=3P5F3S3G8}3W0L8,013!3$4#851z763,3.853;3?3^4p3-3|1Q3 4143453u0c494b4d1+4g5.810!4m5z4p560N4s1g7c4*0s4z4B4!6_4v4x4O4E8_6 9S4p4W4Y0c9Q6~4/4U4N3J2s0S9R1r504?0S4^2I1g4|4~50523}8`5i57595b225o2X5g1=5ja28/5da65s4A2e4c5m9j5z9l5=1x7|5G5m5I2F5L1|5N7p5Q4Y5T5V5X5)715#0H615)af647k675:am5@9x5`0O5|1^0!605(8d659X2b690H6b6d6f6h6j6l6n0y6p6r0`6u6w6y0C6A6C6E6G6I6K6M0e6O0q6Q7M6U6W6Y6!0A6$6(6*716,6.7`6:6=1Z6^9(4(6{0!9~aZ99aD730s7577797b4k7e7g0A7i9J0L9`7m1G7o5(0A7J0Q0w6f6A0}6l7b0A777a0y7g186M0G100a0A6q0g0b0MbX0a7X8S7!9h8N1y1A1C447;8l7/851H7=1+7@8q3(ao833(82c38h87232h8gbg8dcd2X9d2w2pc27~8r2v2oc66/8t2P9^2Y3qct8v8C2U8F8xcx8A2%8K8G2|2U8O8Q8x8S2_018V2~30328Z3537391r3b8)3f3X3N018.5c3ocD1=8?478^9/018^943V8 3O0S3Q598|c_c%3Z0B3#c;8h3*9g3(aj5A9m3{849q3S9sc.46484a5_9zaK4k9D3v9F4q9I4t9Y4y4A4C9Vc=9MdqdAbl4~4*9!4ZdE4$bqdC4,1+c=9;0J4@3^cv9`4:4p9}c=56585l5n5p0La75i93d%a4d)5r1r5tag5wdaal5Cc52Vaq0w5JatbI5O9.ae5S5U5W1NaC725$aWaIcedW2baM5?5^9y4faR1x5}aUaFed5uce9 99a#a%1|6e6g6i6k6m6o6q6sa=6x6z6B6D6F0G6H6J0e6L6N6P6R6T6V0e6X6Z6#6%6)3Zbd0I6-3(6;6?0jbkdL9)8z6|bpe=5ZaEbu2g76781g7a7ce|aFbBbDaK0D0D.'
+</script><script src="../../js-per-pages/0-generic-python-snippets-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../js-per-pages/1-error_logs-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../js-per-pages/1-packagesInstaller-install-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../js-per-pages/1-runtimeManager-runtime-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../js-per-pages/2-0-runnersManager-runners.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../js-per-pages/2-pyodideSectionsRunner-runner-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../js-per-pages/3-terminalRunner-term.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../js-per-pages/4-0-idesManager-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../js-per-pages/4-ideLogistic-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../js-per-pages/4-ideRunner-ide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
+<script src="../../js-per-pages/start-pyodide.js" crossorigin="anonymous" referrerpolicy="no-referrer" charset="utf-8" type="module"></script>
+
 
 
 
